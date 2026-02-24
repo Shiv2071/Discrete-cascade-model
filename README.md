@@ -6,7 +6,7 @@ Discrete stochastic cascade dynamics on finite graphs with irreversible energy d
 
 ## Contents
 
-- **[mathematical_model.txt](mathematical_model.txt)** — Full model specification (Sections I–XIV): state, dynamics, ripple rule, regimes, key equations, and derivations.
+- **[model_overview.txt](model_overview.txt)** — Short model overview: state variables, update order, main results, how to run.
 - **[model_simulation/](model_simulation/)** — Python implementation and run scripts. See that folder’s [README](model_simulation/README.md) for usage.
 - **[figures/](figures/)** — Instructions to regenerate figures; see `figures/README.txt`.
 

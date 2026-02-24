@@ -1,6 +1,10 @@
 # Papers — keep for arXiv/submission only
 discrete_cascade_thesis.tex
 asymmetry_necessity_paper2.tex
+
+# Internal docs (AI-style, not for public repo)
+mathematical_model.txt
+extension.txt
 *.aux
 *.bbl
 *.blg

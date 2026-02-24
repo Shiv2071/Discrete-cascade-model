@@ -1,0 +1,36 @@
+Discrete cascade model — overview
+==================================
+
+This repo holds the model specification and Python code for "discrete stochastic cascade dynamics on finite graphs with irreversible energy depletion." The formal work appears in two papers (arXiv); here we give a short, self-contained summary.
+
+What the model is
+-----------------
+A discrete-time stochastic process on a graph. At each site you have:
+  - X, Y: counts of two excitation types (asymmetry: X–Y and X–X allowed; Y–Y forbidden)
+  - Beta: local capacity energy (finite, depletable)
+  - S: structural state (evolves with interactions and bonds)
+
+Constants: k (energy release per X–Y interaction), C (ripple threshold), Delta (overshoot), lambda (leakage rate), mu (bond rate).
+
+Update order (one time step)
+----------------------------
+Interaction (stochastic X–Y events) -> energy release (Beta drops) -> ripple F = |S(n) - 2S(n-1) + S(n-2)| -> regime: if F in (C, C+Delta) then leakage; if F >= C+Delta then explosion (pair creation) -> bonds (X–Y pairs can form bonds) -> S and diffusion updates.
+
+Main results (Paper I)
+----------------------
+- Total Beta decreases strictly every step (irreversible).
+- Activity is bounded in time; the system reaches an absorbing state.
+- As Beta -> 0, X and Y go to zero and F -> 0; final state is a frozen residue of the last cascade.
+
+Paper II shows that species asymmetry (X vs Y, different roles) is necessary for structural hierarchy in this class of models.
+
+How to run
+----------
+From model_simulation/: install numpy, matplotlib (see requirements.txt), then run e.g. run_simulation.py, run_bigbang.py, run_cosmology.py. See model_simulation/README.md and figures/README.txt for details and how to regenerate the figures.
+
+Papers
+------
+- Paper I: Discrete Stochastic Cascade Dynamics on Finite Graphs with Irreversible Energy Depletion
+- Paper II: Necessity of Species Asymmetry for Structural Hierarchy in Discrete Stochastic Cascade Models
+
+Source for the papers is not in this repo; see arXiv (or the author) when available.
