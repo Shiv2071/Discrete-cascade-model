@@ -5,12 +5,21 @@ asymmetry_necessity_paper2.tex
 # Internal docs (AI-style, not for public repo)
 mathematical_model.txt
 extension.txt
+
+# arXiv submission packages (local use only)
+arxiv/
 *.aux
 *.bbl
 *.blg
 *.log
 *.out
 *.synctex.gz
+
+# Compiled output — keep PDFs, ignore intermediates
+compiled_pdfs/*.log
+compiled_pdfs/*.aux
+compiled_pdfs/*.html
+compiled_pdfs/*.md
 
 # Python
 __pycache__/

@@ -1,36 +1,62 @@
-Discrete cascade model — overview
-==================================
+Discrete Stochastic Cascade Dynamics — System Overview
+=======================================================
 
-This repo holds the model specification and Python code for "discrete stochastic cascade dynamics on finite graphs with irreversible energy depletion." The formal work appears in two papers (arXiv); here we give a short, self-contained summary.
+A new class of discrete dynamical systems on finite graphs with
+irreversible energy depletion and emergent structural hierarchy.
 
-What the model is
------------------
-A discrete-time stochastic process on a graph. At each site you have:
-  - X, Y: counts of two excitation types (asymmetry: X–Y and X–X allowed; Y–Y forbidden)
-  - Beta: local capacity energy (finite, depletable)
-  - S: structural state (evolves with interactions and bonds)
+What the system is
+------------------
+A discrete-time stochastic process on a finite graph. At each vertex:
 
-Constants: k (energy release per X–Y interaction), C (ripple threshold), Delta (overshoot), lambda (leakage rate), mu (bond rate).
+  X, Y   : counts of two excitation species
+            (asymmetry: X-Y and X-X interactions allowed; Y-Y forbidden)
+  E(p)   : local capacity energy (finite, strictly non-renewable)
+  S(p)   : structural state (accumulates with interactions and bonds)
+
+The system requires no continuum limit, no external drive, and no
+infinite-resource assumption.
 
 Update order (one time step)
 ----------------------------
-Interaction (stochastic X–Y events) -> energy release (Beta drops) -> ripple F = |S(n) - 2S(n-1) + S(n-2)| -> regime: if F in (C, C+Delta) then leakage; if F >= C+Delta then explosion (pair creation) -> bonds (X–Y pairs can form bonds) -> S and diffusion updates.
+Interaction (stochastic X-Y and X-X events)
+  -> Ripple: F = |S(n) - 2S(n-1) + S(n-2)|
+  -> Regime: quiescent (F <= C), leakage (C < F < C+Delta),
+             explosive (F >= C+Delta, creates new X-Y pairs)
+  -> Bond formation (Landau free-energy functional)
+  -> Energy update (irreversible depletion)
+  -> Structural state update
+  -> Diffusion (conservative; energy does not diffuse)
 
-Main results (Paper I)
-----------------------
-- Total Beta decreases strictly every step (irreversible).
-- Activity is bounded in time; the system reaches an absorbing state.
-- As Beta -> 0, X and Y go to zero and F -> 0; final state is a frozen residue of the last cascade.
+Proven guarantees (Part I)
+--------------------------
+1. Energy Monotonicity: total energy is a non-negative supermartingale
+   that decreases strictly in expectation whenever the system is active.
+2. Finite Activity Bound: cumulative interactions across all space and
+   time are almost surely bounded by initial energy / unit cost.
+3. Almost Sure Absorption: the system reaches a frozen absorbing
+   configuration in finite time with probability one.
 
-Paper II shows that species asymmetry (X vs Y, different roles) is necessary for structural hierarchy in this class of models.
+Proven necessity (Part II)
+--------------------------
+1. Symmetric Collapse: identical species => single-species degeneration,
+   Landau landscape flattens, bonding phase disappears.
+2. Differential Depletion: the forbidden Y-Y channel is independently
+   necessary for bond formation.
+3. Beat Frequency: frequency mismatch is independently necessary for
+   non-trivial dynamics.
+
+Critical threshold: an asymmetry index A exists such that no bonds
+form below A_c (sharp critical threshold).
 
 How to run
 ----------
-From model_simulation/: install numpy, matplotlib (see requirements.txt), then run e.g. run_simulation.py, run_bigbang.py, run_cosmology.py. See model_simulation/README.md and figures/README.txt for details and how to regenerate the figures.
+  cd model_simulation
+  pip install -r requirements.txt
+  python run_simulation.py --plot
+
+See model_simulation/README.md for the full exploration surface.
 
 Papers
 ------
-- Paper I: Discrete Stochastic Cascade Dynamics on Finite Graphs with Irreversible Energy Depletion
-- Paper II: Necessity of Species Asymmetry for Structural Hierarchy in Discrete Stochastic Cascade Models
-
-Source for the papers is not in this repo; see arXiv (or the author) when available.
+Part I:  Construction, Guarantees, and Phase Structure
+Part II: Necessity of Species Asymmetry for Structural Hierarchy

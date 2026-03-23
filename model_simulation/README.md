@@ -1,60 +1,55 @@
-# Discrete cascade model — simulation
+# Simulation — Discrete Stochastic Cascade Model
 
-This folder contains a Python implementation of the **discrete stochastic cascade dynamics** on a finite graph (Paper I: *Discrete Stochastic Cascade Dynamics on Finite Graphs with Irreversible Energy Depletion*).
+This is the computational exploration surface for the formal system defined in Part I and Part II.
 
-## Model summary
-
-- **State per site:** \(X\), \(Y\) (excitation counts), \(\mathcal{E}\) (capacity energy), \(S\) (structural state).
-- **Update order:** interaction → ripple → regime (leakage/explosion) → bonds → energy → structure → diffusion.
-- **Asymmetry:** X–Y and X–X interactions allowed; Y–Y forbidden. Intrinsic frequencies \(\omega_X\), \(\omega_Y\) can differ.
-- **Ripple:** \(F = |\Delta^2 S|\) (discrete second difference of \(S\) in time).
-- **Regimes:** quiescent (\(F \le C\)), leakage (\(C < F < C+\Delta\)), explosive (\(F \ge C+\Delta\)).
-- **Main results (Paper I):** Energy monotonicity, finite activity bound, almost-sure absorption.
+The system is not tuned for success. It is designed to expose:
+- **Stable regimes** — quiescent states, energy-limited dynamics
+- **Unstable transitions** — explosive cascades, regime switching
+- **Collapse conditions** — absorption, hierarchy degeneration under symmetry
 
 ## Files
 
-| File | Purpose |
-|------|--------|
-| `cascade_model.py` | Core class `CascadeModel` and `run_simulation()` (1D periodic chain). |
-| `run_simulation.py` | Standard run: fixed initial conditions, optional plot (E_tot, X/Y, F_avg). |
-| `run_bigbang.py` | Big Bang analogue: hot dense initial conditions, plots E_tot, X/Y, S_total, F_avg. |
-| `run_cosmology.py` | Early-universe to “current”: concentrated primordial region (left fraction of chain), then full run; outputs global time series + spatial snapshots (X, Y, E vs site) at several times. |
-| `run_radical.py` | **Unproven regime:** two "universes" connected by one bridge; all mass in one. See `RADICAL_README.md`. |
-| `run_quantum_bang.py` | **Unproven narrative:** X,Y as quantum particles; fluctuation triggers Big Bang, then observable universe. See `QUANTUM_BANG_README.md`. |
-| `requirements.txt` | `numpy`, `matplotlib`. |
+| File | Regime explored | Key observables |
+|------|----------------|-----------------|
+| `cascade_model.py` | Core `CascadeModel` class | All state variables: X, Y, E, S, F, bonds |
+| `run_simulation.py` | Standard dynamics | Energy monotonicity, regime transitions, absorption time |
+| `run_bigbang.py` | High-energy initial conditions | Cascade intensity, pair creation rate, rapid depletion |
+| `run_cosmology.py` | Spatially concentrated initial state | Wavefront propagation, local vs global energy depletion, spatial snapshots |
+| `run_quantum_bang.py` | Fluctuation-triggered dynamics | Stochastic ignition threshold, sensitivity to initial noise |
+| `run_radical.py` | Topologically constrained graph | Bottleneck effects, asymmetric spatial absorption |
+
+## What to observe when running
+
+1. **Energy** (`E_tot`) always decreases. It never recovers. This is the built-in thermodynamic arrow (Theorem 1, Part I).
+2. **X depletes faster than Y.** The forbidden Y–Y channel means X is consumed through two channels (X–Y and X–X) while Y only through one (X–Y). This asymmetric depletion is the mechanism that drives bond formation (Theorem 2, Part II).
+3. **Ripple** (`F_avg`) spikes during explosive regime, then decays. The ripple is the system's internal measure of dynamical volatility.
+4. **Structural state** (`S`) accumulates during active dynamics, then freezes permanently at absorption. The frozen pattern is path-dependent.
+5. **Absorption is guaranteed** but timing is stochastic. Different seeds produce different histories but the same qualitative arc.
 
 ## Usage
 
-From this directory:
-
 ```bash
-# Install
 pip install -r requirements.txt
 
-# Standard run (no plot)
-python run_simulation.py --steps 5000 --sites 50 --seed 42
-
-# With diagnostics plot
+# Standard run with diagnostic plot
 python run_simulation.py --steps 5000 --sites 50 --plot
 
-# Save figures for the thesis/paper (from project root: model_simulation/ is subfolder)
-python run_simulation.py --plot -o ../figures/diagnostics.png
-python run_bigbang.py -o ../figures/bigbang_analogue.png
-
-# Big Bang analogue (hot dense start, more steps/sites)
+# High-energy regime
 python run_bigbang.py --steps 10000 --sites 100
 
-# Early-universe to current: concentrated “primordial” region then evolution
-python run_cosmology.py --sites 100 --steps 8000 --primordial-frac 0.25 -o ../figures/cosmology
-```
+# Spatially concentrated initial state
+python run_cosmology.py --sites 100 --steps 8000 --primordial-frac 0.25
 
-Outputs: console summary (steps, final energy, final X/Y, absorbing); with `--plot`, saves to the path given by `--output` or default `diagnostics.png` / `bigbang_analogue.png`. Use `-o ../figures/...` to write into the project’s `figures/` folder for inclusion in the LaTeX papers.
+# Save figures for the papers
+python run_simulation.py --plot -o ../figures/diagnostics.png
+python run_bigbang.py -o ../figures/bigbang_analogue.png
+python run_cosmology.py -o ../figures/cosmology
+```
 
 ## Parameters
 
-Defaults in `CascadeModel` match the thesis conventions: \(\alpha_{XY}\), \(\alpha_{XX}\), \(\omega_X\), \(\omega_Y\), \(k_{XY}\), \(k_{XX}\), \(C\), \(\Delta\), \(\lambda\), \(\eta\), \(\kappa\), \(\gamma_1\), \(\gamma_{XX}\), \(\gamma_2\), \(D_X\), \(D_Y\), and Landau bond parameters \(a_0\), \(b\), \(T_c\). Override via keyword arguments to `CascadeModel` or `run_simulation`.
+Defaults in `CascadeModel` match the paper conventions. Override via keyword arguments. The key dimensionless ratios that control qualitative behaviour are documented in Part I, Appendix B (Parameter Sensitivity).
 
 ## Relation to the papers
 
-- The **math** (theorems, derivations, key equations) is in the LaTeX papers and in `../mathematical_model.txt` (Sections I–XIII).
-- This simulation **implements** the same dynamics and is used to **observe** and **validate** the behaviour (e.g. monotone decrease of total energy, eventual absorption, Big Bang analogue arc).
+The theorems in Part I and Part II are proven independently of this code. The simulations serve a different purpose: they make the system's behaviour space *visible*. The formal guarantees tell you what must happen; the simulations show you *how* it happens across different initial conditions and graph topologies.
