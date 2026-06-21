@@ -32,7 +32,7 @@ rd_Mpc  = 147.09       # Mpc  (Planck 2018 sound horizon)
 H0_fid  = 67.4         # km/s/Mpc (fiducial; we fit this)
 Om_fid  = 0.315        # matter density (we fit this)
 
-# ── DESI DR2 BAO data: z, DH/rd, sigma(DH/rd) ─────────────────────────────
+# ── DESI Year 1 BAO data (April 2024, arXiv: 2404.03002): z, DH/rd, sigma ─
 desi = np.array([
     [0.510, 20.98, 0.61],   # LRG1
     [0.706, 20.08, 0.60],   # LRG2
