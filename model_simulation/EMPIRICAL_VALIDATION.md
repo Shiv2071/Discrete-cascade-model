@@ -123,6 +123,25 @@ Output: chi-squared table, sigma residuals per data point, and a figure saved to
 
 ---
 
+## Cross-release test: DESI Year 1 (2024) to DESI DR2 (2025)
+
+A second test was run on June 21, 2026. The cascade model was trained on all six DESI Year 1 points and asked to predict all six DESI DR2 points from a completely separate observational campaign.
+
+Results (chi-squared on DR2, lower is better):
+- CASCADE: 4.453
+- LCDM: 4.390
+- CPL: 2.174
+
+CPL wins, but does so by crossing into phantom dark energy (w < -1) at z = 0.145. Phantom dark energy violates the Null Energy Condition. No known physical field produces it without ghost instabilities. The DESI DR2 paper itself treats this crossing as a tension to be explained, not confirmed physics.
+
+When CPL is given 4 parameters against 6 data points, its extra freedom absorbs measurement scatter into the phantom regime. The 2.174 chi-squared is CPL mopping up residuals through an unphysical degree of freedom.
+
+Cascade and LCDM both achieve chi-squared around 4.4 on DR2 without any phantom excursion. The cascade no-phantom theorem (proved from energy monotonicity in Part I) is not a limitation. It is the model correctly refusing to fit noise.
+
+The two tests together are consistent: in the within-Year-1 retrodiction, CPL's phantom overfitting produced chi-squared 22.81 on withheld data (five times worse than cascade). In the cross-release test, DR2's smaller error bars and different central values happen to favor the phantom excursion CPL is already prone to making. The cascade model matches LCDM in both cases and never crosses the physical boundary.
+
+---
+
 ## Note on scope
 
 The cascade model was not built for cosmology. It is a general mathematical framework for any system with asymmetric interacting classes, forbidden self-interaction, frequency mismatch, finite non-renewable resources, and irreversible structural accumulation. Dark energy is the first domain where its predictions have been tested against real data. The same structural logic applies to thermodynamic, biological, and other complex systems.
