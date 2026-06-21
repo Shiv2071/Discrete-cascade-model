@@ -2,7 +2,9 @@
 
 **Author: Shiv Goswami**
 **Date: June 21, 2026**
-**Status: Working derivation. Pre-proof document. Extends Part III cosmological section.**
+**Status: Reference document. Contains the formal identification table and prior analytical work.**
+
+> **Methodological note (June 21, 2026):** The correct derivation program is documented in `CASCADE_DARK_ENERGY_DERIVATION.md`. That document supersedes the methodology used in Sections IV–V here. The identification table (Section I), master equation (Section II), and regime correspondence (Sections III, VI) remain valid. Sections IV.2 (analytical w(z) forms) and the BAO fitting exercise (`fit_desi_bao.py`) are preparatory side-products — not the primary derivation. The correct program derives dark energy behavior from cascade simulation output without importing cosmological equations.
 
 ---
 
