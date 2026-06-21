@@ -94,13 +94,15 @@ The three scripts that implement this test are in `model_simulation/`:
 |--------|---------|
 | `cascade_retrodiction.py` | Full blind retrodiction protocol. Calibrates all three models, predicts unseen data, reports chi-squared and sigma residuals. |
 | `reverse_cascade.py` | Inverts DESI H(z) data to recover the cascade's implied beta history from Big Bang to today. |
-| `run_1M.py` | Runs the paper's Big Bang analogue with prescribed parameters (E0 = 500, X0 = 8, Y0 = 8) and records the emergent three-regime arc. |
+| `run_bigbang_analogue.py` | Runs the paper's Big Bang analogue with prescribed parameters (E0 = 500, X0 = 8, Y0 = 8) and records the emergent three-regime arc. |
 
 ### Run the retrodiction test
 
 ```bash
 cd model_simulation
-python cascade_retrodiction.py
+python cascade_retrodiction.py   # blind retrodiction test
+python reverse_cascade.py        # DESI beta history inversion
+python run_bigbang_analogue.py   # Big Bang arc with paper parameters
 ```
 
 Output: chi-squared table, sigma residuals per data point, and a figure saved to `../figures/cascade_retrodiction.png`.
