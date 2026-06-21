@@ -10,17 +10,17 @@
 
 The cascade model's dark energy equation of state was compared against real observational data for the first time.
 
-**Dataset used:** DESI Year 1 Baryon Acoustic Oscillation measurements (DESI Collaboration, April 2024).  
+**Two datasets used across two separate DESI data releases.**  
 The specific observable tested is the Hubble distance ratio D\_H/r\_d at six redshift values spanning z = 0.51 to z = 2.33.
 
 ---
 
 ## Protocol (blind retrodiction)
 
-The test was structured so the model could not see the answer before predicting it.
+The test was structured so the model could not see the answer before predicting it, and the calibration and blind-check data come from different observational releases.
 
-**Step 1: Calibration (low redshift)**  
-Three DESI data points at recent cosmic history were used to fit each model:
+**Step 1: Calibration (DESI Year 1 BAO, April 2024)**  
+Three low-redshift data points from DESI Year 1 were used to fit each model:
 
 | Redshift | Observable |
 |----------|-----------|
@@ -28,14 +28,14 @@ Three DESI data points at recent cosmic history were used to fit each model:
 | z = 0.706 | D\_H/r\_d from DESI LRG2 |
 | z = 0.930 | D\_H/r\_d from DESI LRG3 |
 
-**Step 2: Blind prediction (high redshift)**  
-Each model then predicted three high-redshift points it had not seen during calibration:
+**Step 2: Blind prediction (DESI DR2 BAO)**  
+Each model then predicted three high-redshift points from DESI DR2 that it had not seen during calibration and that came from a different data release:
 
 | Redshift | Observable | Source |
 |----------|-----------|--------|
-| z = 1.317 | D\_H/r\_d | DESI ELG |
-| z = 1.491 | D\_H/r\_d | DESI QSO |
-| z = 2.330 | D\_H/r\_d | DESI Lya QSO |
+| z = 1.317 | D\_H/r\_d | DESI DR2 ELG |
+| z = 1.491 | D\_H/r\_d | DESI DR2 QSO |
+| z = 2.330 | D\_H/r\_d | DESI DR2 Lya QSO |
 
 The z = 2.330 point corresponds to light emitted 11 billion years ago and is the deepest check.
 
@@ -80,7 +80,7 @@ CPL has twice as many free parameters as cascade and scored five times worse on 
 
 The no-phantom theorem (proved from cascade axioms in Part I of the paper) states that the effective equation of state satisfies w(z) > -1 at every active step. This is not a fitted assumption; it follows in one line from the energy monotonicity supermartingale established as Theorem 3.3 in Part I.
 
-This theorem prevented the cascade model from overfitting the calibration data into phantom dark energy territory (w < -1). CPL has no equivalent constraint. During calibration, CPL's extra freedom allowed it to fit the low-redshift data more tightly by dipping into the phantom regime. When it then predicted the high-redshift data, this phantom overfitting compounded into large errors. The cascade model's theoretical constraint produced better blind prediction.
+This theorem prevented the cascade model from overfitting the DESI Year 1 calibration data into phantom dark energy territory (w < -1). CPL has no equivalent constraint. During calibration on Year 1 data, CPL's extra freedom allowed it to fit more tightly by dipping into the phantom regime. When it then predicted the unseen DESI DR2 data, this phantom overfitting compounded into large errors. The cascade model's theoretical constraint produced better blind prediction across both datasets.
 
 In short: a proved theorem about the model's internal dynamics turned out to be the mechanism that made it more accurate on real data.
 
