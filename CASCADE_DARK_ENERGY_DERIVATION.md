@@ -1,4 +1,4 @@
-# Cascade Model: Dark Energy from First Principles
+﻿# Cascade Model: Dark Energy from First Principles
 
 **Author: Shiv Goswami**  
 **Date: June 21, 2026**  
@@ -8,14 +8,14 @@
 
 ## Methodological Commitment
 
-The cascade model is not a sub-model of cosmology. It is a foundational discrete stochastic system on a finite graph. Cosmology — including dark energy, the Hubble parameter, redshift, and the Friedmann equation — are descriptions of phenomena that **emerge** from cascade dynamics. They are not inputs.
+The cascade model is not a sub-model of cosmology. It is a foundational discrete stochastic system on a finite graph. Cosmology (including dark energy, the Hubble parameter, redshift, and the Friedmann equation) are descriptions of phenomena that **emerge** from cascade dynamics. They are not inputs.
 
 This means the correct order of operations is:
 
 1. **Simulate** the cascade model from first principles, using only its own rules.
 2. **Extract** dark energy observables from the simulation output using only cascade-internal quantities.
 3. **Derive** the dark energy equation of state as a function of cascade-internal time.
-4. **Validate** by comparing the derived output to DESI DR2 — as a check, not as a source of parameters.
+4. **Validate** by comparing the derived output to DESI DR2, as a check, not as a source of parameters.
 
 **Nothing from cosmology is assumed in steps 1–3.** No Friedmann equation. No CPL ansatz. No fitted Γ₀. No external H₀. The cascade model has its own dynamics; those dynamics either produce dark energy behavior or they do not. We find out by running the model.
 
@@ -27,7 +27,7 @@ This is the same principle that governed the big bang simulation: we did not fit
 
 ### I.1 Per-Step Quantities (All from Simulation)
 
-At each step n, the cascade model yields — directly from the rules in `cascade_model.py`:
+At each step n, the cascade model yields, directly from the rules in `cascade_model.py`:
 
 | Cascade quantity | Symbol | How computed |
 |---|---|---|
@@ -87,7 +87,7 @@ Therefore:
 
 $$\boxed{w_{\text{eff}}(n) = -1 + (1 + w_0) \cdot \Phi(n)}$$
 
-This equation contains exactly one external input (w₀). Everything else — including Γ₀, the evolution rate, the transition redshift, the shape — comes from the cascade.
+This equation contains exactly one external input (w₀). Everything else (including Γ₀, the evolution rate, the transition redshift, the shape) comes from the cascade.
 
 **The supermartingale theorem proves Φ(n) > 0, which proves w_eff(n) > −1 at all n.** This is a structural consequence of the cascade axioms, not a parametric constraint.
 
@@ -128,7 +128,7 @@ From this, we compute:
 - Φ(n) = δ(n)/δ₀ × √(β₀/β(n)) (master ratio)
 - w_eff(n) = −1 + (1+w₀)·Φ(n) (dark energy equation of state)
 
-Plotting **w_eff vs z_c** gives the cascade dark energy curve — entirely from cascade dynamics.
+Plotting **w_eff vs z_c** gives the cascade dark energy curve, derived entirely from cascade dynamics.
 
 ---
 
@@ -137,7 +137,7 @@ Plotting **w_eff vs z_c** gives the cascade dark energy curve — entirely from 
 | Regime | β(n) | δ(n) | Φ(n) | w_eff | z_c range |
 |---|---|---|---|---|---|
 | Explosive | >> β₀ | ~ Γ₁·β >> δ₀ | >> 1 | >> −1 (near 0) | z >> 1 |
-| Leakage (transition) | several × β₀ | intermediate | decreasing from >> 1 | transitional | z ~ 1–5 |
+| Leakage (transition) | several × β₀ | intermediate | decreasing from >> 1 | transitional | z ~ 1 to 5 |
 | Quiescent (today) | ≈ β₀ | ≈ Γ₀ = δ₀ | ≈ 1 | ≈ w₀ = −0.77 | z ~ 0–1 |
 | Future quiescent | < β₀ | < δ₀ | < 1 | < w₀ | z < 0 |
 | Absorbing state | = 0 | = 0 | = 0 | undefined | n → ∞ |
@@ -148,7 +148,7 @@ This is a **structural prediction from the cascade axioms**, not a fit.
 
 ---
 
-## V. Comparison to DESI (Validation Step — Comes Last)
+## V. Comparison to DESI (Validation Step (Comes Last))
 
 After steps I–IV are complete from the simulation, the output w_eff(z_c) is compared to DESI DR2.
 
@@ -164,7 +164,7 @@ After steps I–IV are complete from the simulation, the output w_eff(z_c) is co
 
 **The key observable difference:** Does the CASCADE show Φ > 1 (w_eff > w₀) at z_c > 0? If the simulation is still in the quiescent regime for all z_c = 0 to 2, Φ ≈ 1 everywhere (w ≈ const ≈ −0.77). If the simulation shows the leakage→quiescent transition within z_c = 1–3, Φ drops from high values to 1, which matches DESI's dynamical dark energy signal.
 
-**The result determines which regime DESI is actually observing** — and whether the cascade parameters are consistent with the observed transition rate.
+**The result determines which regime DESI is actually observing**, and whether the cascade parameters are consistent with the observed transition rate.
 
 ---
 
@@ -208,7 +208,7 @@ The `DARK_ENERGY_MAPPING.md` document contains preparatory work:
 - The formal identification table (cascade ↔ cosmology): valid and foundational.
 - The master equation for w_eff: correct, still used here as II.2.
 - The analytical LOG and POLY w(z) forms: these are **mean-field approximations** of the dynamics, useful for qualitative insight but not the simulation output itself.
-- The `fit_desi_bao.py` chi-squared fitting: this was a **wrong methodological step** — it imported cosmological distance formulas and fitted Γ₀ to DESI data. The result (CAS_POLY chi2=8.66 vs CPL chi2=7.99) is noted as a side-product, not the primary derivation. It is superseded by the simulation-derived approach documented here.
+- The `fit_desi_bao.py` chi-squared fitting: this was a preliminary computation that imported cosmological distance formulas and fitted Γ₀ to DESI data. The result (CAS_POLY chi2=8.66 vs CPL chi2=7.99) is noted as a side-product; it is superseded by the simulation-derived approach documented here.
 
 ---
 
@@ -220,10 +220,10 @@ The `DARK_ENERGY_MAPPING.md` document contains preparatory work:
 **Author: Shiv Goswami.**
 
 Priority claims:
-1. The cascade-internal dark energy observable Φ(n) = δ(n)/δ₀ × √(β₀/β(n)) — first defined here.
-2. The cascade-internal redshift z_c(n) = β(n)/β₀ − 1 — first defined here.
-3. The structural proof that Φ(n) > 0 ⟹ w_eff(n) > −1 at all n, from the supermartingale theorem — first stated here.
-4. The three-regime Φ arc as the cascade model's foundational dark energy prediction — first described here.
+1. The cascade-internal dark energy observable Φ(n) = δ(n)/δ₀ × √(β₀/β(n)), first defined here.
+2. The cascade-internal redshift z_c(n) = β(n)/β₀ − 1, first defined here.
+3. The structural proof that Φ(n) > 0 ⟹ w_eff(n) > −1 at all n, from the supermartingale theorem, first stated here.
+4. The three-regime Φ arc as the cascade model's foundational dark energy prediction, first described here.
 
 ---
 
@@ -239,8 +239,8 @@ Steps: 10  (absorbing state reached)
   Explosive:  1 step
   Leakage:    0 steps
   Quiescent:  9 steps
-  beta range: 0.307 — 5.000
-  delta range: 0.003 — 0.780
+  beta range: 0.307 to 5.000
+  delta range: 0.003 to 0.780
 ```
 
 The cascade model with default big-bang parameters runs for 10 steps before reaching the absorbing state. This is expected: XY excitations deplete rapidly at high alpha_XY = 0.1 with X=Y=8 per site.
@@ -266,18 +266,18 @@ w_eff > -1 at all active steps: True  ← no phantom crossing
 ### IX.3 What this shows
 
 **Structure (from cascade axioms, no external equations):**
-1. **Explosive step (z_c ≈ 1.36):** w_eff = −0.584. Dark energy is significantly less negative — positive pressure contribution — consistent with rapid structure formation in early universe.
+1. **Explosive step (z_c ≈ 1.36):** w_eff = −0.584. Dark energy is significantly less negative (positive pressure contribution), consistent with rapid structure formation in early universe.
 2. **Today (z_c = 0):** w_eff = −0.77. Calibrated to DESI (single external input).
 3. **Future (z_c < 0):** w_eff → −1. Cascade energy approaches zero (heat death).
 4. **Phi > 0 throughout** → **w_eff > −1 throughout.** No phantom. Structural theorem, not a fit.
 
 **Comparison to DESI:**
-- At z_c ≈ 1.64 (past, quiescent): cascade gives w_eff = −0.926. DESI CPL gives w ≈ −1.08. The cascade predicts LESS negative w in the past than DESI's CPL fit — consistent with no phantom.
-- At z_c ≈ 1.36 (explosive): cascade gives w_eff = −0.584. This epoch has no DESI analogue at z=1.36 (DESI CPL gives −1.08). The CASCADE predicts that this redshift corresponds to an active explosive step — an entirely different regime from what CPL assumes.
+- At z_c ≈ 1.64 (past, quiescent): cascade gives w_eff = −0.926. DESI CPL gives w ≈ −1.08. The cascade predicts LESS negative w in the past than DESI's CPL fit, consistent with no phantom.
+- At z_c ≈ 1.36 (explosive): cascade gives w_eff = −0.584. This epoch has no DESI analogue at z=1.36 (DESI CPL gives −1.08). The CASCADE predicts that this redshift corresponds to an active explosive step, an entirely different regime from what CPL assumes.
 
 ### IX.4 Honest limitation
 
-The paper's default parameters produce a 10-step simulation. This gives sparse z_c resolution — each step covers a large interval of z_c (the z_c axis spans 0 to 11, with only 3 points in the DESI-relevant range z_c = 0 to 2.33). The cascade model at this parameter scale is a coarse-grained description. High-resolution mapping to the DESI z range requires either finer cascade parameters or a multi-scale embedding — both are formal tasks for the paper.
+The paper's default parameters produce a 10-step simulation. This gives sparse z_c resolution; each step covers a large interval of z_c (the z_c axis spans 0 to 11, with only 3 points in the DESI-relevant range z_c = 0 to 2.33). The cascade model at this parameter scale is a coarse-grained description. High-resolution mapping to the DESI z range requires either finer cascade parameters or a multi-scale embedding; both are formal tasks for the paper.
 
 **Figure:** `figures/cascade_de_internal.png`
 

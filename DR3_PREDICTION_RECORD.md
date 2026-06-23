@@ -7,6 +7,11 @@
 **Script:** `model_simulation/cascade_dr3_prediction.py`  
 **Figure:** `figures/cascade_dr3_prediction.png`
 
+**Zenodo DOIs (permanent citable record):**
+- Part I: https://doi.org/10.5281/zenodo.20787297
+- Part II: https://doi.org/10.5281/zenodo.20787504
+- Dark Energy Preprint: https://doi.org/10.5281/zenodo.20787562
+
 ---
 
 ## What this is

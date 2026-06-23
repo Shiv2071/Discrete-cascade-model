@@ -2,7 +2,8 @@
 
 **Date:** June 21, 2026  
 **Author:** Shiv Goswami  
-**Priority date:** 21 June 2026. Preprint in preparation.
+**Priority date:** 21 June 2026.  
+**Preprint:** [Dark Energy as Discrete Beta Depletion (Zenodo)](https://doi.org/10.5281/zenodo.20787562)
 
 ---
 

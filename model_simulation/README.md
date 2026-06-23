@@ -1,11 +1,11 @@
-# Simulation — Discrete Stochastic Cascade Model
+﻿# Simulation: Discrete Stochastic Cascade Model
 
 This is the computational exploration surface for the formal system defined in Part I and Part II.
 
 The system is not tuned for success. It is designed to expose:
-- **Stable regimes** — quiescent states, energy-limited dynamics
-- **Unstable transitions** — explosive cascades, regime switching
-- **Collapse conditions** — absorption, hierarchy degeneration under symmetry
+- **Stable regimes**: quiescent states, energy-limited dynamics
+- **Unstable transitions**: explosive cascades, regime switching
+- **Collapse conditions**: absorption, hierarchy degeneration under symmetry
 
 ## Files
 
@@ -13,10 +13,10 @@ The system is not tuned for success. It is designed to expose:
 |------|----------------|-----------------|
 | `cascade_model.py` | Core `CascadeModel` class | All state variables: X, Y, E, S, F, bonds |
 | `run_simulation.py` | Standard dynamics | Energy monotonicity, regime transitions, absorption time |
-| `run_bigbang.py` | High-energy initial conditions | Cascade intensity, pair creation rate, rapid depletion |
-| `run_cosmology.py` | Spatially concentrated initial state | Wavefront propagation, local vs global energy depletion, spatial snapshots |
-| `run_quantum_bang.py` | Fluctuation-triggered dynamics | Stochastic ignition threshold, sensitivity to initial noise |
-| `run_radical.py` | Topologically constrained graph | Bottleneck effects, asymmetric spatial absorption |
+| `run_high_energy.py` | High-energy initial conditions | Cascade intensity, pair creation rate, rapid depletion |
+| `run_spatial_concentration.py` | Spatially concentrated initial state | Wavefront propagation, local vs global energy depletion, spatial snapshots |
+| `run_minimal_seed.py` | Fluctuation-triggered dynamics | Stochastic ignition threshold, sensitivity to initial noise |
+| `run_coupled_domains.py` | Topologically constrained graph | Bottleneck effects, asymmetric spatial absorption |
 
 ## What to observe when running
 
@@ -35,15 +35,15 @@ pip install -r requirements.txt
 python run_simulation.py --steps 5000 --sites 50 --plot
 
 # High-energy regime
-python run_bigbang.py --steps 10000 --sites 100
+python run_high_energy.py --steps 10000 --sites 100
 
 # Spatially concentrated initial state
-python run_cosmology.py --sites 100 --steps 8000 --primordial-frac 0.25
+python run_spatial_concentration.py --sites 100 --steps 8000 --primordial-frac 0.25
 
 # Save figures for the papers
 python run_simulation.py --plot -o ../figures/diagnostics.png
-python run_bigbang.py -o ../figures/bigbang_analogue.png
-python run_cosmology.py -o ../figures/cosmology
+python run_high_energy.py -o ../figures/high_energy_cascade.png
+python run_spatial_concentration.py -o ../figures/spatial_concentration
 ```
 
 ## Parameters

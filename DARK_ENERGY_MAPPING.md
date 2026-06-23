@@ -1,16 +1,16 @@
-# Dark Energy as Discrete Beta Depletion: Formal Mapping
+﻿# Dark Energy as Discrete Beta Depletion: Formal Mapping
 
 **Author: Shiv Goswami**
 **Date: June 21, 2026**
 **Status: Reference document. Contains the formal identification table and prior analytical work.**
 
-> **Methodological note (June 21, 2026):** The correct derivation program is documented in `CASCADE_DARK_ENERGY_DERIVATION.md`. That document supersedes the methodology used in Sections IV–V here. The identification table (Section I), master equation (Section II), and regime correspondence (Sections III, VI) remain valid. Sections IV.2 (analytical w(z) forms) and the BAO fitting exercise (`fit_desi_bao.py`) are preparatory side-products — not the primary derivation. The correct program derives dark energy behavior from cascade simulation output without importing cosmological equations.
+> **Methodological note (June 21, 2026):** The correct derivation program is documented in `CASCADE_DARK_ENERGY_DERIVATION.md`. That document supersedes the methodology used in Sections IV–V here. The identification table (Section I), master equation (Section II), and regime correspondence (Sections III, VI) remain valid. Sections IV.2 (analytical w(z) forms) and the BAO fitting exercise (`fit_desi_bao.py`) are preparatory analytical steps, not the final derivation. The correct program derives dark energy behavior from cascade simulation output without importing cosmological equations.
 
 ---
 
 ## Purpose
 
-This document derives the formal correspondence between the cascade model's β depletion dynamics and the observed dark energy equation of state w(z). The goal is to show that what cosmology calls "dark energy" — and specifically its observed evolution as measured by DESI DR2 (2025) — is a direct instance of the cascade model's global invariant:
+This document derives the formal correspondence between the cascade model's β depletion dynamics and the observed dark energy equation of state w(z). The goal is to show that what cosmology calls "dark energy" , and specifically its observed evolution as measured by DESI DR2 (2025) , is a direct instance of the cascade model's global invariant:
 
 $$\sum_p \mathcal{E}(p,n+1) < \sum_p \mathcal{E}(p,n) \quad \text{whenever active}$$
 
@@ -158,11 +158,11 @@ Mapping from step n to redshift z via b(n) → b(a) where a = 1/(1+z):
 | Far future | b << b_0 | Quiescent (dying) | w → -1 | Approaches cosmological constant behavior. |
 | Absorbing state | b = 0 | Frozen | undefined (no activity) | Heat death. |
 
-### IV.2 The w(z) Function — Two Derivations
+### IV.2 The w(z) Function: Two Derivations
 
 The cascade model produces a w(z) trajectory. Two approaches are computed, giving different functional forms. Both predict w(z) > -1 at all z.
 
-#### (A) The Logarithmic Form — Correct Physical Mapping
+#### (A) The Logarithmic Form (Correct Physical Mapping)
 
 The cascade's step-to-time mapping: each step n corresponds to fixed proper time τ.
 
@@ -199,7 +199,7 @@ With w₀ = −0.77 (k ≡ 3(1+w₀)/2 = 0.345):
 | 2.0 | -0.833 | 1.902 |
 | 2.33 | -0.837 | 1.994 |
 
-#### (B) The Polynomial Form — Phenomenological Cascade-Inspired
+#### (B) The Polynomial Form (Phenomenological, Cascade-Inspired)
 
 If we instead map each cascade step to an interval proportional to H·dt (e-fold time), we arrive at a different ODE:
 
@@ -213,7 +213,7 @@ And:
 
 $$\boxed{w_{\text{POLY}}(z) = -1 + \frac{(1+w_0)}{1 + \Gamma_0 z(z+2)/4}}$$
 
-This form has **one free parameter Γ₀** controlling how rapidly w evolves toward −1. The polynomial form is phenomenological — it uses the cascade's functional structure but treats the n→z mapping as a free choice parameterized by Γ₀.
+This form has **one free parameter Γ₀** controlling how rapidly w evolves toward −1. The polynomial form is phenomenological; it uses the cascade's functional structure but treats the n→z mapping as a free choice parameterized by Γ₀.
 
 **Key property of BOTH forms:** w(z) > −1 at all z ≥ 0 (no phantom crossing). This is enforced by the supermartingale theorem, which forbids β from becoming more negative than its starting value.
 
@@ -237,13 +237,13 @@ $$w_{\text{LOG}}(z) \approx w_0 - \frac{3(1+w_0)^2}{2}\cdot z$$
 
 Identifying with CPL: $w_a^{\text{cascade,LOG}} = -3(1+w_0)^2/2 = -0.0794$ (with w₀ = −0.77).
 
-**The LOG form predicts wa ≈ −0.079** — significantly smaller in magnitude than DESI's wa ≈ −0.44, hence the poorer fit to DESI data.
+**The LOG form predicts wa ≈ −0.079** , significantly smaller in magnitude than DESI's wa ≈ −0.44, hence the poorer fit to DESI data.
 
-**The POLY form with Γ₀ = 6.33** gives wa_eff ≈ −0.23·6.33/2 = −0.73 at z≈0 — this is a reasonable match to DESI's dynamical dark energy signal.
+**The POLY form with Γ₀ = 6.33** gives wa_eff ≈ −0.23·6.33/2 = −0.73 at z≈0 , this is a reasonable match to DESI's dynamical dark energy signal.
 
 ---
 
-## VI. The Three Regimes as Three Epochs — Precise Correspondence
+## VI. The Three Regimes as Three Epochs: Precise Correspondence
 
 ### VI.1 Explosive Regime ↔ Cosmic Dawn and Reionization (z ~ 6-20)
 
@@ -253,7 +253,7 @@ Cosmological signature:
 - Rapid, simultaneous structure formation (JWST impossible early galaxies)
 - High star formation rate
 - Reionization driven by explosive burst of ionizing photons
-- Expansion rate anomalously high (Hubble tension — the rate in this epoch differs from quiescent rate)
+- Expansion rate anomalously high (Hubble tension (the rate in this epoch differs from quiescent rate))
 
 The cascade model PREDICTS this: the explosive regime has a different effective dynamics from the quiescent regime. The measured Hubble constant at high z (from early universe CMB) versus low z (from supernovae) being different is a regime transition signature.
 
@@ -262,7 +262,7 @@ The cascade model PREDICTS this: the explosive regime has a different effective 
 Condition: C < F < C+Δ. Slow energy leakage. Structure growth decelerating.
 
 Cosmological signature:
-- Baryon acoustic oscillations: pressure waves of scale ~150 Mpc propagating through the coupled baryon-photon plasma. These are RIPPLES in the structural field S — the acoustic oscillations of matter density are literally the ripple F propagating across the graph.
+- Baryon acoustic oscillations: pressure waves of scale ~150 Mpc propagating through the coupled baryon-photon plasma. These are RIPPLES in the structural field S; the acoustic oscillations of matter density are literally the ripple F propagating across the graph.
 - Galaxy filament formation: the cosmic web's filamentary structure forms in this epoch as the leakage regime propagates spatially.
 
 ### VI.3 Quiescent Regime ↔ Current Epoch (z ~ 0-1)
@@ -280,39 +280,39 @@ Cosmological signature:
 
 ### Proved (from Part I and Part II):
 
-1. β decreases monotonically — dark energy weakens over time (qualitative match to DESI)
-2. Absorbing state is reached almost surely in finite time — universe terminates
-3. Asymmetry is necessary — baryon asymmetry is necessary for structure (proved necessity, not just assumption)
-4. Three distinct regimes exist — three distinct cosmic epochs are predicted by the model structure
+1. β decreases monotonically: dark energy weakens over time (qualitative match to DESI)
+2. Absorbing state is reached almost surely in finite time; universe terminates
+3. Asymmetry is necessary; baryon asymmetry is necessary for structure (proved necessity, not just assumption)
+4. Three distinct regimes exist; three distinct cosmic epochs are predicted by the model structure
 
 ### Derived Here (requiring formal proof):
 
 5. The effective equation of state w_eff(z) is derived from the depletion function D(n)
-6. w_eff(z) is negative and evolves from near -1 (early) to w_0 > -1 (today) — thawing quintessence
-7. The sign of w_a is negative — consistent with DESI DR2
+6. w_eff(z) is negative and evolves from near -1 (early) to w_0 > -1 (today), thawing quintessence
+7. The sign of w_a is negative, consistent with DESI DR2
 8. The b(z) evolution equation has been derived in the quiescent regime
 
 ### Still Requiring Formal Work:
 
-A. **The b(z) solution across all regimes** — the transition between explosive, leakage, and quiescent must be computed for a continuous w(z) trajectory.
+A. **The b(z) solution across all regimes**: the transition between explosive, leakage, and quiescent must be computed for a continuous w(z) trajectory.
 
-B. **The Hubble analog must be made precise** — H_analog currently uses the Friedmann equation assumption. This should be derived from the cascade model's own dynamics (how does the graph "expand"?).
+B. **The Hubble analog must be made precise**: H_analog currently uses the Friedmann equation assumption. This should be derived from the cascade model's own dynamics (how does the graph "expand"?).
 
-C. **Quantitative fitting** — numerical integration of the cascade model with specific parameter values (Γ₀, Γ₁, C, Δ, λ, k, α, η, κ) to produce a specific w(z) curve, then compare to DESI DR2 confidence intervals.
+C. **Quantitative fitting**: numerical integration of the cascade model with specific parameter values (Γ₀, Γ₁, C, Δ, λ, k, α, η, κ) to produce a specific w(z) curve, then compare to DESI DR2 confidence intervals.
 
-D. **The graph topology** — what finite graph topology (1D chain, 2D grid, 3D lattice, random graph, scale-free) gives cosmological behavior? The Hubble Horizon is a causal boundary that the graph must encode.
+D. **The graph topology**: what finite graph topology (1D chain, 2D grid, 3D lattice, random graph, scale-free) gives cosmological behavior? The Hubble Horizon is a causal boundary that the graph must encode.
 
-E. **Species identification** — X and Y as matter and radiation requires verifying: does the asymmetric interaction structure (Y-Y forbidden, ω_X ≠ ω_Y) match the known asymmetry between matter and radiation in standard physics?
+E. **Species identification**: X and Y as matter and radiation requires verifying: does the asymmetric interaction structure (Y-Y forbidden, ω_X ≠ ω_Y) match the known asymmetry between matter and radiation in standard physics?
 
 ---
 
-## VIII. The Claim — Stated Precisely
+## VIII. The Claim, Stated Precisely
 
 The cascade model, under the identification β ↔ dark energy density and the mean-field quiescent regime dynamics, predicts:
 
-1. Dark energy is not constant (w ≠ -1) — it evolves from near -1 in the past to w_0 > -1 today
+1. Dark energy is not constant (w ≠ -1) , it evolves from near -1 in the past to w_0 > -1 today
 2. The evolution is described by a specific functional form: $w(z) = -1 + (1+w_0)/(1 + \Gamma_0 z(z+2)/4)$
-3. The sign of w_a is negative — dark energy was stronger in the past
+3. The sign of w_a is negative , dark energy was stronger in the past
 4. All of this follows from the single proved theorem: β is a non-negative supermartingale
 
 **DESI DR2 (March 2025, 15 million galaxies) is measuring the cascade model's energy monotonicity theorem playing out at cosmological scale.**
@@ -323,12 +323,12 @@ The cascade model, under the identification β ↔ dark energy density and the m
 
 **Computed June 21, 2026. Scripts: `model_simulation/run_dark_energy.py`, `model_simulation/fit_desi_bao.py`.**
 
-### IX.1 Three Regimes — Confirmed Numerically
+### IX.1 Three Regimes: Confirmed Numerically
 
 Cascade simulation (P=50 sites, E_total=800, seed=42, primed S-history with F_init=1.5 > C+Δ):
-- Explosive regime: 3 steps (25%) — high β, F > C+Δ
-- Leakage regime: 1 step (8%) — intermediate β, C < F < C+Δ
-- Quiescent regime: 8 steps (67%) — low β, F ≤ C
+- Explosive regime: 3 steps (25%) , high β, F > C+Δ
+- Leakage regime: 1 step (8%) , intermediate β, C < F < C+Δ
+- Quiescent regime: 8 steps (67%) , low β, F ≤ C
 
 All three regimes confirmed in simulation.
 
@@ -351,7 +351,7 @@ Free parameters for all models: θ = H₀r_d/c, Ω_m; each model gets one additi
 
 | Model | chi2 | dof | chi2/dof | Δchi2 vs LCDM | Best-fit H₀ | Best-fit Ω_m | Shape param |
 |---|---|---|---|---|---|---|---|
-| LCDM (w = −1) | 10.61 | 11 | 0.965 | — | 69.1 km/s/Mpc | 0.297 | — |
+| LCDM (w = −1) | 10.61 | 11 | 0.965 | , | 69.1 km/s/Mpc | 0.297 | , |
 | **CAS_LOG** (log form) | **12.48** | **11** | **1.135** | **−1.87** | 66.2 km/s/Mpc | 0.293 | k = 0.345 (fixed) |
 | **CAS_POLY** (poly form) | **8.66** | **10** | **0.866** | **+1.95** | 66.7 km/s/Mpc | 0.310 | Γ₀ = 6.33 |
 | CPL (best fit) | 7.99 | 10 | 0.799 | +2.62 | 66.7 km/s/Mpc | 0.320 | w_a = −0.623 |
@@ -382,7 +382,7 @@ With best-fit parameters (Γ₀ = 6.33 for CAS_POLY, w_a = −0.623 for CPL):
 
 **CASCADE POLY:** w approaches −0.99 asymptotically from above. No phantom crossing. No NEC violation. This is physically permitted and is consistent with the proved supermartingale theorem.
 
-**The phantom in DESI CPL fit is almost certainly a parametrization artifact** — the CPL form is chosen for mathematical convenience. Non-parametric reconstructions of w(z) from DESI data do not strongly require w < −1 at any specific redshift. The cascade polynomial form fits the data equally well without phantom behavior.
+**The phantom in DESI CPL fit is almost certainly a parametrization artifact**: the CPL form is chosen for mathematical convenience. Non-parametric reconstructions of w(z) from DESI data do not strongly require w < −1 at any specific redshift. The cascade polynomial form fits the data equally well without phantom behavior.
 
 ### IX.6 The Falsifiable Prediction
 
@@ -394,7 +394,7 @@ With best-fit parameters (Γ₀ = 6.33 for CAS_POLY, w_a = −0.623 for CPL):
 
 ### IX.7 Figure
 
-`figures/desi_bao_fit.png` — six-panel figure showing:
+`figures/desi_bao_fit.png` , six-panel figure showing:
 - w(z) curves for all four models
 - D_M/r_d vs z (transverse distance)
 - D_H/r_d vs z (Hubble distance) with DESI DR2 data points
@@ -413,13 +413,13 @@ This document is the first formal statement of the dark energy equation of state
 
 ### Priority Claims (dated June 21, 2026):
 
-1. β depletion ↔ dark energy density evolution — first stated here.
-2. Master equation for w_eff from cascade dynamics — first derived here.
-3. Freezing quintessence prediction from the supermartingale theorem — first stated here.
-4. Falsifiable prediction: w(z) > -1 at all z (no phantom divide crossing) — first stated here.
-5. Three cosmic epochs as three cascade regimes — first mapped here.
-6. **Direct chi-squared fit of cascade w(z) to DESI DR2 BAO: chi2 = 8.66 vs CPL chi2 = 7.99 (same 3 free parameters)** — first computed here.
-7. **Quantitative statement: CASCADE predicts w ≈ −0.96 at z=1 vs CPL phantom w ≈ −1.08** — the distinguishing falsifiable difference.
+1. β depletion ↔ dark energy density evolution, first stated here.
+2. Master equation for w_eff from cascade dynamics, first derived here.
+3. Freezing quintessence prediction from the supermartingale theorem, first stated here.
+4. Falsifiable prediction: w(z) > -1 at all z (no phantom divide crossing), first stated here.
+5. Three cosmic epochs as three cascade regimes, first mapped here.
+6. **Direct chi-squared fit of cascade w(z) to DESI DR2 BAO: chi2 = 8.66 vs CPL chi2 = 7.99 (same 3 free parameters)**, first computed here.
+7. **Quantitative statement: CASCADE predicts w ≈ −0.96 at z=1 vs CPL phantom w ≈ −1.08** , the distinguishing falsifiable difference.
 
 ### Completed Steps:
 
