@@ -15,6 +15,11 @@ arxiv/
 *.out
 *.synctex.gz
 
+# PDF build intermediate (from scripts/md_to_pdf_preprocess.py)
+_mathematical_model_for_pdf.md
+_mathematical_model_with_images.md
+figures/generated_pdf/
+
 # Compiled output — keep PDFs, ignore intermediates
 compiled_pdfs/*.log
 compiled_pdfs/*.aux
@@ -28,6 +33,19 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 .eggs/
+
+# Private notes / internal planning — never publish
+_private_notes/
+GITHUB_UPLOAD_CHECKLIST.md
+*BREAKTHROUGH*.md
+*RADICAL_README*.md
+*QUANTUM_BANG_README*.md
+Onepager.recall.md
+PART_III_PROOF_REQUIREMENTS.md
+DARK_ENERGY_PROOF.md
+_mm_build.*
+_tmp.*
+*.recall.md
 
 # OS
 .DS_Store
