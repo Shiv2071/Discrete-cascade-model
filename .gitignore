@@ -6,8 +6,11 @@ asymmetry_necessity_paper2.tex
 mathematical_model.txt
 extension.txt
 
-# arXiv submission packages (local use only)
+# Submission packages (local use only)
 arxiv/
+PRD_submission_package/
+PRD_submission_package.zip
+prd_cover_letter.txt
 *.aux
 *.bbl
 *.blg
