@@ -2,6 +2,9 @@
 discrete_cascade_thesis.tex
 asymmetry_necessity_paper2.tex
 
+# PDFs — compile locally, not tracked in git
+*.pdf
+
 # Internal docs (AI-style, not for public repo)
 mathematical_model.txt
 extension.txt
