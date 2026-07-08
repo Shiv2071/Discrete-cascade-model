@@ -12,6 +12,7 @@ PRD_submission_package/
 PRD_submission_package.zip
 prd_cover_letter.txt
 *.aux
+*.toc
 *.bbl
 *.blg
 *.log

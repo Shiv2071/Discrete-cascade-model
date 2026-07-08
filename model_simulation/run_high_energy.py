@@ -16,7 +16,7 @@ def main():
     ap.add_argument("--sites", type=int, default=100, help="Number of sites (chain)")
     ap.add_argument("--seed", type=int, default=2024, help="RNG seed")
     ap.add_argument("--no-plot", action="store_true", help="Skip saving plot")
-    ap.add_argument("--output", "-o", type=str, default="", help="Save plot to path (e.g. ../figures/bigbang_analogue.png)")
+    ap.add_argument("--output", "-o", type=str, default="", help="Save plot to path (e.g. ../figures/high_energy_cascade.png)")
     args = ap.parse_args()
 
     # Hot, dense "pre-bang" initial conditions: high energy, high X,Y
@@ -75,7 +75,7 @@ def main():
         axes[3].grid(True, alpha=0.3)
 
         plt.tight_layout()
-        outpath = args.output if args.output else "bigbang_analogue.png"
+        outpath = args.output if args.output else "high_energy_cascade.png"
         plt.savefig(outpath, dpi=150)
         print(f"Saved {outpath}")
         if args.output:

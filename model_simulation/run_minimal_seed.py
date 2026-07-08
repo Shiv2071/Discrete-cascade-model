@@ -70,7 +70,7 @@ import numpy as np
 from cascade_model import CascadeModel
 
 
-def run_quantum_bang(
+def run_minimal_seed(
     P: int = 200,
     max_steps: int = 12000,
     seed_site: int = 0,
@@ -128,8 +128,11 @@ def run_quantum_bang(
             peak_XY = tx + ty
             peak_XY_step = n
         all_snapshots.append((n, m.X.copy(), m.Y.copy(), m.Beta.copy()))
-        active = m.step()
-        if not active or m.is_absorbing():
+        m.step()
+        # Stop only at true absorption: a quiet step is not absorption (the
+        # phase-interference factor can pause cross-interactions near beat
+        # troughs and revive them when the phases realign).
+        if m.is_absorbing():
             break
 
     # Record final state so the plot has at least two points (initial + final)
@@ -168,16 +171,16 @@ def main():
     ap.add_argument("--sites", type=int, default=200, help="Universe size (chain length)")
     ap.add_argument("--steps", type=int, default=12000)
     ap.add_argument("--seed-site", type=int, default=0, help="Center of initial fluctuation")
-    ap.add_argument("--X", type=float, default=3.0, help="X in fluctuation")
-    ap.add_argument("--Y", type=float, default=3.0, help="Y in fluctuation")
-    ap.add_argument("--E", type=float, default=60.0, help="Total energy in fluctuation")
+    ap.add_argument("--X", type=float, default=12.0, help="X in fluctuation")
+    ap.add_argument("--Y", type=float, default=12.0, help="Y in fluctuation")
+    ap.add_argument("--E", type=float, default=150.0, help="Total energy in fluctuation")
     ap.add_argument("--rng", type=int, default=42)
-    ap.add_argument("--output", "-o", type=str, default="", help="Base path for figures, e.g. ../figures/quantum_bang")
+    ap.add_argument("--output", "-o", type=str, default="", help="Base path for figures, e.g. ../figures/minimal_seed")
     ap.add_argument("--no-plot", action="store_true")
     args = ap.parse_args()
 
     # Paper principles: use model defaults (no overrides). Only initial condition is the "quantum fluctuation."
-    model, history, snapshots = run_quantum_bang(
+    model, history, snapshots = run_minimal_seed(
         P=args.sites,
         max_steps=args.steps,
         seed_site=args.seed_site,
@@ -206,9 +209,9 @@ def main():
         print("matplotlib not installed; skipping plot")
         return
 
-    base = args.output.rstrip("/").rstrip("\\") if args.output else "quantum_bang"
-    if base and not base.endswith("quantum_bang"):
-        base = base + "_quantum_bang"
+    base = args.output.rstrip("/").rstrip("\\") if args.output else "minimal_seed"
+    if base and not base.endswith("minimal_seed"):
+        base = base + "_minimal_seed"
     steps = history["n"]
 
     # Figure 1: global evolution with narrative labels

@@ -86,7 +86,10 @@ def chi2(H0, Om, fDE_func, params, z_data, DH_data, sDH_data):
 # Grid search for (H0, Om, model_params)
 H0_grid  = np.linspace(60.0, 75.0, 60)
 Om_grid  = np.linspace(0.25, 0.38, 55)
-w0_grid  = np.linspace(-1.2,  0.0, 60)
+# Cascade: no-phantom theorem enforces w0 > -1 (hard structural prior)
+w0_grid_cascade = np.linspace(-0.999, 0.0, 60)
+# CPL: unconstrained (may go phantom)
+w0_grid_cpl = np.linspace(-1.2,  0.0, 60)
 wa_grid  = np.linspace(-2.0,  1.5, 55)
 
 def fit_model(fDE_func, param_grids, label):
@@ -135,10 +138,10 @@ print(f"\nFitting models...\n")
 chi2_lcdm_cal, pars_lcdm = fit_model(fDE_lcdm, [], "LCDM")
 print(f"  LCDM    fit done: chi2_cal = {chi2_lcdm_cal:.3f}")
 
-chi2_cas_cal,  pars_cas  = fit_model(fDE_cascade, [w0_grid], "CASCADE")
+chi2_cas_cal,  pars_cas  = fit_model(fDE_cascade, [w0_grid_cascade], "CASCADE")
 print(f"  CASCADE fit done: chi2_cal = {chi2_cas_cal:.3f}")
 
-chi2_cpl_cal,  pars_cpl  = fit_model(fDE_cpl, [w0_grid, wa_grid], "CPL")
+chi2_cpl_cal,  pars_cpl  = fit_model(fDE_cpl, [w0_grid_cpl, wa_grid], "CPL")
 print(f"  CPL     fit done: chi2_cal = {chi2_cpl_cal:.3f}")
 
 # Extract best-fit parameters

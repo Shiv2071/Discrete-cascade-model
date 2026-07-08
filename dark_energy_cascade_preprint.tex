@@ -8,14 +8,18 @@
 \usepackage{microtype}
 \usepackage{mathtools}
 \usepackage{geometry}
-\usepackage[hidelinks]{hyperref}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{authblk}
 \usepackage{xcolor}
+\definecolor{linkblue}{HTML}{1a5276}
+\definecolor{citeblue}{HTML}{2e4057}
+\usepackage[colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, citecolor=citeblue]{hyperref}
+\urlstyle{same}
 
 \geometry{margin=1in}
+\graphicspath{{figures/}}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
@@ -33,13 +37,16 @@
 
 \title{%
   \textbf{Dark Energy as Cascade Dynamics:\\
-  Empirical Validation and Sealed Prediction for DESI DR3}
+  No-Phantom Constraint, DESI Retrodiction, and Sealed Predictions
+  for DESI DR3}
 }
 
-\author{Shiv Goswami}
-\affil{Terraflock Pvt Ltd, Bihar, India\\
-ORCID: 0009-0006-1554-9241\quad
-\texttt{shivgoswami.com}}
+\author{Shiv Goswami\thanks{Contact author: \href{mailto:shiv@terraflock.com}{shiv@terraflock.com}}}
+\affil{\textls[70]{\textsc{Terraflock Pvt Ltd}}, Bihar, India\\
+{\small ORCID\;
+  \href{https://orcid.org/0009-0006-1554-9241}{0009-0006-1554-9241}%
+  \enspace\textperiodcentered\enspace
+  \href{https://shivgoswami.com}{shivgoswami.com}}}
 \date{21 June 2026}
 
 \begin{document}
@@ -51,21 +58,25 @@ The Discrete Stochastic Cascade model on finite graphs, developed in two prior
 works, is applied to the dark energy equation of state through a single physical
 identification: the cascade's global beta density maps to the dark energy density.
 Under this identification, five theorems follow directly from the cascade's proved
-guarantees, without any additional cosmological postulates. Most critically, the
+guarantees, without any additional cosmological postulates; confronting them with
+data requires the phenomenological parameters $(w_0, \Omega_m, H_0 r_d)$, with
+$w_0 > -1$ enforced as a hard structural prior rather than fitted freely. Most
+critically, the
 no-phantom theorem establishes that $w(z) > -1$ at all active steps, a constraint
 that cannot be assumed but is proved from energy monotonicity. This constraint is
 tested against the DESI Year~1 Baryon Acoustic Oscillation dataset (April 2024).
 A blind retrodiction protocol (calibrating on three low-redshift points and
 predicting three withheld high-redshift points) yields a cascade chi-squared of
-$4.44$ on unseen data, compared to $22.81$ for CPL (which has twice as many free
-parameters). The no-phantom constraint is the mechanism that prevents overfitting.
+$5.50$ on unseen data, compared to $22.81$ for CPL (which has one more free
+parameter and no phantom bound). The no-phantom constraint is the mechanism that prevents overfitting.
 A cross-release test training on DESI Year~1 and predicting DESI~DR2 (March~2025)
 shows cascade performing at the LCDM level ($\chi^2 = 4.45$) while CPL achieves
 $\chi^2 = 2.17$ only via a phantom crossing at $z = 0.345$ that violates the Null
 Energy Condition. Six specific $D_H/r_d$ predictions for DESI~DR3 (expected 2027)
 are sealed in this document. If DESI~DR3 confirms $w > -1$ at all redshifts and
 the CPL phantom preference weakens as error bars tighten, the no-phantom theorem
-and the cascade dark energy mapping are empirically vindicated.
+and the cascade dark energy mapping survive a falsifiable empirical test; if DR3
+finds $w < -1$ at high significance, the mapping is ruled out.
 \end{abstract}
 
 \tableofcontents
@@ -94,6 +105,13 @@ The key result is the no-phantom theorem (Theorem~\ref{thm:nophantom}): the
 effective equation of state satisfies $\weff(n) > -1$ at every active step.
 This is not assumed. It is proved from the energy monotonicity supermartingale,
 which in turn is proved from the asymmetric structure of the interaction space.
+
+The present paper does not claim to outperform $\Lambda$CDM on current BAO
+data; on today's measurements the two are near-degenerate, and information
+criteria mildly favor $\Lambda$CDM (Section~\ref{sec:dr2}). Rather, it proposes
+a structurally constrained alternative whose distinguishing empirical
+consequence is the exclusion of phantom evolution, a commitment that DESI~DR3
+can falsify.
 
 \medskip
 \noindent\textbf{Priority statement.} The sealed predictions in
@@ -172,8 +190,22 @@ where $z(n)$ is the cascade-internal redshift defined by the Friedmann relation
 with the beta density as the dark energy source.
 \end{definition}
 
-No additional cosmological parameters are introduced. The cascade's internal
-dynamics generate all cosmological behavior through this identification alone.
+This identification is \emph{interpretive}, not derived: it is a proposed
+correspondence between a variable of the cascade model and a cosmological
+quantity, analogous to identifying a lattice-model order parameter with a
+physical magnetisation. It is not obtained from cosmological field equations,
+and its justification is empirical: the constraints it induces must survive
+confrontation with data, which is the subject of
+Sections~\ref{sec:y1}--\ref{sec:dr3prediction}.
+
+The identification itself introduces no new cascade-side parameters: the
+cascade's internal dynamics generate the qualitative cosmological behavior
+(monotone depletion, $w > -1$, freeze-out) through this identification alone.
+Confronting the identification with data does require phenomenological
+parameters ($w_0$, $\Omega_m$, $H_0 r_d$), which are fitted in
+Sections~\ref{sec:y1}--\ref{sec:dr3prediction}; the structural content the
+cascade adds is the hard prior $w_0 > -1$ and the specific functional form of
+quiescent depletion.
 
 %% ------------------------------------------------------------------
 \section{Derived Theorems}
@@ -210,6 +242,19 @@ axioms. The constraint does not assume energy conditions; it proves them from th
 energy monotonicity supermartingale.
 \end{remark}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.82\textwidth]{fig1_wz_profile}
+\caption{Dark energy equation of state $w(z)$ for the three models considered in
+this paper. The cascade (blue solid) is bound above $w=-1$ by
+Theorem~\ref{thm:nophantom} and calibrates to $w_0 = -0.999$ on DR2 data.
+CPL (red dash-dot), calibrated on DESI~DR2, crosses the phantom line at
+$z = 0.345$, violating the Null Energy Condition. The shaded region marks
+the phantom-forbidden domain. $\Lambda$CDM (gray dashed) is the $w = -1$
+reference. The cascade's no-phantom constraint is structural, not assumed.}
+\label{fig:wz}
+\end{figure}
+
 \begin{theorem}[Quiescent Equation of State]
 In the quiescent regime, the fractional depletion rate $\delta(n) = D(n)/\rhob(n)$
 is approximately constant, yielding $\weff \approx w_0 > -1$.
@@ -221,9 +266,11 @@ $\weff(n) \to -1$ as $n \to n^*$, where $n^* < \infty$ almost surely.
 \end{theorem}
 
 \begin{corollary}
-Phantom dark energy ($w < -1$) is structurally impossible under the cascade axioms.
-Any parameterization (e.g.\ CPL) that infers $w < -1$ from data is absorbing
-noise through an unphysical degree of freedom.
+Phantom dark energy ($w < -1$) is structurally impossible under the cascade
+axioms.  Consequently, within the cascade interpretation, a fitted phantom
+crossing (e.g.\ from CPL) is read as an unconstrained phenomenological degree
+of freedom absorbing fluctuations, rather than as evidence for a physically
+admissible cascade trajectory.
 \end{corollary}
 
 %% ------------------------------------------------------------------
@@ -245,6 +292,13 @@ $z = 1.317, 1.491, 2.330$.
 
 Three models are calibrated on the low-redshift points using grid-search
 chi-squared minimisation, then used to predict the withheld points.
+The grid covers $H_0 \in [60, 75]$~km/s/Mpc (60 points) and
+$\Omega_m \in [0.25, 0.38]$ (55 points) for all models.  The cascade
+sweeps $w_0 \in [-0.999, 0]$ (60 points), the no-phantom bound enforced;
+CPL sweeps $w_0 \in [-1.2, 0]$ (60 points, unconstrained) and
+$w_a \in [-2.0, 1.5]$ (55 points).
+Parameter values at grid-search minimum are reported; bootstrap uncertainties
+are given in Section~\ref{sec:dr3prediction}.
 
 \begin{itemize}
 \item \textbf{LCDM}: $w(z) = -1$, parameters $H_0$, $\Omega_m$.
@@ -262,14 +316,16 @@ chi-squared minimisation, then used to predict the withheld points.
 \toprule
 Model & $\chi^2$ calibration & $\chi^2$ blind & Phantom crossing \\
 \midrule
-LCDM    & $-$  & 5.54  & None \\
-Cascade & $-$  & \textbf{4.44}  & None (theorem) \\
-CPL     & $-$  & 22.81 & Yes ($w_a < 0$) \\
+LCDM    & 4.24  & 5.54  & None \\
+Cascade & 4.24  & \textbf{5.50}  & None (theorem) \\
+CPL     & 0.73  & 22.81 & Yes ($w_a < 0$) \\
 \bottomrule
 \end{tabular}
 \caption{Blind prediction chi-squared on three withheld DESI Year~1 points.
-Cascade wins with fewer parameters. CPL's phantom excursion causes catastrophic
-failure on the withheld data.}
+Cascade matches $\Lambda$CDM (with one more parameter, pressed against the
+$w_0 = -1$ boundary) and decisively outperforms CPL, whose phantom excursion
+causes catastrophic failure on the withheld data despite the best calibration
+fit.}
 \end{table}
 
 The Lya~QSO point at $z = 2.330$ (light from 11 billion years ago) provides the
@@ -280,18 +336,20 @@ deepest check:
 \toprule
 Model & Prediction & Residual \\
 \midrule
-Cascade & 8.57 & $+1.83\sigma$ \\
-LCDM    & 8.54 & $+2.07\sigma$ \\
-CPL     & 8.18 & $+4.05\sigma$ \\
+Cascade & 8.87 & $+2.07\sigma$ \\
+LCDM    & 8.87 & $+2.07\sigma$ \\
+CPL     & 9.21 & $+4.05\sigma$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\textbf{Interpretation.} CPL achieved better calibration fit by dipping into
-$w < -1$. When used to predict the withheld data, the phantom excursion amplified
-prediction error by a factor of five. The cascade's no-phantom theorem acted as a
-structural prior that prevented this overfitting. Theoretical constraint produced
-better prediction.
+\textbf{Interpretation.} CPL achieved a much better calibration fit
+($\chi^2 = 0.73$ vs.\ $4.24$) by dipping into $w < -1$. When used to predict
+the withheld data, the phantom excursion amplified prediction error roughly
+fourfold relative to the constrained models. The cascade's no-phantom theorem
+acted as a structural prior that prevented this overfitting: pressed against
+the $w_0 = -1$ boundary, the cascade predicts at the $\Lambda$CDM level on
+data it has not seen. Theoretical constraint produced better prediction.
 
 %% ------------------------------------------------------------------
 \section{Empirical Test II: Cross-Release (Year~1 to DR2)}
@@ -318,6 +376,19 @@ CPL achieves better chi-squared only by invoking phantom behavior that has no
 physical mechanism.}
 \end{table}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.85\textwidth]{fig2_chi2_comparison}
+\caption{$\chi^2$ on withheld data for all three models across both empirical
+tests. Left group: DESI Year~1 blind retrodiction (three withheld high-redshift
+points); cascade at 5.50 vs CPL 22.81. Right group: cross-release test
+(Year~1 trained, DR2 predicted); cascade and $\Lambda$CDM perform equivalently
+while CPL achieves a lower $\chi^2$ only via a phantom crossing that violates
+the Null Energy Condition. The no-phantom theorem prevents cascade from
+absorbing the same noise.}
+\label{fig:chi2}
+\end{figure}
+
 \textbf{Key observation.} When the cascade model is properly constrained to
 $w_0 > -1$ (as the no-phantom theorem requires), it calibrates to $w_0 = -0.999$
 on Year~1 data, converging toward the cosmological constant boundary. This is not
@@ -328,6 +399,20 @@ If phantom dark energy ($w < -1$) violates the Null Energy Condition and has no
 known physical field theory, then CPL's lower chi-squared on DR2 represents noise
 absorption through an unphysical degree of freedom, not a genuine cosmological
 signal. The cascade model correctly declines to absorb that noise.
+
+\textbf{Information-criterion comparison.} Penalizing parameter count with
+$\mathrm{AIC} = \chi^2 + 2k$ (with $k$ the number of fitted parameters:
+2 for $\Lambda$CDM, 3 for cascade, 4 for CPL) on the cross-release test gives
+$\mathrm{AIC} = 8.39$ ($\Lambda$CDM), $10.45$ (cascade), $10.17$ (CPL).
+On current data, $\Lambda$CDM is preferred by AIC, and the cascade is
+statistically indistinguishable from CPL despite lacking the phantom degree of
+freedom. This is the honest summary of the present evidence: the data do not
+yet discriminate between the constrained and unconstrained extensions, which
+is precisely why the sealed DR3 predictions (Section~\ref{sec:dr3prediction})
+are the operative test. Note that the Year~1 blind retrodiction
+(Section~\ref{sec:y1}) requires no such penalty, since $\chi^2$ on withheld
+data penalizes overfitting directly; there the cascade's advantage over CPL
+(5.50 vs.\ 22.81) is a genuine out-of-sample result.
 
 %% ------------------------------------------------------------------
 \section{Sealed Prediction for DESI DR3}
@@ -348,11 +433,14 @@ The cascade model is calibrated on all six DESI~DR2 points (March~2025) with the
 no-phantom constraint enforced:
 
 \begin{itemize}
-\item $H_0 = 71.3$~km/s/Mpc
-\item $\Omega_m = 0.274$
-\item $w_0 = -0.999$ (at the no-phantom boundary)
+\item $H_0 = 71.3 \pm 1.8$~km/s/Mpc
+\item $\Omega_m = 0.274 \pm 0.018$
+\item $w_0 = -0.999^{+0.001}_{-0.000}$ (pressed against the no-phantom boundary)
 \item Chi-squared on DR2: 4.076 (3 degrees of freedom, reduced $\chi^2 = 1.36$)
 \end{itemize}
+
+Uncertainties are $1\sigma$ bootstrap estimates from 500 resamplings of the DR2
+data points with replacement.
 
 \subsection{Sealed D$_H/r_d$ predictions}
 
@@ -373,7 +461,21 @@ $z = 2.330$ & \textbf{8.681}  & 8.687  & 8.634  & $\pm 0.080$ \\
 \caption{Sealed DR3 predictions. Cascade and LCDM are nearly degenerate at
 $w_0 = -0.999$. The distinguishing predictions are in the falsifiable claims below.
 Sealed 21~June~2026; repository commit timestamp is the priority record.}
+\label{tab:dr3}
 \end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig3_dr3_predictions}
+\caption{\textit{Left:} Sealed $D_H/r_d$ predictions for DESI~DR3 at six
+redshifts, with projected $\pm1\sigma$ error bars. Cascade (blue circles) and
+$\Lambda$CDM (gray squares) are near-degenerate; CPL (red triangles) deviates
+at intermediate redshifts. \textit{Right:} Residuals from $\Lambda$CDM for
+cascade (blue) and CPL (red). The near-zero cascade residuals reflect
+$w_0 = -0.999$ calibration; the primary falsification test is the absence of
+phantom crossing in DR3, not the $D_H/r_d$ point values.}
+\label{fig:dr3}
+\end{figure}
 
 \subsection{Falsifiable claims}
 
@@ -388,10 +490,11 @@ Sealed 21~June~2026; repository commit timestamp is the priority record.}
   within $1\sigma$ of this value.
 
 \item \textbf{CPL phantom preference weakens.} CPL calibrated on DR2 finds
-  $w_a = -2.50$ at the grid boundary. This is noise absorption. As DR3 tightens
-  error bars by a factor of 1.83, the phantom preference will weaken toward
+  $w_a = -2.50$ at the grid boundary; within the cascade interpretation, this
+  is an unconstrained degree of freedom absorbing fluctuations. As DR3 tightens
+  error bars by a factor of 1.83, the phantom preference should weaken toward
   $w_a = 0$. If DR3 best-fit $|w_a|$ decreases relative to DR2, the no-phantom
-  theorem is vindicated as the correct prior.
+  prior is supported.
 
 \item \textbf{$w_0$ range.} DR3 best-fit $w_0$ should fall in $[-1.15,\,-0.85]$
   if the cascade dark energy description is correct.
@@ -402,23 +505,26 @@ Sealed 21~June~2026; repository commit timestamp is the priority record.}
 \label{sec:thermo}
 %% ------------------------------------------------------------------
 
-The cascade no-phantom theorem is a corollary of a deeper result: the energy
-monotonicity supermartingale (Part~I, Theorem~3.3) is the first derivation of
-thermodynamic irreversibility from discrete structural axioms that does not
-assume irreversibility at any level.
+The cascade no-phantom theorem is a corollary of a structural feature of the
+model: the energy monotonicity supermartingale (Part~I, Theorem~3.3) derives a
+thermodynamic arrow within the cascade framework without assuming
+irreversibility as a separate postulate; the arrow is built into the
+\emph{constitutive} structure of the interaction rules rather than added as a
+dynamical assumption.
 
-Every prior attempt to derive the Second Law of Thermodynamics from more fundamental
-principles has encountered the same obstacle. Boltzmann's H-theorem required the
-Stosszahlansatz (molecular chaos assumption), which is itself time-asymmetric.
-Statistical mechanics explains why entropy increase is overwhelmingly probable
-for reversible microscopic laws; it does not explain why it is necessary. Jaynes's
-MaxEnt reformulation assumes irreversibility in the choice of macro-constraints.
-
-The cascade model's energy monotonicity is proved without assuming irreversibility.
-The asymmetric interaction space (the forbidden $Y$--$Y$ channel) makes energy
-decrease a structural necessity, not a statistical tendency. The dark energy
-equation of state $\weff > -1$ is a direct consequence of this structural
-irreversibility applied at cosmological scales.
+This should be stated carefully relative to the classical literature.
+Boltzmann's H-theorem requires the Stosszahlansatz (molecular chaos), which is
+itself time-asymmetric; statistical mechanics explains why entropy increase is
+overwhelmingly probable for reversible microscopic laws, not why it is
+necessary. The cascade model does not resolve this classical problem: its
+irreversibility is a consequence of irreversible update rules (interactions
+strictly consume the capacity field), so the arrow is assumed at the level of
+the model's constitution, even though no explicit irreversibility postulate
+appears among the theorems' hypotheses. What the model offers is a minimal,
+fully explicit example in which a monotone Lyapunov structure, an absorbing
+future, and a $w > -1$ constraint all follow from the same finite-resource
+axioms. The dark energy equation of state $\weff > -1$ is a direct consequence
+of this structural irreversibility applied at cosmological scales.
 
 %% ------------------------------------------------------------------
 \section{Discussion}
@@ -433,16 +539,42 @@ classes, forbidden self-interaction, frequency mismatch, finite non-renewable
 resource, and irreversible structural accumulation) were derived before any
 cosmological application was considered.
 
-The cosmological results reported here are therefore not a fit to cosmological data
-with cosmological free parameters. They are a consequence of identifying the
-cascade's internal depletion dynamics with dark energy density and inheriting
-theorems that were already proved.
+The cosmological results reported here do involve fitting: the mapping to
+observables introduces the phenomenological parameters $(w_0, \Omega_m, H_0 r_d)$,
+which are calibrated to BAO data exactly as described in
+Secs.~\ref{sec:y1}--\ref{sec:dr3prediction}. What the cascade contributes is not the fit but the
+\emph{prior}: the hard structural bound $w > -1$, inherited from theorems about
+monotone resource depletion that were proved before any cosmological application
+was considered. The comparison in this paper is therefore between two fitted
+models that differ only in whether the phantom regime is admissible.
 
-The practical implication is clear. The no-phantom theorem is not a cosmological
-assumption to be tested against phantom models. It is a mathematical theorem that
-identifies phantom dark energy as an artifact of over-parameterized fitting. The
-sealed DR3 prediction tests whether the universe obeys the structural constraint
-that cascade axioms require. The answer arrives in 2027.
+The practical implication is clear. Within this framework, the no-phantom bound
+is not a cosmological assumption to be tested against phantom models; it is a
+structural constraint of the underlying dynamics, and the analysis here shows the
+current phantom preference is consistent with being an artifact of
+over-parameterized fitting. The sealed DR3 prediction tests whether the data
+continue to tolerate the constraint. The answer arrives in 2027.
+
+\medskip
+\noindent\textbf{On near-degeneracy with $\Lambda$CDM.}
+The cascade model calibrates to $w_0 = -0.999$ on DR2, placing its predictions
+within hundredths of $D_H/r_d$ of $\Lambda$CDM at every sealed redshift
+(Table~\ref{tab:dr3}).
+This is the \emph{correct} behavior of a constrained model: when current data
+cannot distinguish $w$ from $-1$, a model with a proved lower bound $w > -1$
+parks at the boundary.
+The scientific content is not the DR3 point predictions themselves, which are
+near-degenerate with $\Lambda$CDM, but what DR3 can \emph{falsify}.
+If DR3 finds $w < -1$ at $\geq 3\sigma$, the cascade application is definitively
+ruled out.
+If DR3 finds $w$ consistent with $[-1,\,-0.7]$ and the CPL phantom preference
+weakens as error bars tighten (Falsifiable claim~3), the structural prior is
+supported, though such an outcome supports the no-phantom constraint rather
+than uniquely selecting the cascade mapping, since $\Lambda$CDM satisfies the
+same bound.
+Near-degeneracy with $\Lambda$CDM in the DR2 regime is not a weakness; it is a
+precise, testable commitment: the cascade forbids the phantom regime that CPL
+exploits, and DR3 will either confirm or refute that commitment.
 
 %% ------------------------------------------------------------------
 \section{Conclusion}
@@ -460,7 +592,7 @@ cosmological postulates:
 \item Finite heat death: $w \to -1$ as the cascade approaches absorption.
 \end{enumerate}
 
-Blind retrodiction on DESI Year~1 data yields cascade $\chi^2 = 4.44$ versus CPL
+Blind retrodiction on DESI Year~1 data yields cascade $\chi^2 = 5.50$ versus CPL
 $\chi^2 = 22.81$ on withheld data, with the no-phantom constraint as the mechanism.
 A cross-release test training on Year~1 and predicting DR2 gives cascade at the
 LCDM level while CPL achieves lower chi-squared only via a phantom crossing that
@@ -471,11 +603,12 @@ falsifiable claim is the absence of phantom crossing in DR3 and the weakening of
 the CPL phantom preference as error bars tighten. These claims are testable in 2027.
 
 \bigskip
-\noindent\textbf{Data availability statement.} All data used in this study are
-publicly available. DESI Year~1 BAO measurements are from arXiv:2404.03002.
-DESI~DR2 BAO measurements are from arXiv:2503.14738. All analysis scripts,
-calibrated parameters, and the sealed DR3 prediction record are available at
-\url{https://github.com/Shiv2071/Discrete-cascade-model}.
+\noindent\textbf{Data availability statement.}
+All data used in this study are publicly available.
+DESI Year~1 BAO measurements are from arXiv:2404.03002.
+DESI~DR2 BAO measurements are from arXiv:2503.14738.
+All analysis scripts, calibrated parameters, and the sealed DR3 prediction
+record are available at \url{https://github.com/Shiv2071/Discrete-cascade-model}.
 No new experimental data were generated.
 
 \bigskip

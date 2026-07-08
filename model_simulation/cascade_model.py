@@ -25,6 +25,7 @@ class CascadeModel:
         alpha_XX: float = 0.05,
         omega_X: float = 1.0,
         omega_Y: float = 1.2,
+        theta_floor: float = 0.1,  # coherence floor (theta) for the phase-interference factor
         # Energy costs
         k_XY: float = 0.5,
         k_XX: float = 0.3,
@@ -53,6 +54,7 @@ class CascadeModel:
         self.alpha_XX = alpha_XX
         self.omega_X = omega_X
         self.omega_Y = omega_Y
+        self.theta_floor = theta_floor
         self.k_XY = k_XY
         self.k_XX = k_XX
         self.eta = eta
@@ -94,8 +96,28 @@ class CascadeModel:
         # Step count
         self.n = 0
 
+    def _interference(self) -> float:
+        """Phase-interference factor Theta(n) = theta + (1-theta)*[1 + cos((wX-wY) n)]/2.
+
+        Cross-interaction efficiency is modulated by the phase alignment of the
+        two species; the beat period is 2*pi/|wX - wY|. Same-species pairs are
+        always phase-aligned, so the self-channel is unmodulated (Paper I,
+        eq. interference).
+        """
+        d_omega = self.omega_X - self.omega_Y
+        return self.theta_floor + (1.0 - self.theta_floor) * (
+            1.0 + np.cos(d_omega * self.n)
+        ) / 2.0
+
     def _rate_XY(self, p: int) -> float:
-        return self.alpha_XY * self.omega_X * self.omega_Y * self.X[p] * self.Y[p]
+        return (
+            self.alpha_XY
+            * self.omega_X
+            * self.omega_Y
+            * self._interference()
+            * self.X[p]
+            * self.Y[p]
+        )
 
     def _rate_XX(self, p: int) -> float:
         x = self.X[p]
@@ -253,13 +275,19 @@ class CascadeModel:
         return float(np.mean(F))
 
     def is_absorbing(self) -> bool:
-        """Check if no further activity can occur (X*Y=0 everywhere, F<=C)."""
+        """Check if no further activity can occur (X*Y=0 everywhere, F<=C).
+
+        The ripple is evaluated as the raw second difference of S (without the
+        n<2 warm-up guard used during stepping): a structural jump in the very
+        first steps still produces a ripple two steps later, which can trigger
+        explosive regeneration, so the state is not yet absorbing.
+        """
         if np.any(self.X * self.Y > 0):
             return False
         if np.any(self.X > 1) and self.alpha_XX > 0:
             return False
-        F = np.array([self._ripple(p) for p in range(self.P)])
-        if np.any(F > self.C):
+        F_pending = np.abs(self.S - 2 * self.S_prev1 + self.S_prev2)
+        if np.any(F_pending > self.C):
             return False
         return True
 
@@ -307,7 +335,10 @@ def run_simulation(
         history["S_total"].append(S_tot)
         history["F_avg"].append(F_avg)
         history["active"].append(active)
-        if not active or m.is_absorbing():
+        # Stop only at true absorption: a single quiet step is not absorption
+        # (the phase-interference factor makes cross-interactions pause near
+        # beat troughs and resume when the phases realign).
+        if m.is_absorbing():
             break
 
     return m, history

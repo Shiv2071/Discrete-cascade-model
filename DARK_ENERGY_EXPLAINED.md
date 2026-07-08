@@ -1,4 +1,4 @@
-﻿# Dark Energy: Seven Questions, Seven Cascade Theorems
+# Dark Energy: Seven Questions, Seven Cascade Theorems
 
 **Author: Shiv Goswami**
 **Date: June 21, 2026**

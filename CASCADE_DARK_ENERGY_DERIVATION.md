@@ -1,4 +1,4 @@
-﻿# Cascade Model: Dark Energy from First Principles
+# Cascade Model: Dark Energy from First Principles
 
 **Author: Shiv Goswami**
 **Date: June 21, 2026**

@@ -108,7 +108,7 @@ def main():
     ap.add_argument("--P2", type=int, default=50, help="Sites in Universe B")
     ap.add_argument("--steps", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=777)
-    ap.add_argument("--output", "-o", type=str, default="", help="Save plot path (e.g. ../figures/radical_two_universes.png)")
+    ap.add_argument("--output", "-o", type=str, default="", help="Save plot path (e.g. ../figures/coupled_domains.png)")
     ap.add_argument("--no-plot", action="store_true")
     args = ap.parse_args()
 
@@ -173,7 +173,7 @@ def main():
     axes[2].grid(True, alpha=0.3)
 
     plt.tight_layout()
-    out = args.output if args.output else "radical_two_universes.png"
+    out = args.output if args.output else "coupled_domains.png"
     plt.savefig(out, dpi=150)
     print(f"Saved {out}")
     if args.output:

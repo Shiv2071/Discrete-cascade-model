@@ -13,7 +13,7 @@ import numpy as np
 from cascade_model import CascadeModel
 
 
-def run_cosmology(
+def run_spatial_concentration(
     P: int = 100,
     max_steps: int = 8000,
     primordial_frac: float = 0.25,
@@ -63,15 +63,23 @@ def run_cosmology(
         history["S_total"].append(m.total_structure())
         history["F_avg"].append(m.mean_ripple())
         all_snapshots.append((n, m.X.copy(), m.Y.copy(), m.Beta.copy()))
-        active = m.step()
-        if not active or m.is_absorbing():
+        m.step()
+        # Stop only at true absorption: a quiet step is not absorption (the
+        # phase-interference factor can pause cross-interactions near beat
+        # troughs and revive them when the phases realign).
+        if m.is_absorbing():
             break
 
-    # Subsample to num_snapshots (include t=0 and spread over time)
+    # Subsample to num_snapshots. Use logarithmic spacing: most of the
+    # spreading happens early, while the late run is a slow diffusive tail.
     if len(all_snapshots) <= num_snapshots:
         snapshots = all_snapshots
     else:
-        indices = np.linspace(0, len(all_snapshots) - 1, num_snapshots, dtype=int)
+        last = len(all_snapshots) - 1
+        log_idx = np.unique(
+            np.round(np.geomspace(1, last, num_snapshots - 1)).astype(int)
+        )
+        indices = np.concatenate(([0], log_idx))
         snapshots = [all_snapshots[i] for i in indices]
 
     return m, history, snapshots
@@ -83,19 +91,32 @@ def main():
     ap.add_argument("--steps", type=int, default=8000, help="Max time steps")
     ap.add_argument("--primordial-frac", type=float, default=0.25, help="Fraction of sites in initial hot region (e.g. 0.25 = left 25%%)")
     ap.add_argument("--seed", type=int, default=12345)
-    ap.add_argument("--output", "-o", type=str, default="", help="Base path for figures (e.g. ../figures/cosmology)")
+    ap.add_argument("--output", "-o", type=str, default="", help="Base path for figures (e.g. ../figures/spatial_concentration)")
     ap.add_argument("--no-plot", action="store_true", help="Skip plots")
     args = ap.parse_args()
 
-    model, history, snapshots = run_cosmology(
+    # Gentle interaction rates + strong diffusion so the run unfolds over
+    # many steps and the propagation front is visible (annihilation at the
+    # default rates empties the primordial region within a few steps, and
+    # weak diffusion is killed by the integer rounding of site occupancies).
+    model, history, snapshots = run_spatial_concentration(
         P=args.sites,
         max_steps=args.steps,
         primordial_frac=args.primordial_frac,
-        X0_per_site=4.0,
-        Y0_per_site=4.0,
-        E0_total=600.0,
+        X0_per_site=20.0,
+        Y0_per_site=20.0,
+        E0_total=3000.0,
         seed=args.seed,
         num_snapshots=6,
+        alpha_XY=0.002,
+        alpha_XX=0.0005,
+        k_XY=0.05,
+        k_XX=0.05,
+        C=0.8,
+        Delta=0.4,
+        lambda_=0.05,
+        D_X=0.3,
+        D_Y=0.3,
     )
 
     n_final = model.n
@@ -117,9 +138,9 @@ def main():
         print("matplotlib not installed; skipping plots")
         return
 
-    base = args.output.rstrip("/").rstrip("\\") if args.output else "cosmology"
-    if not base.endswith("cosmology"):
-        base = base + "_cosmology" if not ("cosmology" in base) else base
+    base = args.output.rstrip("/").rstrip("\\") if args.output else "spatial_concentration"
+    if not base.endswith("spatial_concentration"):
+        base = base + "_spatial_concentration" if not ("spatial_concentration" in base) else base
 
     # Figure 1: global time series (like bigbang)
     fig1, axes = plt.subplots(4, 1, sharex=True, figsize=(9, 8))
@@ -141,7 +162,7 @@ def main():
     axes[3].grid(True, alpha=0.3)
     fig1.suptitle("Big Bang to current: global evolution (concentrated initial region)")
     plt.tight_layout()
-    path1 = base + "_timeseries.png" if args.output else "cosmology_timeseries.png"
+    path1 = base + "_timeseries.png" if args.output else "spatial_concentration_timeseries.png"
     plt.savefig(path1, dpi=150)
     print(f"Saved {path1}")
     if not args.output:
@@ -168,7 +189,7 @@ def main():
     axes[-1].set_xlabel("Site p")
     fig2.suptitle("Spatial distribution at different times (expansion from primordial region)")
     plt.tight_layout()
-    path2 = base + "_snapshots.png" if args.output else "cosmology_snapshots.png"
+    path2 = base + "_snapshots.png" if args.output else "spatial_concentration_snapshots.png"
     plt.savefig(path2, dpi=150)
     print(f"Saved {path2}")
     if not args.output:
