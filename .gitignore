@@ -1,6 +1,7 @@
-# Papers — keep for arXiv/submission only
+# Papers — tex sources, compile locally only
 discrete_cascade_thesis.tex
 asymmetry_necessity_paper2.tex
+*.tex
 
 # PDFs — compile locally, not tracked in git
 *.pdf
