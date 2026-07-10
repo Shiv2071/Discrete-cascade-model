@@ -2,7 +2,11 @@
 
 **Author: Shiv Goswami**
 **Date: June 21, 2026**
-**Status: Active derivation. Foundational document. Takes precedence over DARK_ENERGY_MAPPING.md on methodology.**
+**Status: Superseded historical derivation (10 July 2026).**
+
+> **Correction:** The simulation-to-`Phi` and `z_c` recipe below is not the corrected cosmological DSCD system. In particular, `z_c = beta/beta_0 - 1` is not cosmological redshift, the reference finite-graph simulator is not a literal universe recipe, and the pressure/expansion closure cannot be omitted. The current realization is specified in `model_simulation/DSCD_COSMOLOGY_SYSTEM_SPEC.md`: one expanding stochastic DSCD sector is coupled to standard flat FLRW/GR, funded DSCD dynamics generate the density trajectory, covariant conservation supplies the background pressure, and the trajectory generates `H(z)` and BAO distances. All five prerequisite validations pass, but the version-1 audit in `model_simulation/dscd_cosmology_results/audit.md` returns `NO_FORECAST` because the exposed depletion combination is unidentifiable and structural ablations are observationally unresolved. The version-2 forecasting layer (`dscd-forecast-v2`, see `model_simulation/dscd_v2_results/audit_v2.md`) supersedes that verdict by weighting an ensemble of prior-drawn realizations against the DR1+DR2 history; it passes all predictive-convergence gates and its sealed DR3 forecast lives in `18_DSCD_V2_DR3_FORECAST_RECORD.md`.
+
+The remainder of this file is retained as development history and must not be presented as the active methodology.
 
 ---
 

@@ -10,6 +10,51 @@ Author: Shiv Goswami | [shivgoswami.com](https://shivgoswami.com)
 
 ---
 
+## Cosmological DSCD status (10 July 2026)
+
+The dark-energy application is now implemented as one coupled stochastic
+DSCD+GR dynamical system, not as `CAS_LOG`, `CAS_POLY`, CPL, or constant-\(w\).
+The DSCD state generates its free-capacity density, pressure, expansion history,
+and BAO distances inside an assumed flat-FLRW background.
+
+Mandatory small validations V1--V5 all pass before any DESI calculation:
+funded one-cell accounting, stochastic hazards, conservative transport,
+minimal GR closure, and synthetic distance recovery. Official full-covariance
+retrospective results are:
+
+- DR1 fixed-dynamics DSCD: \(\chi^2=12.736\)
+- DR2 fixed-dynamics DSCD: \(\chi^2=10.280\)
+- retrospective DR1 high-redshift conditional check: \(\chi^2=3.466\)
+
+The version-1 inference layer (one frozen configuration) returns
+**`NO_FORECAST`**: the exposed DSCD depletion combination is not identifiable
+from compressed BAO, and structural ablations are not observationally
+distinguishable at current precision. That record is preserved unchanged.
+
+The version-2 forecasting layer (`dscd-forecast-v2`) treats the present DSCD
+state as latent, samples a declared eight-dimensional prior with a scrambled
+Sobol sequence (2048 complete DSCD+GR realizations), weights each realization
+by its joint DR1+DR2 likelihood with the common BAO scale marginalized
+analytically, and gates on predictive convergence instead of parameter
+identifiability. All 15 technical and scientific gates pass
+(**`FORECAST_ELIGIBLE`**): joint effective sample size 205, interval medians
+stable under sample halving, disjoint seeds, and DR2-only conditioning, and
+end-to-end synthetic coverage of 94.9% (95% level) and 73.7% (68% level).
+A sealed DR3 forecast of thirteen credible intervals is recorded in
+`18_DSCD_V2_DR3_FORECAST_RECORD.md`; the medians sit within 0.06 DR2 sigma of
+best-fit \(\Lambda\)CDM and every interval excludes the CPL phantom excursion.
+
+See:
+
+- `model_simulation/DSCD_COSMOLOGY_SYSTEM_SPEC.md`
+- `model_simulation/dscd_cosmology_results/audit.md` (v1)
+- `model_simulation/dscd_v2_results/audit_v2.md` (v2)
+- `17_CORRECTED_DSCD_DR3_DISPOSITION.md` (v1 disposition, preserved)
+- `18_DSCD_V2_DR3_FORECAST_RECORD.md` (sealed v2 forecast)
+- `19_DSCD_V2_METHODOLOGY_AND_OUTLOOK.md` (method, process record, outcome assessment)
+
+---
+
 ## What this system is
 
 A fully discrete stochastic process on a finite graph. No continuum limit, no external drive, no infinite resources. Two asymmetric excitation species (X, Y) interact and consume energy from a finite local field. The system couples four state variables through three dynamical regimes and terminates with probability one.

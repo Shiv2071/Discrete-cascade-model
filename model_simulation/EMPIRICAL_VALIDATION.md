@@ -1,5 +1,14 @@
 # Empirical Validation: DESI BAO Blind Retrodiction Test
 
+> **Superseded historical analysis (10 July 2026).** This file uses a
+> non-official reconstructed DR1 QSO `D_H/r_d` value, diagonal errors, and a
+> constant-\(w\) non-phantom surrogate labelled as cascade. It is not a
+> validation of the coupled DSCD dynamical system and is not blind because all
+> DR1/DR2 data are public and have influenced development. The corrected
+> trajectory-based analysis uses official vectors and full covariances; see
+> `DSCD_COSMOLOGY_SYSTEM_SPEC.md` and
+> `dscd_cosmology_results/audit.md`. Its status is `NO_FORECAST`.
+
 **Date:** June 21, 2026  
 **Author:** Shiv Goswami  
 **Priority date:** 21 June 2026.  

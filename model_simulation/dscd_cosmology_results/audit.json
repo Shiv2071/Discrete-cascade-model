@@ -1,0 +1,236 @@
+{
+  "artifact_sha256": {
+    "identifiability": "44a6610352709f89dbfee907f0af6726552077dad459944296dc23d162dd2020",
+    "pilot": "1160ffea8dee9bcb497d572fef5aec54b0e445a07403c568e91946ab42912ad4",
+    "retrospective": "e13e4354c81a5c08be97b071e5e49ebd0e1f77607133cf1dc40c196076c56deb",
+    "small": "96c58f080493cb08b51ec12c16a876427f0ff40e571c22c6dcbba43cbeaf052f"
+  },
+  "created_utc": "2026-07-09T22:52:48.150228+00:00",
+  "gate_counts": {
+    "passed": 25,
+    "scientific_failures": 8,
+    "technical_failures": 0,
+    "total": 33
+  },
+  "gates": [
+    {
+      "detail": "all declared sources match",
+      "name": "small.source_hashes_current",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "all declared sources match",
+      "name": "pilot.source_hashes_current",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "all declared sources match",
+      "name": "identifiability.source_hashes_current",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "all declared sources match",
+      "name": "retrospective.source_hashes_current",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "transitive artifact hash",
+      "name": "pilot_depends_on_small",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "transitive artifact hash",
+      "name": "identifiability_depends_on_pilot",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "transitive artifact hash",
+      "name": "retrospective_depends_on_identifiability",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "all five no-DESI small validations must pass first",
+      "name": "V1_to_V5_pass",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.all_closure_converged",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.all_density_nonincreasing",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.all_density_positive",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.all_interval_w_nonphantom",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.continuity_residual_below_1e-10",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.early_fraction_below_1e-8",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.friedmann_residual_below_1e-10",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "pilot hard check",
+      "name": "pilot.small_validation_passed",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "Freeze all DSCD dynamics, including depletion_scale=1; fit only theta and omega_m.",
+      "name": "identifiability.fixed_background",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "condition=1.06133e+07; rank=3",
+      "name": "identifiability.DSCD_depletion_scale",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "embedded vectors and full covariances equal pinned likelihood",
+      "name": "official_DESI_arrays",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "official DR1 QSO observable must be DV/rd",
+      "name": "official_DR1_QSO_DV",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "DR1/DR2 contamination and overlap are explicit",
+      "name": "retrospective_labeling",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "joint squared separation d2=0.000101425; required >=4",
+      "name": "DSCD_vs_LCDM_discriminability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=2.14664e-06; required >=1",
+      "name": "ablation.no_memory.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=2.82987e-06; required >=1",
+      "name": "ablation.no_regime_feedback.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=5.00247e-06; required >=1",
+      "name": "ablation.no_transport.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=1.9927e-06; required >=1",
+      "name": "ablation.symmetric_depletion.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=6.39204e-06; required >=1",
+      "name": "ablation.zero_beat.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "raw prediction L2 difference=0.107753",
+      "name": "DESI_DR1.optimizer_prediction_agreement",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "independent-seed joint predictive score",
+      "name": "DESI_DR1.finite_predictive_score",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "raw prediction L2 difference=0.0508395",
+      "name": "DESI_DR2.optimizer_prediction_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "independent-seed joint predictive score",
+      "name": "DESI_DR2.finite_predictive_score",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "conditional target chi2=3.46598; descriptive only",
+      "name": "retrospective_holdout_finite",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "both release directions explicitly reject independence",
+      "name": "release_overlap_warning",
+      "passed": true,
+      "severity": "technical"
+    }
+  ],
+  "interpretation": [
+    "The coupled dynamical system and all small numerical validations run successfully.",
+    "One DSCD depletion combination is not identifiable with the compressed BAO layout, so it is frozen.",
+    "The fixed DSCD background is close to LambdaCDM and its structural ablations are not observationally distinguishable.",
+    "No corrected DR3 forecast is scientifically eligible under the preregistered gates."
+  ],
+  "schema_version": "dscd-cosmology-audit-v1",
+  "status": "NO_FORECAST",
+  "summary": {
+    "DR1_DSCD_chi2": 12.736197195550142,
+    "DR1_holdout_conditional_chi2": 3.4659839994129973,
+    "DR2_DSCD_LCDM_squared_separation": 0.00010142515163009159,
+    "DR2_DSCD_chi2": 10.279705853265467,
+    "DR2_ablation_squared_separations": {
+      "no_memory": 2.1466410678330657e-06,
+      "no_regime_feedback": 2.8298709996966432e-06,
+      "no_transport": 5.002467421783256e-06,
+      "symmetric_depletion": 1.992695839745265e-06,
+      "zero_beat": 6.392041452069194e-06
+    }
+  }
+}

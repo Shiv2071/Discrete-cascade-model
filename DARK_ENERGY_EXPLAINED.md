@@ -2,7 +2,9 @@
 
 **Author: Shiv Goswami**
 **Date: June 21, 2026**
-**Status: Interpretive derivation. Each answer follows from proved cascade theorems under one explicit identification stated below.**
+**Status: Superseded historical interpretation (10 July 2026).**
+
+> **Correction:** The direct `beta -> rho_DE` theorem transfer described below is not the corrected model. The active implementation is one coupled DSCD+GR stochastic dynamical system (`model_simulation/DSCD_COSMOLOGY_SYSTEM_SPEC.md`) whose trajectory generates density, pressure, expansion, and BAO distances. Its conditional background relation is not a proof of intrinsic pressure, NEC, or ghost freedom. The version-1 audit returns `NO_FORECAST` for a single frozen configuration because the DSCD depletion scale is unidentifiable from compressed BAO. The version-2 forecasting layer (`dscd-forecast-v2`) supersedes that verdict: it samples a declared prior over latent DSCD states, weights realizations by the DR1+DR2 history, passes all predictive-convergence and coverage-calibration gates (`FORECAST_ELIGIBLE`), and seals thirteen DR3 credible intervals in `18_DSCD_V2_DR3_FORECAST_RECORD.md`. The text below is retained only as development history.
 
 ---
 

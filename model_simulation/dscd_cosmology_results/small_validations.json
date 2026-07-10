@@ -1,0 +1,212 @@
+{
+  "created_utc": "2026-07-09T22:25:28.085584+00:00",
+  "next_gate": "pilot_ensemble",
+  "order_enforced": [
+    "V1_deterministic_cell",
+    "V2_stochastic_core",
+    "V3_transport_graph",
+    "V4_minimal_GR",
+    "V5_synthetic_distances"
+  ],
+  "real_desi_used": false,
+  "schema_version": "dscd-small-validation-v1",
+  "source_sha256": {
+    "DSCD_COSMOLOGY_SYSTEM_SPEC.md": "19a78140bde3551dbe1c28a29a8abfd60bc5206ffd9ea4fd74d6055acf42f8b8",
+    "desi_bao_likelihood.py": "4415f47797912cd5db4ff0995b77e8084ab846e08667393162b07c3af520d9ab",
+    "dscd_cosmology_config.py": "010b8be74ea32073cf66c360807507b3e55ab418db4a3068da9310963e17fa5b",
+    "dscd_cosmology_dynamics.py": "c8edf417cfaf2b52e883d57e0a3ee34d1d0a1506b87417bd8bc650872b93198d",
+    "dscd_cosmology_observables.py": "8a12cd9426b4526521e9a1d9e35b9c3079f1a390616e2a6f91ea5b97302960db",
+    "dscd_cosmology_state.py": "ae86df6c6cf727d438821270dfd314867de56226dff7e3e03e03293366860136"
+  },
+  "status": "PASS",
+  "system_version": "dscd-cosmology-v1",
+  "validations": [
+    {
+      "expected": [
+        "Every event is funded before commitment.",
+        "Exact debit equals the sum of funded costs.",
+        "The manually calculated state is reproduced."
+      ],
+      "name": "V1_deterministic_cell",
+      "observed": {
+        "deterministic_step": {
+          "continuity_residual": 4.440892098500626e-16,
+          "debit": [
+            0.003
+          ],
+          "dtau": 0.0009537479894440126,
+          "expansion": 1.048495001895574,
+          "funded_bonds": [
+            0
+          ],
+          "funded_explosion": [
+            0
+          ],
+          "funded_xx": [
+            1
+          ],
+          "funded_xy": [
+            1
+          ],
+          "leakage": [
+            0.0
+          ],
+          "pressure_c": 0.9900000000000002,
+          "regimes": [
+            0
+          ],
+          "requested_xx": [
+            1
+          ],
+          "requested_xy": [
+            1
+          ],
+          "ripple": [
+            0.0
+          ],
+          "transport_x_residual": 0.0,
+          "transport_y_residual": 0.0,
+          "w_interval": 117.89164797957748
+        },
+        "funding_cases": {
+          "exact_exhaustion": [
+            5,
+            0.0
+          ],
+          "insufficient_budget": [
+            1,
+            0.09999999999999998
+          ],
+          "no_events": [
+            0,
+            1.0
+          ]
+        },
+        "next_state": {
+          "rho_c": [
+            0.007
+          ],
+          "structure": [
+            0.30000000000000004
+          ],
+          "x": [
+            0.0
+          ],
+          "y": [
+            1.0
+          ]
+        }
+      },
+      "runtime_seconds": 0.0006846000032965094,
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "Requested event moments match declared Poisson hazards.",
+        "Fixed seeds are exactly reproducible.",
+        "Beat and memory ablations affect their intended mechanisms."
+      ],
+      "name": "V2_stochastic_core",
+      "observed": {
+        "expected_means": {
+          "xx": 0.10870989616420393,
+          "xy": 0.5526086388347031
+        },
+        "interference": {
+          "aligned": 1.0,
+          "opposed": 0.1
+        },
+        "memory_ablation_static": true,
+        "sample_means": {
+          "xx": 0.106,
+          "xy": 0.571
+        },
+        "sample_variances": {
+          "xx": 0.10881840920460231,
+          "xy": 0.5692436218109055
+        },
+        "seed_reproducible": true,
+        "zero_beat_phase_static": true
+      },
+      "runtime_seconds": 0.7013603000013973,
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "Undirected transport conserves activity and remains non-negative.",
+        "Refining the transport step gives a nearby state.",
+        "Separated species connected by diffusion are not called absorbing."
+      ],
+      "name": "V3_transport_graph",
+      "observed": {
+        "empty_absorbing": true,
+        "initial": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "mass_residual": 0.0,
+        "refinement_l2": 0.008818163074019524,
+        "separated_with_transport_absorbing": false,
+        "transported": [
+          2.76,
+          0.12000000000000002,
+          0.12000000000000002
+        ],
+        "two_half_steps": [
+          2.7672,
+          0.11640000000000002,
+          0.11640000000000002
+        ]
+      },
+      "runtime_seconds": 0.000487900004372932,
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "Zero depletion reproduces flat LambdaCDM.",
+        "The pressure closure satisfies continuity.",
+        "Active DSCD evolution satisfies Friedmann and continuity constraints."
+      ],
+      "name": "V4_minimal_GR",
+      "observed": {
+        "active_max_continuity_residual": 9.71445146547012e-17,
+        "active_max_friedmann_residual": 4.440892098500626e-16,
+        "active_rho_final": 0.9964,
+        "active_rho_initial": 1.0,
+        "forced_depletion_continuity_residual": -2.0816681711721685e-16,
+        "forced_depletion_w_interval": -0.9797912427968589,
+        "lambda_max_abs_error": 0.0
+      },
+      "runtime_seconds": 0.11063889999786625,
+      "status": "PASS"
+    },
+    {
+      "expected": [
+        "Distances are generated from an emergent trajectory.",
+        "The exposed synthetic theta is recovered.",
+        "A no-dynamics ablation does not reproduce the same trajectory."
+      ],
+      "name": "V5_synthetic_distances",
+      "observed": {
+        "lcdm_control_at_z_0p3": {
+          "DH": 25.68036183944675,
+          "DM": 8.349625222976288,
+          "DV": 8.128656771557221
+        },
+        "minimum_chi2": 3.5056410192499364e-13,
+        "no_dynamics_l2_difference": 0.005691892072218173,
+        "recovered_theta": 0.03340000005405697,
+        "synthetic_values": [
+          8.128588541360939,
+          18.5158916704428,
+          19.705312147445532,
+          23.261534236042806
+        ],
+        "truth_theta": 0.0334
+      },
+      "runtime_seconds": 0.2222777000060887,
+      "status": "PASS"
+    }
+  ]
+}

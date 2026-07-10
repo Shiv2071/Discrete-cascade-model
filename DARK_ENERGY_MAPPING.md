@@ -2,9 +2,11 @@
 
 **Author: Shiv Goswami**
 **Date: June 21, 2026**
-**Status: Reference document. Contains the formal identification table and prior analytical work.**
+**Status: Superseded historical mapping (10 July 2026).**
 
-> **Methodological note (June 21, 2026):** The correct derivation program is documented in `CASCADE_DARK_ENERGY_DERIVATION.md`. That document supersedes the methodology used in Sections IV–V here. The identification table (Section I), master equation (Section II), and regime correspondence (Sections III, VI) remain valid. Sections IV.2 (analytical w(z) forms) and the BAO fitting exercise (`fit_desi_bao.py`) are preparatory analytical steps, not the final derivation. The correct program derives dark energy behavior from cascade simulation output without importing cosmological equations.
+> **Correction:** This document does not define the corrected cosmological DSCD model. Its direct identification table, `z_c` construction, `CAS_LOG`/`CAS_POLY` forms, source-free theorem transfer, and historical BAO claims are retained only as development history. The implemented model is the coupled DSCD+GR dynamical system specified in `model_simulation/DSCD_COSMOLOGY_SYSTEM_SPEC.md`. It evolves an intensive DSCD free-capacity density together with asymmetric activity, beat phase, structural memory, regimes, transport, and flat-FLRW expansion; `H(z)` and BAO distances are trajectory outputs. The audit in `model_simulation/dscd_cosmology_results/audit.md` returns `NO_FORECAST`: the depletion scale is not identifiable and the defining DSCD ablations are not distinguishable at current compressed-BAO precision.
+
+Everything below this notice is non-current historical reasoning and must not be cited as the corrected derivation or prediction protocol.
 
 ---
 

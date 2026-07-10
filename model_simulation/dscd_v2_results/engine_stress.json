@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-07-10T00:51:38.190741+00:00",
+  "next_gate": "history_ensemble",
+  "real_desi_used": false,
+  "schema_version": "dscd-v2-engine-stress-v1",
+  "source_sha256": {
+    "DSCD_COSMOLOGY_SYSTEM_SPEC.md": "2cc646be64e259f8ee7dad270424bf0acf5dac1579b36d58cfd5dc37e99475af",
+    "desi_bao_likelihood.py": "4415f47797912cd5db4ff0995b77e8084ab846e08667393162b07c3af520d9ab",
+    "dscd_cosmology_config.py": "010b8be74ea32073cf66c360807507b3e55ab418db4a3068da9310963e17fa5b",
+    "dscd_cosmology_dynamics.py": "c8edf417cfaf2b52e883d57e0a3ee34d1d0a1506b87417bd8bc650872b93198d",
+    "dscd_cosmology_observables.py": "8a12cd9426b4526521e9a1d9e35b9c3079f1a390616e2a6f91ea5b97302960db",
+    "dscd_cosmology_state.py": "ae86df6c6cf727d438821270dfd314867de56226dff7e3e03e03293366860136",
+    "dscd_forecast_prior.py": "f937feb97dca236a71fd2fa0d51bf8320cc94c2f99962e5b7b68abf6ccb81fd2"
+  },
+  "status": "PASS",
+  "system_version": "dscd-cosmology-v1",
+  "validations": [
+    {
+      "expected": [
+        "Funded accounting is exact at thousandfold depletion scales.",
+        "Density is pathwise non-negative and non-increasing everywhere on the prior.",
+        "Depletion never produces a phantom interval.",
+        "Impossible realizations fail with clean typed exceptions."
+      ],
+      "name": "V6a_prior_engine_stress",
+      "observed": {
+        "extreme_corner": {
+          "final_min_rho": 0.0,
+          "max_accounting_error": 5.551115123125783e-17,
+          "min_w_interval": -1.0
+        },
+        "mild_corner": {
+          "final_min_rho": 1.0249796446059196,
+          "max_accounting_error": 9.765509023343833e-17,
+          "min_w_interval": -1.0
+        },
+        "prior_sweep": {
+          "clean_typed_failures": 0,
+          "completed": 32,
+          "failure_types": {},
+          "samples": 32
+        }
+      },
+      "runtime_seconds": 21.64913130000059,
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,5 +1,15 @@
 # Cascade Model vs. Standard Dark Energy Approaches
 
+> **Superseded comparison (10 July 2026).** The theorem transfers and
+> cosmological claims in the table below are not supported by the corrected
+> coupled-system audit. DSCD now generates a late-time background trajectory
+> inside standard flat FLRW/GR; it does not derive gravity, intrinsic pressure,
+> cosmic heat death, or a unique no-phantom physical theory. Current compressed
+> BAO cannot identify its depletion scale or distinguish its defining
+> mechanisms from ablations. See
+> `model_simulation/DSCD_COSMOLOGY_SYSTEM_SPEC.md` and
+> `model_simulation/dscd_cosmology_results/audit.md`.
+
 **Author: Shiv Goswami**
 **Date: June 23, 2026**
 
@@ -53,5 +63,5 @@ No other model in the table above has made a sealed quantitative prediction for 
 ---
 
 *Preprint: [Zenodo 10.5281/zenodo.20787562](https://doi.org/10.5281/zenodo.20787562)*
-*Papers: [Part I](https://doi.org/10.5281/zenodo.20787297) | [Part II](https://doi.org/10.5281/zenodo.20787504)*
+*Papers: [Part I](https://doi.org/10.5281/zenodo.21210030) | [Part II](https://doi.org/10.5281/zenodo.21227989)*
 *Repository: [github.com/Shiv2071/Discrete-cascade-model](https://github.com/Shiv2071/Discrete-cascade-model)*

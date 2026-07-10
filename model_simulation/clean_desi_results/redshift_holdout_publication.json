@@ -1,0 +1,3608 @@
+{
+  "analysis_version": "1.0.0",
+  "assumptions": [
+    "Retrospective analysis of already-public DESI DR1/DR2 compressed BAO data.",
+    "Gaussian BAO likelihood with covariance treated as fixed in cosmology.",
+    "Spatially flat FRW background.",
+    "BAO scale parameter theta=H0*r_d/c; H0 and r_d are not separately inferred.",
+    "No CMB, supernova, or external sound-horizon prior.",
+    "Baseline radiation density is zero; a fixed-radiation sensitivity is reported separately."
+  ],
+  "configuration": {
+    "baseline_omega_r": 0.0,
+    "bootstrap_replicates": 24,
+    "mode": "publication",
+    "model_order": [
+      "LCDM",
+      "WCDM",
+      "WCDM_NONPHANTOM",
+      "CPL",
+      "CPL_NONPHANTOM",
+      "CAS_LOG",
+      "CAS_POLY"
+    ],
+    "optimizer_maxiter": 180,
+    "profile_points": 15,
+    "quadrature_order": 96,
+    "radiation_sensitivity_omega_r": 9e-05,
+    "seeds": [
+      17,
+      43,
+      101
+    ],
+    "selected_models": [
+      "LCDM",
+      "WCDM",
+      "WCDM_NONPHANTOM",
+      "CPL",
+      "CPL_NONPHANTOM",
+      "CAS_LOG",
+      "CAS_POLY"
+    ]
+  },
+  "configuration_sha256": "3b2876c63b7f93a2d7ad9d8405eff2242ba45335061036db6684f560b6db4df0",
+  "created_utc": "2026-07-09T21:17:18.475865+00:00",
+  "data": {
+    "full_DR1": {
+      "covariance": [
+        [
+          0.0227230845,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.063466224,
+          -0.068533725,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.068533725,
+          0.372968756,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.101975713,
+          -0.0799403059,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -0.0799403059,
+          0.354449156,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0795675235,
+          -0.0380110101,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0380110101,
+          0.119935683,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.476569857,
+          -0.129405759,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.129405759,
+          0.178270498,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.447134991,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.889752928,
+          -0.076947712
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.076947712,
+          0.0291860447
+        ]
+      ],
+      "covariance_condition_number": 40.097633512405466,
+      "labels": [
+        "BGS:DV@z=0.295",
+        "LRG1:DM@z=0.510",
+        "LRG1:DH@z=0.510",
+        "LRG2:DM@z=0.706",
+        "LRG2:DH@z=0.706",
+        "LRG3+ELG1:DM@z=0.930",
+        "LRG3+ELG1:DH@z=0.930",
+        "ELG2:DM@z=1.317",
+        "ELG2:DH@z=1.317",
+        "QSO:DV@z=1.491",
+        "Lya:DM@z=2.330",
+        "Lya:DH@z=2.330"
+      ],
+      "name": "DESI_DR1",
+      "size": 12,
+      "source": {
+        "covariance_file": "desi_2024_gaussian_bao_ALL_GCcomb_cov.txt",
+        "covariance_sha256": "bbafa9074b51cf1a45e0d10e4f37db8c0e80a5d1d1788857abb7fc49fb21abcc",
+        "covariance_url": "https://raw.githubusercontent.com/CobayaSampler/bao_data/bb0c1c9009dc76d1391300e169e8df38fd1096db/desi_2024_gaussian_bao_ALL_GCcomb_cov.txt",
+        "mean_file": "desi_2024_gaussian_bao_ALL_GCcomb_mean.txt",
+        "mean_sha256": "dd2873a0b88459a491af3c0c0307ba059f62df9211d5b976760f310565a1be68",
+        "mean_url": "https://raw.githubusercontent.com/CobayaSampler/bao_data/bb0c1c9009dc76d1391300e169e8df38fd1096db/desi_2024_gaussian_bao_ALL_GCcomb_mean.txt",
+        "references": [
+          "arXiv:2404.03000",
+          "arXiv:2404.03001",
+          "arXiv:2404.03002"
+        ],
+        "release": "DESI DR1 (Year 1)"
+      },
+      "values": [
+        7.92512927,
+        13.6200308,
+        20.98334647,
+        16.84645313,
+        20.07872919,
+        21.70841761,
+        17.87612922,
+        27.78720817,
+        13.82372285,
+        26.07217182,
+        39.70838281,
+        8.52256583
+      ]
+    },
+    "target": {
+      "covariance": [
+        [
+          0.476569857,
+          -0.129405759,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.129405759,
+          0.178270498,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.447134991,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.889752928,
+          -0.076947712
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -0.076947712,
+          0.0291860447
+        ]
+      ],
+      "covariance_condition_number": 40.097633512405466,
+      "labels": [
+        "ELG2:DM@z=1.317",
+        "ELG2:DH@z=1.317",
+        "QSO:DV@z=1.491",
+        "Lya:DM@z=2.330",
+        "Lya:DH@z=2.330"
+      ],
+      "name": "DESI_DR1_high_z",
+      "size": 5,
+      "source": {
+        "covariance_file": "desi_2024_gaussian_bao_ALL_GCcomb_cov.txt",
+        "covariance_sha256": "bbafa9074b51cf1a45e0d10e4f37db8c0e80a5d1d1788857abb7fc49fb21abcc",
+        "covariance_url": "https://raw.githubusercontent.com/CobayaSampler/bao_data/bb0c1c9009dc76d1391300e169e8df38fd1096db/desi_2024_gaussian_bao_ALL_GCcomb_cov.txt",
+        "indices": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "mean_file": "desi_2024_gaussian_bao_ALL_GCcomb_mean.txt",
+        "mean_sha256": "dd2873a0b88459a491af3c0c0307ba059f62df9211d5b976760f310565a1be68",
+        "mean_url": "https://raw.githubusercontent.com/CobayaSampler/bao_data/bb0c1c9009dc76d1391300e169e8df38fd1096db/desi_2024_gaussian_bao_ALL_GCcomb_mean.txt",
+        "parent": "DESI_DR1",
+        "references": [
+          "arXiv:2404.03000",
+          "arXiv:2404.03001",
+          "arXiv:2404.03002"
+        ],
+        "release": "DESI DR1 (Year 1)"
+      },
+      "values": [
+        27.78720817,
+        13.82372285,
+        26.07217182,
+        39.70838281,
+        8.52256583
+      ]
+    },
+    "train": {
+      "covariance": [
+        [
+          0.0227230845,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.063466224,
+          -0.068533725,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.068533725,
+          0.372968756,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.101975713,
+          -0.0799403059,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -0.0799403059,
+          0.354449156,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0795675235,
+          -0.0380110101
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0380110101,
+          0.119935683
+        ]
+      ],
+      "covariance_condition_number": 17.05161610401232,
+      "labels": [
+        "BGS:DV@z=0.295",
+        "LRG1:DM@z=0.510",
+        "LRG1:DH@z=0.510",
+        "LRG2:DM@z=0.706",
+        "LRG2:DH@z=0.706",
+        "LRG3+ELG1:DM@z=0.930",
+        "LRG3+ELG1:DH@z=0.930"
+      ],
+      "name": "DESI_DR1_low_z",
+      "size": 7,
+      "source": {
+        "covariance_file": "desi_2024_gaussian_bao_ALL_GCcomb_cov.txt",
+        "covariance_sha256": "bbafa9074b51cf1a45e0d10e4f37db8c0e80a5d1d1788857abb7fc49fb21abcc",
+        "covariance_url": "https://raw.githubusercontent.com/CobayaSampler/bao_data/bb0c1c9009dc76d1391300e169e8df38fd1096db/desi_2024_gaussian_bao_ALL_GCcomb_cov.txt",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mean_file": "desi_2024_gaussian_bao_ALL_GCcomb_mean.txt",
+        "mean_sha256": "dd2873a0b88459a491af3c0c0307ba059f62df9211d5b976760f310565a1be68",
+        "mean_url": "https://raw.githubusercontent.com/CobayaSampler/bao_data/bb0c1c9009dc76d1391300e169e8df38fd1096db/desi_2024_gaussian_bao_ALL_GCcomb_mean.txt",
+        "parent": "DESI_DR1",
+        "references": [
+          "arXiv:2404.03000",
+          "arXiv:2404.03001",
+          "arXiv:2404.03002"
+        ],
+        "release": "DESI DR1 (Year 1)"
+      },
+      "values": [
+        7.92512927,
+        13.6200308,
+        20.98334647,
+        16.84645313,
+        20.07872919,
+        21.70841761,
+        17.87612922
+      ]
+    }
+  },
+  "environment": {
+    "matplotlib": "3.8.4",
+    "numpy": "2.2.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.10.9",
+    "python_executable": "F:\\A mathematical model\\.venv-desi\\Scripts\\python.exe",
+    "scipy": "1.15.3"
+  },
+  "mode": "publication",
+  "official_data_commit": "bb0c1c9009dc76d1391300e169e8df38fd1096db",
+  "protocol": "retrospective_redshift_holdout",
+  "results": {
+    "CAS_LOG": {
+      "bootstrap": {
+        "empirical_upper_tail_fraction_plus_one_corrected": 0.04,
+        "failures": [],
+        "method": "parametric bootstrap with full-covariance simulation and refitting",
+        "observed_target_chi2": 383.777871448454,
+        "parameter_intervals_16_50_84_percent": {
+          "omega_m": {
+            "median": 0.10069600833038007,
+            "p16": 0.10000000000000063,
+            "p84": 0.18103399525809746
+          },
+          "theta": {
+            "median": 0.031604173962932997,
+            "p16": 0.030599701295848145,
+            "p84": 0.03287944419705036
+          },
+          "w0": {
+            "median": -0.3541964220249513,
+            "p16": -0.630330942096943,
+            "p84": -0.269685207636434
+          }
+        },
+        "requested_replicates": 24,
+        "seed": 20265710,
+        "successful_replicates": 24,
+        "target_chi2_samples": [
+          4.107332363081512,
+          11.731106873046963,
+          10.534546846964027,
+          11.480412520239454,
+          21.292801387052187,
+          8.95599393711945,
+          6.547400115474736,
+          201.3329351166655,
+          8.59537718696079,
+          2.2905369906899793,
+          194.34147297316713,
+          184.60524565233305,
+          13.236529133872018,
+          5.066094795022557,
+          35.10838866654963,
+          2.3579699224525257,
+          13.655982925938904,
+          10.015114255156426,
+          2.1307321492897016,
+          31.173669714798372,
+          2.8464344938083186,
+          320.87962208866037,
+          6.412828453632711,
+          45.23979847638218
+        ],
+        "warning": "Finite-bootstrap diagnostic under the fitted model; not a preregistered p-value."
+      },
+      "fit": {
+        "active_bounds": [
+          "omega_m"
+        ],
+        "chi2": 5.456221314396927,
+        "converged": true,
+        "description": "Logarithmic cascade-to-FRW ansatz with fitted w0; mapping remains exploratory.",
+        "family": "exploratory",
+        "global_runs": [
+          {
+            "chi2": 5.456221314903945,
+            "evaluations": 3528,
+            "iterations": 97,
+            "message": "Optimization terminated successfully.",
+            "seed": 17,
+            "success": true
+          },
+          {
+            "chi2": 5.456221314396927,
+            "evaluations": 3348,
+            "iterations": 92,
+            "message": "Optimization terminated successfully.",
+            "seed": 43,
+            "success": true
+          },
+          {
+            "chi2": 5.456221315290371,
+            "evaluations": 3600,
+            "iterations": 99,
+            "message": "Optimization terminated successfully.",
+            "seed": 101,
+            "success": true
+          }
+        ],
+        "hessian_eigenvalues": [
+          295.6357076138916,
+          454826.6073694375,
+          61760343.62212817
+        ],
+        "hessian_rank": 3,
+        "local_message": "Optimization terminated successfully.",
+        "model": "CAS_LOG",
+        "parameter_bounds": {
+          "omega_m": [
+            0.1,
+            0.6
+          ],
+          "theta": [
+            0.02,
+            0.045
+          ],
+          "w0": [
+            -1.0,
+            1.0
+          ]
+        },
+        "parameter_names": [
+          "theta",
+          "omega_m",
+          "w0"
+        ],
+        "parameter_vector": [
+          0.03131937574018461,
+          0.10000000001441733,
+          -0.3315169078314053
+        ],
+        "parameters": {
+          "omega_m": 0.10000000001441733,
+          "theta": 0.03131937574018461,
+          "w0": -0.3315169078314053
+        },
+        "regular_interior_fit": false,
+        "regularity_note": "At w0=-1 this nests LambdaCDM on a boundary.",
+        "warnings": [
+          "Best fit reaches declared bound(s): omega_m"
+        ]
+      },
+      "target_conditional_on_train": {
+        "chi2": 383.777871448454,
+        "cholesky_whitened_residuals": [
+          0.2273002814370083,
+          4.275453395691461,
+          1.7205437181359926,
+          1.6272332105990266,
+          18.969410789059562
+        ],
+        "conditional_covariance": [
+          [
+            0.476569857,
+            -0.129405759,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.129405759,
+            0.178270498,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.447134991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.889752928,
+            -0.076947712
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.076947712,
+            0.0291860447
+          ]
+        ],
+        "conditional_residuals": [
+          0.15691456541746263,
+          1.5749165571215311,
+          1.1504958090101312,
+          1.534915643065581,
+          2.714656430816609
+        ],
+        "cross_covariance_max_abs": 0.0,
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.2273002814370083,
+          3.730077110588843,
+          1.7205437181359926,
+          1.6272332105990266,
+          15.890122712613882
+        ]
+      },
+      "target_marginal": {
+        "chi2": 383.777871448454,
+        "cholesky_whitened_residuals": [
+          0.2273002814370083,
+          4.275453395691461,
+          1.7205437181359926,
+          1.6272332105990266,
+          18.969410789059562
+        ],
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.2273002814370083,
+          3.730077110588843,
+          1.7205437181359926,
+          1.6272332105990266,
+          15.890122712613882
+        ],
+        "predictions": [
+          27.944122735417462,
+          15.39863940712153,
+          27.222667629010132,
+          41.243298453065584,
+          11.237222260816608
+        ],
+        "raw_residuals": [
+          0.15691456541746263,
+          1.5749165571215311,
+          1.1504958090101312,
+          1.534915643065581,
+          2.714656430816609
+        ]
+      },
+      "train": {
+        "chi2": 5.456221314396927,
+        "cholesky_whitened_residuals": [
+          0.1452429651984686,
+          -1.393626227077653,
+          0.8315297653927096,
+          1.520692212634929,
+          0.05987617024960156,
+          -0.6190896859901258,
+          -0.31957469125840793
+        ],
+        "labels": [
+          "BGS:DV@z=0.295",
+          "LRG1:DM@z=0.510",
+          "LRG1:DH@z=0.510",
+          "LRG2:DM@z=0.706",
+          "LRG2:DH@z=0.706",
+          "LRG3+ELG1:DM@z=0.930",
+          "LRG3+ELG1:DH@z=0.930"
+        ],
+        "marginal_standardized_residuals": [
+          0.1452429651984686,
+          -1.393626227077653,
+          1.3652628779048404,
+          1.520692212634929,
+          -0.5850875786676241,
+          -0.6190896859901258,
+          -0.05349888832105093
+        ],
+        "predictions": [
+          7.947023453232925,
+          13.26894146191905,
+          21.817128455708065,
+          17.33206545105845,
+          19.730393598239733,
+          21.533786550351827,
+          17.857601628615587
+        ],
+        "raw_residuals": [
+          0.02189418323292447,
+          -0.3510893380809499,
+          0.8337819857080646,
+          0.48561232105845065,
+          -0.34833559176026796,
+          -0.17463105964817416,
+          -0.01852759138441229
+        ]
+      },
+      "warning": "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test.",
+      "wider_bounds_sensitivity": {
+        "bounds": [
+          [
+            0.015,
+            0.056249999999999994
+          ],
+          [
+            0.05,
+            0.75
+          ],
+          [
+            -1.0,
+            1.5
+          ]
+        ],
+        "delta_target_chi2": 272.37721865869264,
+        "fit": {
+          "active_bounds": [
+            "omega_m"
+          ],
+          "chi2": 5.004653647644345,
+          "converged": true,
+          "description": "Logarithmic cascade-to-FRW ansatz with fitted w0; mapping remains exploratory.",
+          "family": "exploratory",
+          "global_runs": [
+            {
+              "chi2": 5.004653647644345,
+              "evaluations": 3060,
+              "iterations": 84,
+              "message": "Optimization terminated successfully.",
+              "seed": 17,
+              "success": true
+            }
+          ],
+          "hessian_eigenvalues": [
+            366.8770803430726,
+            210228.48363098007,
+            63554850.187620856
+          ],
+          "hessian_rank": 3,
+          "local_message": "Optimization terminated successfully.",
+          "model": "CAS_LOG",
+          "parameter_bounds": {
+            "omega_m": [
+              0.05,
+              0.75
+            ],
+            "theta": [
+              0.015,
+              0.056249999999999994
+            ],
+            "w0": [
+              -1.0,
+              1.5
+            ]
+          },
+          "parameter_names": [
+            "theta",
+            "omega_m",
+            "w0"
+          ],
+          "parameter_vector": [
+            0.03087401654922391,
+            0.050000000012854984,
+            -0.23902037522378233
+          ],
+          "parameters": {
+            "omega_m": 0.050000000012854984,
+            "theta": 0.03087401654922391,
+            "w0": -0.23902037522378233
+          },
+          "regular_interior_fit": false,
+          "regularity_note": "At w0=-1 this nests LambdaCDM on a boundary.",
+          "warnings": [
+            "Best fit reaches declared bound(s): omega_m"
+          ]
+        },
+        "target_conditional_on_train": {
+          "chi2": 656.1550901071466,
+          "cholesky_whitened_residuals": [
+            0.3102933685522346,
+            5.054001692520776,
+            2.1801736850225915,
+            2.30155980851562,
+            24.909145713483166
+          ],
+          "conditional_covariance": [
+            [
+              0.476569857,
+              -0.129405759,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.129405759,
+              0.178270498,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.447134991,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.889752928,
+              -0.076947712
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              -0.076947712,
+              0.0291860447
+            ]
+          ],
+          "conditional_residuals": [
+            0.2142080457202944,
+            1.8539060832693526,
+            1.4578418793392203,
+            2.17098577544467,
+            3.5512303290541425
+          ],
+          "cross_covariance_max_abs": 0.0,
+          "labels": [
+            "ELG2:DM@z=1.317",
+            "ELG2:DH@z=1.317",
+            "QSO:DV@z=1.491",
+            "Lya:DM@z=2.330",
+            "Lya:DH@z=2.330"
+          ],
+          "marginal_standardized_residuals": [
+            0.3102933685522346,
+            4.390843829226948,
+            2.1801736850225915,
+            2.30155980851562,
+            20.78697144465227
+          ]
+        },
+        "unstable": true
+      }
+    },
+    "CAS_POLY": {
+      "bootstrap": {
+        "empirical_upper_tail_fraction_plus_one_corrected": 0.04,
+        "failures": [],
+        "method": "parametric bootstrap with full-covariance simulation and refitting",
+        "observed_target_chi2": 415.9449666311351,
+        "parameter_intervals_16_50_84_percent": {
+          "gamma": {
+            "median": 5.922905298551807,
+            "p16": 1.9184384605921823,
+            "p84": 13.6349396709589
+          },
+          "omega_m": {
+            "median": 0.1034134226367712,
+            "p16": 0.10000000000000762,
+            "p84": 0.2178921378177955
+          },
+          "theta": {
+            "median": 0.028760137927946974,
+            "p16": 0.026923011157642493,
+            "p84": 0.03204661719812248
+          },
+          "w0": {
+            "median": 0.17899714302304698,
+            "p16": -0.4634420927324046,
+            "p84": 0.9999999678099022
+          }
+        },
+        "requested_replicates": 24,
+        "seed": 20266710,
+        "successful_replicates": 24,
+        "target_chi2_samples": [
+          214.33143452890332,
+          139.8160912444305,
+          82.52331487706392,
+          156.47975859651442,
+          214.5451845538129,
+          38.59944301312112,
+          11.992752177702808,
+          79.97307707093574,
+          225.68070314826713,
+          341.4613217569663,
+          44.055904988757746,
+          91.34084336912413,
+          86.88283880612356,
+          149.73144507909058,
+          43.999493787033444,
+          26.472859708457033,
+          17.20853298616836,
+          84.89645874913278,
+          30.120034434421434,
+          75.8493794744069,
+          3.5855584810602066,
+          50.24854587304467,
+          90.77244341277967,
+          3.7497030322472638
+        ],
+        "warning": "Finite-bootstrap diagnostic under the fitted model; not a preregistered p-value."
+      },
+      "fit": {
+        "active_bounds": [
+          "w0"
+        ],
+        "chi2": 4.330485340685809,
+        "converged": true,
+        "description": "Phenomenological polynomial cascade ansatz with fitted w0 and gamma>=0.",
+        "family": "exploratory",
+        "global_runs": [
+          {
+            "chi2": 4.330485342768687,
+            "evaluations": 7344,
+            "iterations": 152,
+            "message": "Optimization terminated successfully.",
+            "seed": 17,
+            "success": true
+          },
+          {
+            "chi2": 4.330485341306908,
+            "evaluations": 6768,
+            "iterations": 140,
+            "message": "Optimization terminated successfully.",
+            "seed": 43,
+            "success": true
+          },
+          {
+            "chi2": 4.330485341961337,
+            "evaluations": 7632,
+            "iterations": 158,
+            "message": "Optimization terminated successfully.",
+            "seed": 101,
+            "success": true
+          }
+        ],
+        "hessian_eigenvalues": [
+          0.044872341810077966,
+          1073.6673902425857,
+          2361.572257519244,
+          79789044.64468186
+        ],
+        "hessian_rank": 3,
+        "local_message": "Optimization terminated successfully.",
+        "model": "CAS_POLY",
+        "parameter_bounds": {
+          "gamma": [
+            0.0,
+            30.0
+          ],
+          "omega_m": [
+            0.1,
+            0.6
+          ],
+          "theta": [
+            0.02,
+            0.045
+          ],
+          "w0": [
+            -1.0,
+            1.0
+          ]
+        },
+        "parameter_names": [
+          "theta",
+          "omega_m",
+          "w0",
+          "gamma"
+        ],
+        "parameter_vector": [
+          0.02755300496890887,
+          0.19561787223784066,
+          0.9999999999995416,
+          15.176536011748874
+        ],
+        "parameters": {
+          "gamma": 15.176536011748874,
+          "omega_m": 0.19561787223784066,
+          "theta": 0.02755300496890887,
+          "w0": 0.9999999999995416
+        },
+        "regular_interior_fit": false,
+        "regularity_note": "Gamma is unidentifiable at w0=-1; regular criteria are then invalid.",
+        "warnings": [
+          "Best fit reaches declared bound(s): w0",
+          "Numerical Hessian is rank deficient or non-positive."
+        ]
+      },
+      "target_conditional_on_train": {
+        "chi2": 415.9449666311351,
+        "cholesky_whitened_residuals": [
+          0.3791359124062959,
+          5.291627122221356,
+          2.203752794367032,
+          2.005918088117972,
+          19.46585911886529
+        ],
+        "conditional_covariance": [
+          [
+            0.476569857,
+            -0.129405759,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.129405759,
+            0.178270498,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.447134991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.889752928,
+            -0.076947712
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.076947712,
+            0.0291860447
+          ]
+        ],
+        "conditional_residuals": [
+          0.2617328344394245,
+          1.930901798320015,
+          1.4736087942946625,
+          1.89211665058572,
+          2.7582841992753426
+        ],
+        "cross_covariance_max_abs": 0.0,
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.3791359124062959,
+          4.573202667874763,
+          2.203752794367032,
+          2.005918088117972,
+          16.145495947553318
+        ]
+      },
+      "target_marginal": {
+        "chi2": 415.9449666311351,
+        "cholesky_whitened_residuals": [
+          0.3791359124062959,
+          5.291627122221356,
+          2.203752794367032,
+          2.005918088117972,
+          19.46585911886529
+        ],
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.3791359124062959,
+          4.573202667874763,
+          2.203752794367032,
+          2.005918088117972,
+          16.145495947553318
+        ],
+        "predictions": [
+          28.048941004439424,
+          15.754624648320014,
+          27.545780614294664,
+          41.60049946058572,
+          11.280850029275342
+        ],
+        "raw_residuals": [
+          0.2617328344394245,
+          1.930901798320015,
+          1.4736087942946625,
+          1.89211665058572,
+          2.7582841992753426
+        ]
+      },
+      "train": {
+        "chi2": 4.330485340685809,
+        "cholesky_whitened_residuals": [
+          0.4562197412300329,
+          -1.1817573963702932,
+          0.09175145968686456,
+          1.5031804437055236,
+          -0.21065775872542314,
+          -0.6292873425702153,
+          0.13209586291102635
+        ],
+        "labels": [
+          "BGS:DV@z=0.295",
+          "LRG1:DM@z=0.510",
+          "LRG1:DH@z=0.510",
+          "LRG2:DM@z=0.706",
+          "LRG2:DH@z=0.706",
+          "LRG3+ELG1:DM@z=0.930",
+          "LRG3+ELG1:DH@z=0.930"
+        ],
+        "marginal_standardized_residuals": [
+          0.4562197412300329,
+          -1.1817573963702934,
+          0.6085569971669738,
+          1.5031804437055236,
+          -0.823180828749109,
+          -0.6292873425702153,
+          0.3665449325112948
+        ],
+        "predictions": [
+          7.993900646261279,
+          13.322316524821685,
+          21.354999336071543,
+          17.326473306451547,
+          19.58864327540751,
+          21.5309100243576,
+          18.003070077029435
+        ],
+        "raw_residuals": [
+          0.06877137626127894,
+          -0.29771427517831484,
+          0.3716528660715426,
+          0.4800201764515464,
+          -0.4900859145924912,
+          -0.17750758564240243,
+          0.12694085702943525
+        ]
+      },
+      "warning": "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test.",
+      "wider_bounds_sensitivity": {
+        "bounds": [
+          [
+            0.015,
+            0.056249999999999994
+          ],
+          [
+            0.05,
+            0.75
+          ],
+          [
+            -1.0,
+            1.5
+          ],
+          [
+            0.0,
+            60.0
+          ]
+        ],
+        "delta_target_chi2": -37.6348888171558,
+        "fit": {
+          "active_bounds": [
+            "w0"
+          ],
+          "chi2": 4.300635176251915,
+          "converged": true,
+          "description": "Phenomenological polynomial cascade ansatz with fitted w0 and gamma>=0.",
+          "family": "exploratory",
+          "global_runs": [
+            {
+              "chi2": 4.300801450601272,
+              "evaluations": 4368,
+              "iterations": 90,
+              "message": "Maximum number of iterations has been exceeded.",
+              "seed": 17,
+              "success": false
+            }
+          ],
+          "hessian_eigenvalues": [
+            0.02730161275307841,
+            1024.2960642738092,
+            1534.6399573201709,
+            83550567.71998188
+          ],
+          "hessian_rank": 3,
+          "local_message": "Optimization terminated successfully.",
+          "model": "CAS_POLY",
+          "parameter_bounds": {
+            "gamma": [
+              0.0,
+              60.0
+            ],
+            "omega_m": [
+              0.05,
+              0.75
+            ],
+            "theta": [
+              0.015,
+              0.056249999999999994
+            ],
+            "w0": [
+              -1.0,
+              1.5
+            ]
+          },
+          "parameter_names": [
+            "theta",
+            "omega_m",
+            "w0",
+            "gamma"
+          ],
+          "parameter_vector": [
+            0.026925476230193604,
+            0.2155235324014392,
+            1.4999999993911417,
+            21.240493095597067
+          ],
+          "parameters": {
+            "gamma": 21.240493095597067,
+            "omega_m": 0.2155235324014392,
+            "theta": 0.026925476230193604,
+            "w0": 1.4999999993911417
+          },
+          "regular_interior_fit": false,
+          "regularity_note": "Gamma is unidentifiable at w0=-1; regular criteria are then invalid.",
+          "warnings": [
+            "Best fit reaches declared bound(s): w0",
+            "Numerical Hessian is rank deficient or non-positive."
+          ]
+        },
+        "target_conditional_on_train": {
+          "chi2": 378.3100778139793,
+          "cholesky_whitened_residuals": [
+            0.37048178561108086,
+            5.1713096984686775,
+            2.1301605362802647,
+            1.897390385645184,
+            18.528159727214383
+          ],
+          "conditional_covariance": [
+            [
+              0.476569857,
+              -0.129405759,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.129405759,
+              0.178270498,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.447134991,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.889752928,
+              -0.076947712
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              -0.076947712,
+              0.0291860447
+            ]
+          ],
+          "conditional_residuals": [
+            0.2557585411541119,
+            1.887004561454555,
+            1.4243990104269528,
+            1.7897460333033166,
+            2.6263842683245286
+          ],
+          "cross_covariance_max_abs": 0.0,
+          "labels": [
+            "ELG2:DM@z=1.317",
+            "ELG2:DH@z=1.317",
+            "QSO:DV@z=1.491",
+            "Lya:DM@z=2.330",
+            "Lya:DH@z=2.330"
+          ],
+          "marginal_standardized_residuals": [
+            0.37048178561108086,
+            4.469235205148219,
+            2.1301605362802647,
+            1.897390385645184,
+            15.373425469388518
+          ]
+        },
+        "unstable": true
+      }
+    },
+    "CPL": {
+      "bootstrap": {
+        "empirical_upper_tail_fraction_plus_one_corrected": 0.72,
+        "failures": [],
+        "method": "parametric bootstrap with full-covariance simulation and refitting",
+        "observed_target_chi2": 6.79498427640686,
+        "parameter_intervals_16_50_84_percent": {
+          "omega_m": {
+            "median": 0.4617688485344298,
+            "p16": 0.23955416490036854,
+            "p84": 0.5115550495855355
+          },
+          "theta": {
+            "median": 0.027555936769141177,
+            "p16": 0.027051972915911267,
+            "p84": 0.02928591394446025
+          },
+          "w0": {
+            "median": 0.9999999592846158,
+            "p16": 0.2941876981002445,
+            "p84": 0.9999999999993953
+          },
+          "wa": {
+            "median": -6.516294768064601,
+            "p16": -7.775514701778115,
+            "p84": -2.4360653198395648
+          }
+        },
+        "requested_replicates": 24,
+        "seed": 20263710,
+        "successful_replicates": 24,
+        "target_chi2_samples": [
+          40.68574385123396,
+          124.72917018569972,
+          10.768339331845015,
+          5.045354761161745,
+          2.56447493164619,
+          28.105674486918346,
+          1317.1441931183888,
+          58.48373662179259,
+          88.97324194601772,
+          46.921341850652276,
+          6.252449957039201,
+          19.9133429025518,
+          1860.22895046778,
+          78.430744367758,
+          3.9486296126577676,
+          15.1956743955956,
+          583.698978284128,
+          1.401329032323367,
+          4.339196126969597,
+          17.17771164168945,
+          20.40205161380326,
+          47.55691796613919,
+          0.9220076759991671,
+          7.841011199185138
+        ],
+        "warning": "Finite-bootstrap diagnostic under the fitted model; not a preregistered p-value."
+      },
+      "fit": {
+        "active_bounds": [],
+        "chi2": 4.236697459623987,
+        "converged": true,
+        "description": "Unconstrained CPL w(z)=w0+wa*z/(1+z).",
+        "family": "APS-reproduction",
+        "global_runs": [
+          {
+            "chi2": 4.236697459633121,
+            "evaluations": 7200,
+            "iterations": 149,
+            "message": "Optimization terminated successfully.",
+            "seed": 17,
+            "success": true
+          },
+          {
+            "chi2": 4.236697463609602,
+            "evaluations": 7392,
+            "iterations": 153,
+            "message": "Optimization terminated successfully.",
+            "seed": 43,
+            "success": true
+          },
+          {
+            "chi2": 4.236697459889616,
+            "evaluations": 7152,
+            "iterations": 148,
+            "message": "Optimization terminated successfully.",
+            "seed": 101,
+            "success": true
+          }
+        ],
+        "hessian_eigenvalues": [
+          1.8764952467047968,
+          499.4331720487352,
+          2473.0660622747578,
+          81707790.7777129
+        ],
+        "hessian_rank": 3,
+        "local_message": "Optimization terminated successfully.",
+        "model": "CPL",
+        "parameter_bounds": {
+          "omega_m": [
+            0.1,
+            0.6
+          ],
+          "theta": [
+            0.02,
+            0.045
+          ],
+          "w0": [
+            -3.0,
+            1.0
+          ],
+          "wa": [
+            -8.0,
+            8.0
+          ]
+        },
+        "parameter_names": [
+          "theta",
+          "omega_m",
+          "w0",
+          "wa"
+        ],
+        "parameter_vector": [
+          0.02722787168317741,
+          0.4795142676488886,
+          0.9996997654368053,
+          -6.838078657726972
+        ],
+        "parameters": {
+          "omega_m": 0.4795142676488886,
+          "theta": 0.02722787168317741,
+          "w0": 0.9996997654368053,
+          "wa": -6.838078657726972
+        },
+        "regular_interior_fit": false,
+        "regularity_note": "",
+        "warnings": [
+          "Numerical Hessian is rank deficient or non-positive."
+        ]
+      },
+      "target_conditional_on_train": {
+        "chi2": 6.79498427640686,
+        "cholesky_whitened_residuals": [
+          0.11553930710837067,
+          2.2901987693215764,
+          0.36467136824830215,
+          -0.3918340360071255,
+          1.118081134499636
+        ],
+        "conditional_covariance": [
+          [
+            0.476569857,
+            -0.129405759,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.129405759,
+            0.178270498,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.447134991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.889752928,
+            -0.076947712
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.076947712,
+            0.0291860447
+          ]
+        ],
+        "conditional_residuals": [
+          0.07976145057510209,
+          0.8447886306233539,
+          0.2438490091319494,
+          -0.3696041768539473,
+          0.19979346905050122
+        ],
+        "cross_covariance_max_abs": 0.0,
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.11553930710837067,
+          2.0008213896316938,
+          0.36467136824830215,
+          -0.3918340360071255,
+          1.1694823346158314
+        ]
+      },
+      "target_marginal": {
+        "chi2": 6.79498427640686,
+        "cholesky_whitened_residuals": [
+          0.11553930710837067,
+          2.2901987693215764,
+          0.36467136824830215,
+          -0.3918340360071255,
+          1.118081134499636
+        ],
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.11553930710837067,
+          2.0008213896316938,
+          0.36467136824830215,
+          -0.3918340360071255,
+          1.1694823346158314
+        ],
+        "predictions": [
+          27.8669696205751,
+          14.668511480623353,
+          26.31602082913195,
+          39.338778633146056,
+          8.7223592990505
+        ],
+        "raw_residuals": [
+          0.07976145057510209,
+          0.8447886306233539,
+          0.2438490091319494,
+          -0.3696041768539473,
+          0.19979346905050122
+        ]
+      },
+      "train": {
+        "chi2": 4.236697459623987,
+        "cholesky_whitened_residuals": [
+          0.45895154284410106,
+          -1.1899269788032516,
+          -0.1391926661761357,
+          1.5136208650451388,
+          0.04254922075706781,
+          -0.5435264496127142,
+          0.04980529116792481
+        ],
+        "labels": [
+          "BGS:DV@z=0.295",
+          "LRG1:DM@z=0.510",
+          "LRG1:DH@z=0.510",
+          "LRG2:DM@z=0.706",
+          "LRG2:DH@z=0.706",
+          "LRG3+ELG1:DM@z=0.930",
+          "LRG3+ELG1:DH@z=0.930"
+        ],
+        "marginal_standardized_residuals": [
+          0.45895154284410106,
+          -1.1899269788032516,
+          0.40543001189323274,
+          1.5136208650451388,
+          -0.5978350624650275,
+          -0.5435264496127142,
+          0.2573693862668755
+        ],
+        "predictions": [
+          7.994312442901569,
+          13.320258402469324,
+          21.230947313656387,
+          17.329807312634674,
+          19.722804303108678,
+          21.555101213376666,
+          17.965260694938205
+        ],
+        "raw_residuals": [
+          0.06918317290156839,
+          -0.29977239753067586,
+          0.2476008436563859,
+          0.4833541826346739,
+          -0.35592488689132296,
+          -0.1533163966233353,
+          0.08913147493820617
+        ]
+      },
+      "warning": "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test.",
+      "wider_bounds_sensitivity": {
+        "bounds": [
+          [
+            0.015,
+            0.056249999999999994
+          ],
+          [
+            0.05,
+            0.75
+          ],
+          [
+            -5.0,
+            3.0
+          ],
+          [
+            -16.0,
+            16.0
+          ]
+        ],
+        "delta_target_chi2": 0.013073869375543445,
+        "fit": {
+          "active_bounds": [],
+          "chi2": 4.236697534247756,
+          "converged": true,
+          "description": "Unconstrained CPL w(z)=w0+wa*z/(1+z).",
+          "family": "APS-reproduction",
+          "global_runs": [
+            {
+              "chi2": 4.236704176773033,
+              "evaluations": 4368,
+              "iterations": 90,
+              "message": "Maximum number of iterations has been exceeded.",
+              "seed": 17,
+              "success": false
+            }
+          ],
+          "hessian_eigenvalues": [
+            0.01753361986832227,
+            42.61057146559688,
+            2472.363027874845,
+            81700567.30443268
+          ],
+          "hessian_rank": 3,
+          "local_message": "Optimization terminated successfully.",
+          "model": "CPL",
+          "parameter_bounds": {
+            "omega_m": [
+              0.05,
+              0.75
+            ],
+            "theta": [
+              0.015,
+              0.056249999999999994
+            ],
+            "w0": [
+              -5.0,
+              3.0
+            ],
+            "wa": [
+              -16.0,
+              16.0
+            ]
+          },
+          "parameter_names": [
+            "theta",
+            "omega_m",
+            "w0",
+            "wa"
+          ],
+          "parameter_vector": [
+            0.027229076155872053,
+            0.47941906796999034,
+            0.9990560182468612,
+            -6.83523250266014
+          ],
+          "parameters": {
+            "omega_m": 0.47941906796999034,
+            "theta": 0.027229076155872053,
+            "w0": 0.9990560182468612,
+            "wa": -6.83523250266014
+          },
+          "regular_interior_fit": false,
+          "regularity_note": "",
+          "warnings": [
+            "Numerical Hessian is rank deficient or non-positive."
+          ]
+        },
+        "target_conditional_on_train": {
+          "chi2": 6.808058145782404,
+          "cholesky_whitened_residuals": [
+            0.1156441297206521,
+            2.2913674531145727,
+            0.3653053082894405,
+            -0.39121051311716015,
+            1.1215284847086846
+          ],
+          "conditional_covariance": [
+            [
+              0.476569857,
+              -0.129405759,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.129405759,
+              0.178270498,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.447134991,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.889752928,
+              -0.076947712
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              -0.076947712,
+              0.0291860447
+            ]
+          ],
+          "conditional_residuals": [
+            0.07983381385836807,
+            0.8452111274086747,
+            0.2442729131297412,
+            -0.3690160281906927,
+            0.20026006844662447
+          ],
+          "cross_covariance_max_abs": 0.0,
+          "labels": [
+            "ELG2:DM@z=1.317",
+            "ELG2:DH@z=1.317",
+            "QSO:DV@z=1.491",
+            "Lya:DM@z=2.330",
+            "Lya:DH@z=2.330"
+          ],
+          "marginal_standardized_residuals": [
+            0.1156441297206521,
+            2.00182204301939,
+            0.3653053082894405,
+            -0.39121051311716015,
+            1.1722135537778082
+          ]
+        },
+        "unstable": false
+      }
+    },
+    "CPL_NONPHANTOM": {
+      "bootstrap": {
+        "empirical_upper_tail_fraction_plus_one_corrected": 0.04,
+        "failures": [],
+        "method": "parametric bootstrap with full-covariance simulation and refitting",
+        "observed_target_chi2": 497.5838455639748,
+        "parameter_intervals_16_50_84_percent": {
+          "omega_m": {
+            "median": 0.11544370820930419,
+            "p16": 0.10000004314104145,
+            "p84": 0.18503287190268206
+          },
+          "theta": {
+            "median": 0.03173413550840111,
+            "p16": 0.03111473269908066,
+            "p84": 0.034055211107824335
+          },
+          "w0": {
+            "median": -0.3884741981929327,
+            "p16": -0.80155289019201,
+            "p84": -0.28934177210763723
+          },
+          "wa": {
+            "median": -0.6102314289442438,
+            "p16": -0.7084297138791601,
+            "p84": 0.20131911537519795
+          }
+        },
+        "requested_replicates": 24,
+        "seed": 20264710,
+        "successful_replicates": 24,
+        "target_chi2_samples": [
+          185.84569174400977,
+          2.534492537583582,
+          2.08511419702503,
+          480.3380191706829,
+          246.2896127711369,
+          46.20386125006843,
+          55.18365690685151,
+          2.5133229363204177,
+          16.988434706734058,
+          256.4293236241729,
+          432.91993981842484,
+          40.56885768340898,
+          2.649669909670773,
+          14.983046302551017,
+          255.38620775368494,
+          3.3475912286659666,
+          10.32642092061948,
+          1.6677835413184283,
+          2.022568012394527,
+          2.134296987764622,
+          5.9150826506122804,
+          32.89281991360239,
+          121.61962695243909,
+          104.15379634973122
+        ],
+        "warning": "Finite-bootstrap diagnostic under the fitted model; not a preregistered p-value."
+      },
+      "fit": {
+        "active_bounds": [
+          "omega_m"
+        ],
+        "chi2": 5.108188050438361,
+        "converged": true,
+        "description": "CPL constrained to w(z)>=-1 for every z>=0.",
+        "family": "prior-isolation",
+        "global_runs": [
+          {
+            "chi2": 5.108188451508076,
+            "evaluations": 8688,
+            "iterations": 180,
+            "message": "Maximum number of iterations has been exceeded.",
+            "seed": 17,
+            "success": false
+          },
+          {
+            "chi2": 5.108188310354613,
+            "evaluations": 8688,
+            "iterations": 180,
+            "message": "Maximum number of iterations has been exceeded.",
+            "seed": 43,
+            "success": false
+          },
+          {
+            "chi2": 5.108188147538572,
+            "evaluations": 8688,
+            "iterations": 180,
+            "message": "Maximum number of iterations has been exceeded.",
+            "seed": 101,
+            "success": false
+          }
+        ],
+        "hessian_eigenvalues": [
+          327337.5628584562,
+          62926719.45083605,
+          1.7361111111111723e+105,
+          6.2499999999996425e+106
+        ],
+        "hessian_rank": 2,
+        "local_message": "Optimization terminated successfully.",
+        "model": "CPL_NONPHANTOM",
+        "parameter_bounds": {
+          "omega_m": [
+            0.1,
+            0.6
+          ],
+          "theta": [
+            0.02,
+            0.045
+          ],
+          "w0": [
+            -1.0,
+            1.0
+          ],
+          "wa": [
+            -4.0,
+            8.0
+          ]
+        },
+        "parameter_names": [
+          "theta",
+          "omega_m",
+          "w0",
+          "wa"
+        ],
+        "parameter_vector": [
+          0.031026297927658292,
+          0.10000000000000143,
+          -0.28668858586103074,
+          -0.7133114138042145
+        ],
+        "parameters": {
+          "omega_m": 0.10000000000000143,
+          "theta": 0.031026297927658292,
+          "w0": -0.28668858586103074,
+          "wa": -0.7133114138042145
+        },
+        "regular_interior_fit": false,
+        "regularity_note": "Inequality-constrained model; ordinary AIC/AICc may be nonregular.",
+        "warnings": [
+          "Best fit reaches declared bound(s): omega_m",
+          "Numerical Hessian is rank deficient or non-positive."
+        ]
+      },
+      "target_conditional_on_train": {
+        "chi2": 497.5838455639748,
+        "cholesky_whitened_residuals": [
+          0.2829902416603033,
+          4.774554701036601,
+          2.001255789168524,
+          1.9847391600106994,
+          21.60470261834096
+        ],
+        "conditional_covariance": [
+          [
+            0.476569857,
+            -0.129405759,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.129405759,
+            0.178270498,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.447134991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.889752928,
+            -0.076947712
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.076947712,
+            0.0291860447
+          ]
+        ],
+        "conditional_residuals": [
+          0.19535959439546602,
+          1.753301442035827,
+          1.3382027866691288,
+          1.872139263298223,
+          3.081062512485518
+        ],
+        "cross_covariance_max_abs": 0.0,
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.2829902416603033,
+          4.152568939178143,
+          2.001255789168524,
+          1.9847391600106994,
+          18.034864689636578
+        ]
+      },
+      "target_marginal": {
+        "chi2": 497.5838455639748,
+        "cholesky_whitened_residuals": [
+          0.2829902416603033,
+          4.774554701036601,
+          2.001255789168524,
+          1.9847391600106994,
+          21.60470261834096
+        ],
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.2829902416603033,
+          4.152568939178143,
+          2.001255789168524,
+          1.9847391600106994,
+          18.034864689636578
+        ],
+        "predictions": [
+          27.982567764395466,
+          15.577024292035826,
+          27.41037460666913,
+          41.580522073298226,
+          11.603628342485518
+        ],
+        "raw_residuals": [
+          0.19535959439546602,
+          1.753301442035827,
+          1.3382027866691288,
+          1.872139263298223,
+          3.081062512485518
+        ]
+      },
+      "train": {
+        "chi2": 5.108188050438361,
+        "cholesky_whitened_residuals": [
+          0.20761459437135846,
+          -1.364807421469375,
+          0.7009396941773061,
+          1.5058700299106815,
+          -0.014937767578333046,
+          -0.6352932166745775,
+          -0.19900583668567345
+        ],
+        "labels": [
+          "BGS:DV@z=0.295",
+          "LRG1:DM@z=0.510",
+          "LRG1:DH@z=0.510",
+          "LRG2:DM@z=0.706",
+          "LRG2:DH@z=0.706",
+          "LRG3+ELG1:DM@z=0.930",
+          "LRG3+ELG1:DH@z=0.930"
+        ],
+        "marginal_standardized_residuals": [
+          0.20761459437135846,
+          -1.364807421469375,
+          1.2355072789787909,
+          1.5058700299106815,
+          -0.6467342024277071,
+          -0.6352932166745775,
+          0.06387320610007229
+        ],
+        "predictions": [
+          7.9564254636902385,
+          13.276201640572914,
+          21.737885195907925,
+          17.327332189129397,
+          19.6936918907511,
+          21.529215904454308,
+          17.89824961726756
+        ],
+        "raw_residuals": [
+          0.03129619369023828,
+          -0.34382915942708614,
+          0.7545387259079241,
+          0.4808790591293963,
+          -0.38503729924889996,
+          -0.1792017055456938,
+          0.02212039726756032
+        ]
+      },
+      "warning": "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test.",
+      "wider_bounds_sensitivity": {
+        "bounds": [
+          [
+            0.015,
+            0.056249999999999994
+          ],
+          [
+            0.05,
+            0.75
+          ],
+          [
+            -1.0,
+            1.5
+          ],
+          [
+            -10.0,
+            14.0
+          ]
+        ],
+        "delta_target_chi2": 348.418300599222,
+        "fit": {
+          "active_bounds": [
+            "omega_m"
+          ],
+          "chi2": 4.8010958640996995,
+          "converged": true,
+          "description": "CPL constrained to w(z)>=-1 for every z>=0.",
+          "family": "prior-isolation",
+          "global_runs": [
+            {
+              "chi2": 4.8021207185017785,
+              "evaluations": 4368,
+              "iterations": 90,
+              "message": "Maximum number of iterations has been exceeded.",
+              "seed": 17,
+              "success": false
+            }
+          ],
+          "hessian_eigenvalues": [
+            131459.99477437595,
+            64386562.11855457,
+            4.34027777777773e+104,
+            3.999999999999992e+106
+          ],
+          "hessian_rank": 2,
+          "local_message": "Optimization terminated successfully.",
+          "model": "CPL_NONPHANTOM",
+          "parameter_bounds": {
+            "omega_m": [
+              0.05,
+              0.75
+            ],
+            "theta": [
+              0.015,
+              0.056249999999999994
+            ],
+            "w0": [
+              -1.0,
+              1.5
+            ],
+            "wa": [
+              -10.0,
+              14.0
+            ]
+          },
+          "parameter_names": [
+            "theta",
+            "omega_m",
+            "w0",
+            "wa"
+          ],
+          "parameter_vector": [
+            0.030672377486129228,
+            0.05000000000000096,
+            -0.21826428361131614,
+            -0.781735716183209
+          ],
+          "parameters": {
+            "omega_m": 0.05000000000000096,
+            "theta": 0.030672377486129228,
+            "w0": -0.21826428361131614,
+            "wa": -0.781735716183209
+          },
+          "regular_interior_fit": false,
+          "regularity_note": "Inequality-constrained model; ordinary AIC/AICc may be nonregular.",
+          "warnings": [
+            "Best fit reaches declared bound(s): omega_m",
+            "Numerical Hessian is rank deficient or non-positive."
+          ]
+        },
+        "target_conditional_on_train": {
+          "chi2": 846.0021461631968,
+          "cholesky_whitened_residuals": [
+            0.36507537281775365,
+            5.567449096222051,
+            2.4757708189944743,
+            2.7151503726055646,
+            28.308495085438405
+          ],
+          "conditional_covariance": [
+            [
+              0.476569857,
+              -0.129405759,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.129405759,
+              0.178270498,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.447134991,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.889752928,
+              -0.076947712
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              -0.076947712,
+              0.0291860447
+            ]
+          ],
+          "conditional_residuals": [
+            0.25202627602637406,
+            2.0378886996230285,
+            1.6555022236857724,
+            2.56111217067248,
+            4.027749954107906
+          ],
+          "cross_covariance_max_abs": 0.0,
+          "labels": [
+            "ELG2:DM@z=1.317",
+            "ELG2:DH@z=1.317",
+            "QSO:DV@z=1.491",
+            "Lya:DM@z=2.330",
+            "Lya:DH@z=2.330"
+          ],
+          "marginal_standardized_residuals": [
+            0.36507537281775365,
+            4.826593483965093,
+            2.4757708189944743,
+            2.7151503726055646,
+            23.57625823288694
+          ]
+        },
+        "unstable": true
+      }
+    },
+    "LCDM": {
+      "bootstrap": {
+        "empirical_upper_tail_fraction_plus_one_corrected": 0.8,
+        "failures": [],
+        "method": "parametric bootstrap with full-covariance simulation and refitting",
+        "observed_target_chi2": 3.492167068942479,
+        "parameter_intervals_16_50_84_percent": {
+          "omega_m": {
+            "median": 0.27327499985704895,
+            "p16": 0.2558051010899479,
+            "p84": 0.2991146522657462
+          },
+          "theta": {
+            "median": 0.03441571288376925,
+            "p16": 0.03390947030851213,
+            "p84": 0.03484733195088872
+          }
+        },
+        "requested_replicates": 24,
+        "seed": 20260710,
+        "successful_replicates": 24,
+        "target_chi2_samples": [
+          17.135020242394695,
+          5.319518346087964,
+          5.47563033396169,
+          5.3273327152505985,
+          5.447090593528977,
+          0.7988880771298232,
+          1.9907622350246155,
+          5.81588061433462,
+          3.209015701820248,
+          18.545330045915385,
+          2.856068744667333,
+          4.152072079223808,
+          6.630369181295521,
+          5.238756291013363,
+          10.704781784385553,
+          5.461031816624567,
+          19.775576459965677,
+          9.035104594059693,
+          5.92203741687556,
+          10.504565332865262,
+          7.61857780028417,
+          5.74877707811478,
+          3.7496632552556908,
+          1.7170488176268424
+        ],
+        "warning": "Finite-bootstrap diagnostic under the fitted model; not a preregistered p-value."
+      },
+      "fit": {
+        "active_bounds": [],
+        "chi2": 10.90691553614691,
+        "converged": true,
+        "description": "Flat LambdaCDM; w=-1.",
+        "family": "APS-reproduction",
+        "global_runs": [
+          {
+            "chi2": 10.90691553620212,
+            "evaluations": 840,
+            "iterations": 34,
+            "message": "Optimization terminated successfully.",
+            "seed": 17,
+            "success": true
+          },
+          {
+            "chi2": 10.9069155361628,
+            "evaluations": 984,
+            "iterations": 40,
+            "message": "Optimization terminated successfully.",
+            "seed": 43,
+            "success": true
+          },
+          {
+            "chi2": 10.9069155367255,
+            "evaluations": 864,
+            "iterations": 35,
+            "message": "Optimization terminated successfully.",
+            "seed": 101,
+            "success": true
+          }
+        ],
+        "hessian_eigenvalues": [
+          2625.033053821011,
+          51358794.38178842
+        ],
+        "hessian_rank": 2,
+        "local_message": "Optimization terminated successfully.",
+        "model": "LCDM",
+        "parameter_bounds": {
+          "omega_m": [
+            0.1,
+            0.6
+          ],
+          "theta": [
+            0.02,
+            0.045
+          ]
+        },
+        "parameter_names": [
+          "theta",
+          "omega_m"
+        ],
+        "parameter_vector": [
+          0.03434655609329492,
+          0.2778723100764555
+        ],
+        "parameters": {
+          "omega_m": 0.2778723100764555,
+          "theta": 0.03434655609329492
+        },
+        "regular_interior_fit": true,
+        "regularity_note": "",
+        "warnings": []
+      },
+      "target_conditional_on_train": {
+        "chi2": 3.492167068942479,
+        "cholesky_whitened_residuals": [
+          -0.13665962326815373,
+          1.0408671563272105,
+          -0.15449331656763832,
+          -0.7255754619078798,
+          1.3563771022112878
+        ],
+        "conditional_covariance": [
+          [
+            0.476569857,
+            -0.129405759,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.129405759,
+            0.178270498,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.447134991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.889752928,
+            -0.076947712
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.076947712,
+            0.0291860447
+          ]
+        ],
+        "conditional_residuals": [
+          -0.09434165791466143,
+          0.4194065037947823,
+          -0.10330682757873078,
+          -0.6844115025755642,
+          0.2627880344190814
+        ],
+        "cross_covariance_max_abs": 0.0,
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          -0.13665962326815373,
+          0.9933342771481759,
+          -0.15449331656763832,
+          -0.7255754619078798,
+          1.5382182684052144
+        ]
+      },
+      "target_marginal": {
+        "chi2": 3.492167068942479,
+        "cholesky_whitened_residuals": [
+          -0.13665962326815373,
+          1.0408671563272105,
+          -0.15449331656763832,
+          -0.7255754619078798,
+          1.3563771022112878
+        ],
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          -0.13665962326815373,
+          0.9933342771481759,
+          -0.15449331656763832,
+          -0.7255754619078798,
+          1.5382182684052144
+        ],
+        "predictions": [
+          27.692866512085338,
+          14.243129353794782,
+          25.96886499242127,
+          39.02397130742444,
+          8.785353864419081
+        ],
+        "raw_residuals": [
+          -0.09434165791466143,
+          0.4194065037947823,
+          -0.10330682757873078,
+          -0.6844115025755642,
+          0.2627880344190814
+        ]
+      },
+      "train": {
+        "chi2": 10.90691553614691,
+        "cholesky_whitened_residuals": [
+          -0.583039124508824,
+          -1.8076951210823948,
+          1.8205566121411871,
+          1.5179746714065967,
+          0.7105668696103771,
+          -0.5567144878198287,
+          -0.9304351059985064
+        ],
+        "labels": [
+          "BGS:DV@z=0.295",
+          "LRG1:DM@z=0.510",
+          "LRG1:DH@z=0.510",
+          "LRG2:DM@z=0.706",
+          "LRG2:DH@z=0.706",
+          "LRG3+ELG1:DM@z=0.930",
+          "LRG3+ELG1:DH@z=0.930"
+        ],
+        "marginal_standardized_residuals": [
+          -0.583039124508824,
+          -1.8076951210823942,
+          2.4351925199157987,
+          1.5179746714065967,
+          0.006429354362505145,
+          -0.5567144878198287,
+          -0.6404898956269618
+        ],
+        "predictions": [
+          7.837240914054382,
+          13.164627140696151,
+          22.47054698478492,
+          17.33119764132516,
+          20.08255694679771,
+          21.551381169029447,
+          17.654316478755582
+        ],
+        "raw_residuals": [
+          -0.08788835594561828,
+          -0.4554036593038493,
+          1.48720051478492,
+          0.48474451132516094,
+          0.003827756797708304,
+          -0.15703644097055403,
+          -0.22181274124441686
+        ]
+      },
+      "warning": "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test.",
+      "wider_bounds_sensitivity": {
+        "bounds": [
+          [
+            0.015,
+            0.056249999999999994
+          ],
+          [
+            0.05,
+            0.75
+          ]
+        ],
+        "delta_target_chi2": -1.894501756849465e-05,
+        "fit": {
+          "active_bounds": [],
+          "chi2": 10.906915536127261,
+          "converged": true,
+          "description": "Flat LambdaCDM; w=-1.",
+          "family": "APS-reproduction",
+          "global_runs": [
+            {
+              "chi2": 10.906915536479703,
+              "evaluations": 1008,
+              "iterations": 41,
+              "message": "Optimization terminated successfully.",
+              "seed": 17,
+              "success": true
+            }
+          ],
+          "hessian_eigenvalues": [
+            2625.0285875311456,
+            51358808.35037896
+          ],
+          "hessian_rank": 2,
+          "local_message": "Optimization terminated successfully.",
+          "model": "LCDM",
+          "parameter_bounds": {
+            "omega_m": [
+              0.05,
+              0.75
+            ],
+            "theta": [
+              0.015,
+              0.056249999999999994
+            ]
+          },
+          "parameter_names": [
+            "theta",
+            "omega_m"
+          ],
+          "parameter_vector": [
+            0.03434655375309612,
+            0.2778724063873498
+          ],
+          "parameters": {
+            "omega_m": 0.2778724063873498,
+            "theta": 0.03434655375309612
+          },
+          "regular_interior_fit": true,
+          "regularity_note": "",
+          "warnings": []
+        },
+        "target_conditional_on_train": {
+          "chi2": 3.4921481239249106,
+          "cholesky_whitened_residuals": [
+            -0.13665973229031125,
+            1.0408647044773334,
+            -0.15449443274410818,
+            -0.725576479447692,
+            1.3563713175940921
+          ],
+          "conditional_covariance": [
+            [
+              0.476569857,
+              -0.129405759,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.129405759,
+              0.178270498,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.447134991,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.889752928,
+              -0.076947712
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              -0.076947712,
+              0.0291860447
+            ]
+          ],
+          "conditional_residuals": [
+            -0.0943417331770604,
+            0.41940559662733,
+            -0.10330757394532242,
+            -0.6844124623874492,
+            0.2627872491269656
+          ],
+          "cross_covariance_max_abs": 0.0,
+          "labels": [
+            "ELG2:DM@z=1.317",
+            "ELG2:DH@z=1.317",
+            "QSO:DV@z=1.491",
+            "Lya:DM@z=2.330",
+            "Lya:DH@z=2.330"
+          ],
+          "marginal_standardized_residuals": [
+            -0.13665973229031125,
+            0.9933321285870133,
+            -0.15449443274410818,
+            -0.725576479447692,
+            1.5382136717321535
+          ]
+        },
+        "unstable": false
+      }
+    },
+    "WCDM": {
+      "bootstrap": {
+        "empirical_upper_tail_fraction_plus_one_corrected": 0.16,
+        "failures": [],
+        "method": "parametric bootstrap with full-covariance simulation and refitting",
+        "observed_target_chi2": 200.2031558015977,
+        "parameter_intervals_16_50_84_percent": {
+          "omega_m": {
+            "median": 0.1000119487421252,
+            "p16": 0.100000000000001,
+            "p84": 0.27122394659613963
+          },
+          "theta": {
+            "median": 0.03276346615772194,
+            "p16": 0.03222214310342921,
+            "p84": 0.034818274005267325
+          },
+          "w0": {
+            "median": -0.5639465278895337,
+            "p16": -1.066946455224183,
+            "p84": -0.5153937916195401
+          }
+        },
+        "requested_replicates": 24,
+        "seed": 20261710,
+        "successful_replicates": 24,
+        "target_chi2_samples": [
+          23.65695338365366,
+          238.16705799375032,
+          205.5661467266816,
+          2.515425260428223,
+          52.42147853287394,
+          11.866355658642634,
+          8.176514066502897,
+          22.813835985962495,
+          135.3922445122273,
+          17.016358800826236,
+          24.505761765560674,
+          15.910261551582941,
+          100.00179668711498,
+          8.592372071302545,
+          8.049999752526983,
+          0.8439965267213609,
+          19.48283891680594,
+          374.18488104186537,
+          7.75870348674579,
+          186.0870273819071,
+          5.402113071479295,
+          7.387880127509642,
+          4.495120361166298,
+          4.7709428036558394
+        ],
+        "warning": "Finite-bootstrap diagnostic under the fitted model; not a preregistered p-value."
+      },
+      "fit": {
+        "active_bounds": [
+          "omega_m"
+        ],
+        "chi2": 6.726097321827782,
+        "converged": true,
+        "description": "Unconstrained constant-w control.",
+        "family": "APS-reproduction",
+        "global_runs": [
+          {
+            "chi2": 6.726097323694993,
+            "evaluations": 3276,
+            "iterations": 90,
+            "message": "Optimization terminated successfully.",
+            "seed": 17,
+            "success": true
+          },
+          {
+            "chi2": 6.726097326977698,
+            "evaluations": 3924,
+            "iterations": 108,
+            "message": "Optimization terminated successfully.",
+            "seed": 43,
+            "success": true
+          },
+          {
+            "chi2": 6.726097321827782,
+            "evaluations": 4248,
+            "iterations": 117,
+            "message": "Optimization terminated successfully.",
+            "seed": 101,
+            "success": true
+          }
+        ],
+        "hessian_eigenvalues": [
+          1068.9310745279693,
+          324052.91244076175,
+          57547533.992695674
+        ],
+        "hessian_rank": 3,
+        "local_message": "Optimization terminated successfully.",
+        "model": "WCDM",
+        "parameter_bounds": {
+          "omega_m": [
+            0.1,
+            0.6
+          ],
+          "theta": [
+            0.02,
+            0.045
+          ],
+          "w0": [
+            -3.0,
+            1.0
+          ]
+        },
+        "parameter_names": [
+          "theta",
+          "omega_m",
+          "w0"
+        ],
+        "parameter_vector": [
+          0.032447614323394956,
+          0.10000000000499745,
+          -0.5292488102601722
+        ],
+        "parameters": {
+          "omega_m": 0.10000000000499745,
+          "theta": 0.032447614323394956,
+          "w0": -0.5292488102601722
+        },
+        "regular_interior_fit": false,
+        "regularity_note": "",
+        "warnings": [
+          "Best fit reaches declared bound(s): omega_m"
+        ]
+      },
+      "target_conditional_on_train": {
+        "chi2": 200.2031558015977,
+        "cholesky_whitened_residuals": [
+          0.1172121005528963,
+          3.3036987257709716,
+          1.1634245525373275,
+          0.9179362944104658,
+          13.677676269175924
+        ],
+        "conditional_covariance": [
+          [
+            0.476569857,
+            -0.129405759,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.129405759,
+            0.178270498,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.447134991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.889752928,
+            -0.076947712
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.076947712,
+            0.0291860447
+          ]
+        ],
+        "conditional_residuals": [
+          0.08091624745754089,
+          1.2279106491124718,
+          0.7779605119501447,
+          0.865859158018047,
+          1.9782032182448503
+        ],
+        "cross_covariance_max_abs": 0.0,
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.1172121005528963,
+          2.9082184610935427,
+          1.1634245525373275,
+          0.9179362944104658,
+          11.579326036091643
+        ]
+      },
+      "target_marginal": {
+        "chi2": 200.2031558015977,
+        "cholesky_whitened_residuals": [
+          0.1172121005528963,
+          3.3036987257709716,
+          1.1634245525373275,
+          0.9179362944104658,
+          13.677676269175924
+        ],
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.1172121005528963,
+          2.9082184610935427,
+          1.1634245525373275,
+          0.9179362944104658,
+          11.579326036091643
+        ],
+        "predictions": [
+          27.86812441745754,
+          15.051633499112471,
+          26.850132331950146,
+          40.57424196801805,
+          10.50076904824485
+        ],
+        "raw_residuals": [
+          0.08091624745754089,
+          1.2279106491124718,
+          0.7779605119501447,
+          0.865859158018047,
+          1.9782032182448503
+        ]
+      },
+      "train": {
+        "chi2": 6.726097321827782,
+        "cholesky_whitened_residuals": [
+          -0.11411153436039222,
+          -1.5504275883874976,
+          1.16460388908838,
+          1.5076087158703442,
+          0.2782442483623029,
+          -0.6059652924495305,
+          -0.4852320235438627
+        ],
+        "labels": [
+          "BGS:DV@z=0.295",
+          "LRG1:DM@z=0.510",
+          "LRG1:DH@z=0.510",
+          "LRG2:DM@z=0.706",
+          "LRG2:DH@z=0.706",
+          "LRG3+ELG1:DM@z=0.930",
+          "LRG3+ELG1:DH@z=0.930"
+        ],
+        "marginal_standardized_residuals": [
+          -0.11411153436039222,
+          -1.5504275883874976,
+          1.7333135979362921,
+          1.5076087158703442,
+          -0.381460061147639,
+          -0.6059652924495305,
+          -0.21120807426709975
+        ],
+        "predictions": [
+          7.907927894092653,
+          13.22943927325265,
+          22.04190132923704,
+          17.32788741478088,
+          19.85162452912964,
+          21.537488641992343,
+          17.802984206712505
+        ],
+        "raw_residuals": [
+          -0.01720137590734705,
+          -0.3905915267473503,
+          1.058554859237038,
+          0.48143428478087813,
+          -0.22710466087035996,
+          -0.170928968007658,
+          -0.07314501328749401
+        ]
+      },
+      "warning": "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test.",
+      "wider_bounds_sensitivity": {
+        "bounds": [
+          [
+            0.015,
+            0.056249999999999994
+          ],
+          [
+            0.05,
+            0.75
+          ],
+          [
+            -5.0,
+            3.0
+          ]
+        ],
+        "delta_target_chi2": 87.26476693581276,
+        "fit": {
+          "active_bounds": [
+            "omega_m"
+          ],
+          "chi2": 6.393415137351219,
+          "converged": true,
+          "description": "Unconstrained constant-w control.",
+          "family": "APS-reproduction",
+          "global_runs": [
+            {
+              "chi2": 6.393415189086898,
+              "evaluations": 3276,
+              "iterations": 90,
+              "message": "Maximum number of iterations has been exceeded.",
+              "seed": 17,
+              "success": false
+            }
+          ],
+          "hessian_eigenvalues": [
+            1510.2684957659696,
+            172522.58077512597,
+            58130678.19402997
+          ],
+          "hessian_rank": 3,
+          "local_message": "Optimization terminated successfully.",
+          "model": "WCDM",
+          "parameter_bounds": {
+            "omega_m": [
+              0.05,
+              0.75
+            ],
+            "theta": [
+              0.015,
+              0.056249999999999994
+            ],
+            "w0": [
+              -5.0,
+              3.0
+            ]
+          },
+          "parameter_names": [
+            "theta",
+            "omega_m",
+            "w0"
+          ],
+          "parameter_vector": [
+            0.032285041026020936,
+            0.050000000000006484,
+            -0.4783113314556697
+          ],
+          "parameters": {
+            "omega_m": 0.050000000000006484,
+            "theta": 0.032285041026020936,
+            "w0": -0.4783113314556697
+          },
+          "regular_interior_fit": false,
+          "regularity_note": "",
+          "warnings": [
+            "Best fit reaches declared bound(s): omega_m"
+          ]
+        },
+        "target_conditional_on_train": {
+          "chi2": 287.46792273741045,
+          "cholesky_whitened_residuals": [
+            0.15675101056508256,
+            3.6756392993639673,
+            1.3852245801425918,
+            1.2354927126942818,
+            16.446511430042438
+          ],
+          "conditional_covariance": [
+            [
+              0.476569857,
+              -0.129405759,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.129405759,
+              0.178270498,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.447134991,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.889752928,
+              -0.076947712
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              -0.076947712,
+              0.0291860447
+            ]
+          ],
+          "conditional_residuals": [
+            0.10821155409956873,
+            1.361214595014749,
+            0.9262740941674252,
+            1.1653996976314644,
+            2.367913704306991
+          ],
+          "cross_covariance_max_abs": 0.0,
+          "labels": [
+            "ELG2:DM@z=1.317",
+            "ELG2:DH@z=1.317",
+            "QSO:DV@z=1.491",
+            "Lya:DM@z=2.330",
+            "Lya:DH@z=2.330"
+          ],
+          "marginal_standardized_residuals": [
+            0.15675101056508256,
+            3.2239393131684295,
+            1.3852245801425918,
+            1.2354927126942818,
+            13.860479325186503
+          ]
+        },
+        "unstable": true
+      }
+    },
+    "WCDM_NONPHANTOM": {
+      "bootstrap": {
+        "empirical_upper_tail_fraction_plus_one_corrected": 0.08,
+        "failures": [],
+        "method": "parametric bootstrap with full-covariance simulation and refitting",
+        "observed_target_chi2": 200.20226661712175,
+        "parameter_intervals_16_50_84_percent": {
+          "omega_m": {
+            "median": 0.18196479263586945,
+            "p16": 0.10000000000010453,
+            "p84": 0.25757956840204443
+          },
+          "theta": {
+            "median": 0.03309700929882729,
+            "p16": 0.0326148070586114,
+            "p84": 0.03467267322758014
+          },
+          "w0": {
+            "median": -0.6663434074595368,
+            "p16": -0.9999999998395359,
+            "p84": -0.5529046372460007
+          }
+        },
+        "requested_replicates": 24,
+        "seed": 20262710,
+        "successful_replicates": 24,
+        "target_chi2_samples": [
+          67.14237748445582,
+          103.98644222516283,
+          179.47490235325805,
+          10.12883828694392,
+          50.78364586505742,
+          135.9757764332752,
+          8.253513413056579,
+          8.727017085008894,
+          238.1824796186567,
+          4.21184145946451,
+          8.383935744559354,
+          6.847276684231412,
+          14.145837102785826,
+          1.7770161210031605,
+          3.749331406693999,
+          86.64693121839339,
+          95.6976817468726,
+          100.69773930633244,
+          66.58458110606384,
+          19.69728435481121,
+          58.73348833028462,
+          5.466696944064822,
+          158.85980337326794,
+          15.687215882762077
+        ],
+        "warning": "Finite-bootstrap diagnostic under the fitted model; not a preregistered p-value."
+      },
+      "fit": {
+        "active_bounds": [
+          "omega_m"
+        ],
+        "chi2": 6.7260973213709345,
+        "converged": true,
+        "description": "Constant-w model with the non-phantom inequality w0>=-1.",
+        "family": "APS-reproduction",
+        "global_runs": [
+          {
+            "chi2": 6.7260973213709345,
+            "evaluations": 3312,
+            "iterations": 91,
+            "message": "Optimization terminated successfully.",
+            "seed": 17,
+            "success": true
+          },
+          {
+            "chi2": 6.72609732267989,
+            "evaluations": 3312,
+            "iterations": 91,
+            "message": "Optimization terminated successfully.",
+            "seed": 43,
+            "success": true
+          },
+          {
+            "chi2": 6.726097324305097,
+            "evaluations": 3636,
+            "iterations": 100,
+            "message": "Optimization terminated successfully.",
+            "seed": 101,
+            "success": true
+          }
+        ],
+        "hessian_eigenvalues": [
+          1068.9342218341214,
+          324251.3673096515,
+          57547474.11926061
+        ],
+        "hessian_rank": 3,
+        "local_message": "Optimization terminated successfully.",
+        "model": "WCDM_NONPHANTOM",
+        "parameter_bounds": {
+          "omega_m": [
+            0.1,
+            0.6
+          ],
+          "theta": [
+            0.02,
+            0.045
+          ],
+          "w0": [
+            -1.0,
+            1.0
+          ]
+        },
+        "parameter_names": [
+          "theta",
+          "omega_m",
+          "w0"
+        ],
+        "parameter_vector": [
+          0.03244761819836399,
+          0.10000000008462234,
+          -0.5292486267371987
+        ],
+        "parameters": {
+          "omega_m": 0.10000000008462234,
+          "theta": 0.03244761819836399,
+          "w0": -0.5292486267371987
+        },
+        "regular_interior_fit": false,
+        "regularity_note": "Standard information criteria are suppressed at the w0=-1 boundary.",
+        "warnings": [
+          "Best fit reaches declared bound(s): omega_m"
+        ]
+      },
+      "target_conditional_on_train": {
+        "chi2": 200.20226661712175,
+        "cholesky_whitened_residuals": [
+          0.11720355492436485,
+          3.303683264668978,
+          1.1634148373612072,
+          0.9179260237015386,
+          13.677649087536945
+        ],
+        "conditional_covariance": [
+          [
+            0.476569857,
+            -0.129405759,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -0.129405759,
+            0.178270498,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.447134991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.889752928,
+            -0.076947712
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -0.076947712,
+            0.0291860447
+          ]
+        ],
+        "conditional_residuals": [
+          0.08091034806498953,
+          1.2279064016380463,
+          0.7779540155912947,
+          0.8658494699956449,
+          1.9781999759916271
+        ],
+        "cross_covariance_max_abs": 0.0,
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.11720355492436485,
+          2.9082084012544605,
+          1.1634148373612072,
+          0.9179260237015386,
+          11.579307057704177
+        ]
+      },
+      "target_marginal": {
+        "chi2": 200.20226661712175,
+        "cholesky_whitened_residuals": [
+          0.11720355492436485,
+          3.303683264668978,
+          1.1634148373612072,
+          0.9179260237015386,
+          13.677649087536945
+        ],
+        "labels": [
+          "ELG2:DM@z=1.317",
+          "ELG2:DH@z=1.317",
+          "QSO:DV@z=1.491",
+          "Lya:DM@z=2.330",
+          "Lya:DH@z=2.330"
+        ],
+        "marginal_standardized_residuals": [
+          0.11720355492436485,
+          2.9082084012544605,
+          1.1634148373612072,
+          0.9179260237015386,
+          11.579307057704177
+        ],
+        "predictions": [
+          27.86811851806499,
+          15.051629251638046,
+          26.850125835591296,
+          40.57423227999565,
+          10.500765805991627
+        ],
+        "raw_residuals": [
+          0.08091034806498953,
+          1.2279064016380463,
+          0.7779540155912947,
+          0.8658494699956449,
+          1.9781999759916271
+        ]
+      },
+      "train": {
+        "chi2": 6.7260973213709345,
+        "cholesky_whitened_residuals": [
+          -0.11411996025190649,
+          -1.550436430881061,
+          1.1645909061340154,
+          1.5075988547179875,
+          0.2782309971135003,
+          -0.6059801409361587,
+          -0.48525264087794684
+        ],
+        "labels": [
+          "BGS:DV@z=0.295",
+          "LRG1:DM@z=0.510",
+          "LRG1:DH@z=0.510",
+          "LRG2:DM@z=0.706",
+          "LRG2:DH@z=0.706",
+          "LRG3+ELG1:DM@z=0.930",
+          "LRG3+ELG1:DH@z=0.930"
+        ],
+        "marginal_standardized_residuals": [
+          -0.11411996025190649,
+          -1.5504364308810608,
+          1.7333059130632524,
+          1.5075988547179875,
+          -0.3814679376879882,
+          -0.6059801409361587,
+          -0.2112212891890368
+        ],
+        "predictions": [
+          7.907926623958761,
+          13.229437045607137,
+          22.041896635995315,
+          17.327884265756346,
+          19.85161983978151,
+          21.537484453573423,
+          17.802979630156216
+        ],
+        "raw_residuals": [
+          -0.017202646041239333,
+          -0.3905937543928637,
+          1.0585501659953138,
+          0.48143113575634544,
+          -0.2271093502184911,
+          -0.17093315642657814,
+          -0.0731495898437835
+        ]
+      },
+      "warning": "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test.",
+      "wider_bounds_sensitivity": {
+        "bounds": [
+          [
+            0.015,
+            0.056249999999999994
+          ],
+          [
+            0.05,
+            0.75
+          ],
+          [
+            -1.0,
+            1.5
+          ]
+        ],
+        "delta_target_chi2": 87.27454045314309,
+        "fit": {
+          "active_bounds": [
+            "omega_m"
+          ],
+          "chi2": 6.393415126460947,
+          "converged": true,
+          "description": "Constant-w model with the non-phantom inequality w0>=-1.",
+          "family": "APS-reproduction",
+          "global_runs": [
+            {
+              "chi2": 6.393415128152395,
+              "evaluations": 3276,
+              "iterations": 90,
+              "message": "Maximum number of iterations has been exceeded.",
+              "seed": 17,
+              "success": false
+            }
+          ],
+          "hessian_eigenvalues": [
+            1510.2791046159293,
+            172497.67288440402,
+            58130397.49170751
+          ],
+          "hessian_rank": 3,
+          "local_message": "Optimization terminated successfully.",
+          "model": "WCDM_NONPHANTOM",
+          "parameter_bounds": {
+            "omega_m": [
+              0.05,
+              0.75
+            ],
+            "theta": [
+              0.015,
+              0.056249999999999994
+            ],
+            "w0": [
+              -1.0,
+              1.5
+            ]
+          },
+          "parameter_names": [
+            "theta",
+            "omega_m",
+            "w0"
+          ],
+          "parameter_vector": [
+            0.032285106420280124,
+            0.050000000389397566,
+            -0.47831502129389786
+          ],
+          "parameters": {
+            "omega_m": 0.050000000389397566,
+            "theta": 0.032285106420280124,
+            "w0": -0.47831502129389786
+          },
+          "regular_interior_fit": false,
+          "regularity_note": "Standard information criteria are suppressed at the w0=-1 boundary.",
+          "warnings": [
+            "Best fit reaches declared bound(s): omega_m"
+          ]
+        },
+        "target_conditional_on_train": {
+          "chi2": 287.47680707026484,
+          "cholesky_whitened_residuals": [
+            0.15675467945477362,
+            3.6757185652944027,
+            1.3852611165184554,
+            1.2355306530578312,
+            16.44675784809579
+          ],
+          "conditional_covariance": [
+            [
+              0.476569857,
+              -0.129405759,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.129405759,
+              0.178270498,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.447134991,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.889752928,
+              -0.076947712
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              -0.076947712,
+              0.0291860447
+            ]
+          ],
+          "conditional_residuals": [
+            0.1082140868823167,
+            1.3612438958083217,
+            0.9262985253672049,
+            1.1654354855302955,
+            2.3679475978208835
+          ],
+          "cross_covariance_max_abs": 0.0,
+          "labels": [
+            "ELG2:DM@z=1.317",
+            "ELG2:DH@z=1.317",
+            "QSO:DV@z=1.491",
+            "Lya:DM@z=2.330",
+            "Lya:DH@z=2.330"
+          ],
+          "marginal_standardized_residuals": [
+            0.15675467945477362,
+            3.2240087100002386,
+            1.3852611165184554,
+            1.2355306530578312,
+            13.860677719387994
+          ]
+        },
+        "unstable": true
+      }
+    }
+  },
+  "runner": "run_desi_redshift_holdout.py",
+  "runner_sha256": "bf10770089113f0e54d28792017ea2777bc110f317a0d39d6788f75a9f4f0bde",
+  "schema_version": "clean-desi-results-v1",
+  "scientific_warnings": [
+    "This split was constructed after DR1 was public. It is a retrospective redshift holdout, not a prospective blind test."
+  ],
+  "source_sha256": {
+    "desi_analysis_common.py": "1d646732ea7d50666cd79e217c9164493c5ca21f33165a6cb300deba0d99d0e8",
+    "desi_bao_likelihood.py": "5920407fb838c841d9d798e4e36ced30f802c820767d3c5409b5875ea2686d27",
+    "desi_cosmology_models.py": "5e72933063948c69d924508e7bc37741ec5ade58bf9b8ce932fcc1cefb74c93a"
+  },
+  "split": {
+    "fixed_before_run": true,
+    "rule": "train z<=0.930; target z>0.930",
+    "target_indices": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "target_labels": [
+      "ELG2:DM@z=1.317",
+      "ELG2:DH@z=1.317",
+      "QSO:DV@z=1.491",
+      "Lya:DM@z=2.330",
+      "Lya:DH@z=2.330"
+    ],
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "train_labels": [
+      "BGS:DV@z=0.295",
+      "LRG1:DM@z=0.510",
+      "LRG1:DH@z=0.510",
+      "LRG2:DM@z=0.706",
+      "LRG2:DH@z=0.706",
+      "LRG3+ELG1:DM@z=0.930",
+      "LRG3+ELG1:DH@z=0.930"
+    ]
+  }
+}

@@ -41,6 +41,7 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 .eggs/
+.venv-desi/
 
 # Private notes / internal planning — never publish
 _private_notes/
@@ -54,6 +55,12 @@ DARK_ENERGY_PROOF.md
 _mm_build.*
 _tmp.*
 *.recall.md
+
+# Scratch/debug scripts and local-only build helpers
+model_simulation/_inspect_*.py
+build_mathematical_model_pdf.ps1
+jcap_submission.zip
+publishing phase.md
 
 # OS
 .DS_Store

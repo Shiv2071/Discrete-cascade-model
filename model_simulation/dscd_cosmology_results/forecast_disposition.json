@@ -1,0 +1,80 @@
+{
+  "audit_sha256": "81aa182332114cda9b5a2e535e523b572537c2ddc5d5371dfb7d7f77a162dc8a",
+  "audit_summary": {
+    "DR1_DSCD_chi2": 12.736197195550142,
+    "DR1_holdout_conditional_chi2": 3.4659839994129973,
+    "DR2_DSCD_LCDM_squared_separation": 0.00010142515163009159,
+    "DR2_DSCD_chi2": 10.279705853265467,
+    "DR2_ablation_squared_separations": {
+      "no_memory": 2.1466410678330657e-06,
+      "no_regime_feedback": 2.8298709996966432e-06,
+      "no_transport": 5.002467421783256e-06,
+      "symmetric_depletion": 1.992695839745265e-06,
+      "zero_beat": 6.392041452069194e-06
+    }
+  },
+  "created_utc": "2026-07-09T22:52:58.893428+00:00",
+  "decision": "The corrected coupled DSCD+GR system is not eligible to issue a new DR3 forecast. No corrected prediction numbers are sealed.",
+  "failed_gates": [
+    {
+      "detail": "condition=1.06133e+07; rank=3",
+      "name": "identifiability.DSCD_depletion_scale",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "joint squared separation d2=0.000101425; required >=4",
+      "name": "DSCD_vs_LCDM_discriminability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=2.14664e-06; required >=1",
+      "name": "ablation.no_memory.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=2.82987e-06; required >=1",
+      "name": "ablation.no_regime_feedback.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=5.00247e-06; required >=1",
+      "name": "ablation.no_transport.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=1.9927e-06; required >=1",
+      "name": "ablation.symmetric_depletion.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "squared observational separation d2=6.39204e-06; required >=1",
+      "name": "ablation.zero_beat.material",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "raw prediction L2 difference=0.107753",
+      "name": "DESI_DR1.optimizer_prediction_agreement",
+      "passed": false,
+      "severity": "scientific"
+    }
+  ],
+  "historical_record": "16_CASCADE_ORIGIN_AND_DR3_PREDICTION_RECORD.md",
+  "historical_record_preserved": true,
+  "historical_record_sha256": "6538695d3391ec93289bd3bf044b893874f8b5e1eff19875976ad48a27cdd77e",
+  "new_DR3_numbers_issued": false,
+  "rules": [
+    "This disposition does not alter or erase the historical prediction record.",
+    "The historical constant-w surrogate is not the corrected DSCD+GR system.",
+    "A later forecast requires a new versioned system and a complete new pre-release audit.",
+    "DR3 evaluation requires a disjoint increment or cross-release covariance for independence."
+  ],
+  "schema_version": "dscd-forecast-disposition-v1",
+  "status": "NO_FORECAST"
+}

@@ -1,0 +1,491 @@
+{
+  "configuration_sha256": "3b2876c63b7f93a2d7ad9d8405eff2242ba45335061036db6684f560b6db4df0",
+  "gate_counts": {
+    "passed": 57,
+    "scientific_failures": 7,
+    "technical_failures": 0,
+    "total": 64
+  },
+  "gates": [
+    {
+      "detail": "hashes=['3b2876c63b7f93a2d7ad9d8405eff2242ba45335061036db6684f560b6db4df0']",
+      "name": "configuration_match",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "All result artifacts must match the current likelihood/model/common source files.",
+      "name": "source_hashes_match_current_code",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "Each result artifact must match its current runner source.",
+      "name": "runner_hashes_match_current_code",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "All canonical artifacts must use the same resolved environment.",
+      "name": "environment_manifests_match",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "Official DR1 QSO compressed observable must be DV/rd, never reconstructed DH/rd.",
+      "name": "official_DR1_QSO_is_DV",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "Labels, vectors, and covariance matrices must equal the pinned in-code likelihood.",
+      "name": "embedded_official_arrays_match_likelihood",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "Every direction embeds the unavailable cross-release covariance warning.",
+      "name": "release_overlap_warning",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "all checked fields consistent",
+      "name": "result_field_consistency",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "global seed chi2 spread=4.00846e-09",
+      "name": "DESI_DR1.CAS_LOG.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=1.62975e-09",
+      "name": "DESI_DR1.CAS_LOG.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=3.08715e-09; active=[]",
+      "name": "DESI_DR1.CAS_LOG.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=1.98658e-09",
+      "name": "DESI_DR1.CAS_POLY.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=7.09799e-06",
+      "name": "DESI_DR1.CAS_POLY.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=0.054107; active=['gamma']",
+      "name": "DESI_DR1.CAS_POLY.bound_stability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=3.76437e-09",
+      "name": "DESI_DR1.CPL.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=4.03248e-08",
+      "name": "DESI_DR1.CPL.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=6.24836e-08; active=[]",
+      "name": "DESI_DR1.CPL.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=1.21145e-08",
+      "name": "DESI_DR1.CPL_NONPHANTOM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=1.15907e-05",
+      "name": "DESI_DR1.CPL_NONPHANTOM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=0.000112508; active=[]",
+      "name": "DESI_DR1.CPL_NONPHANTOM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=5.46267e-10",
+      "name": "DESI_DR1.LCDM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=5.52269e-11",
+      "name": "DESI_DR1.LCDM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=2.06793e-10; active=[]",
+      "name": "DESI_DR1.LCDM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=9.85301e-10",
+      "name": "DESI_DR1.WCDM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=1.62221e-09",
+      "name": "DESI_DR1.WCDM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=2.37675e-10; active=[]",
+      "name": "DESI_DR1.WCDM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=5.29396e-09",
+      "name": "DESI_DR1.WCDM_NONPHANTOM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=3.51278e-09",
+      "name": "DESI_DR1.WCDM_NONPHANTOM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=1.94724e-10; active=[]",
+      "name": "DESI_DR1.WCDM_NONPHANTOM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=1.51572e-09",
+      "name": "DESI_DR2.CAS_LOG.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=9.14623e-10",
+      "name": "DESI_DR2.CAS_LOG.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=5.69418e-10; active=[]",
+      "name": "DESI_DR2.CAS_LOG.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=2.06101e-09",
+      "name": "DESI_DR2.CAS_POLY.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=7.43773e-06",
+      "name": "DESI_DR2.CAS_POLY.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=0.0648663; active=['gamma']",
+      "name": "DESI_DR2.CAS_POLY.bound_stability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=2.31418e-10",
+      "name": "DESI_DR2.CPL.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=6.44593e-10",
+      "name": "DESI_DR2.CPL.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=6.44642e-10; active=[]",
+      "name": "DESI_DR2.CPL.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=5.72729e-09",
+      "name": "DESI_DR2.CPL_NONPHANTOM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=2.32855e-05",
+      "name": "DESI_DR2.CPL_NONPHANTOM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=4.3853e-05; active=[]",
+      "name": "DESI_DR2.CPL_NONPHANTOM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=9.45903e-10",
+      "name": "DESI_DR2.LCDM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=7.10543e-14",
+      "name": "DESI_DR2.LCDM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=2.67777e-10; active=[]",
+      "name": "DESI_DR2.LCDM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=2.04929e-09",
+      "name": "DESI_DR2.WCDM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=1.84792e-09",
+      "name": "DESI_DR2.WCDM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=1.72808e-09; active=[]",
+      "name": "DESI_DR2.WCDM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "global seed chi2 spread=2.09968e-09",
+      "name": "DESI_DR2.WCDM_NONPHANTOM.optimizer_agreement",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=2.78138e-10",
+      "name": "DESI_DR2.WCDM_NONPHANTOM.quadrature_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "|delta chi2|=2.28738e-10; active=[]",
+      "name": "DESI_DR2.WCDM_NONPHANTOM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "24/24 successful",
+      "name": "holdout.CAS_LOG.bootstrap_completion",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "delta target chi2=272.377; active=['omega_m']",
+      "name": "holdout.CAS_LOG.bound_stability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "24/24 successful",
+      "name": "holdout.CAS_POLY.bootstrap_completion",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "delta target chi2=-37.6349; active=['w0']",
+      "name": "holdout.CAS_POLY.bound_stability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "24/24 successful",
+      "name": "holdout.CPL.bootstrap_completion",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "delta target chi2=0.0130739; active=[]",
+      "name": "holdout.CPL.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "24/24 successful",
+      "name": "holdout.CPL_NONPHANTOM.bootstrap_completion",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "delta target chi2=348.418; active=['omega_m']",
+      "name": "holdout.CPL_NONPHANTOM.bound_stability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "24/24 successful",
+      "name": "holdout.LCDM.bootstrap_completion",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "delta target chi2=-1.8945e-05; active=[]",
+      "name": "holdout.LCDM.bound_stability",
+      "passed": true,
+      "severity": "scientific"
+    },
+    {
+      "detail": "24/24 successful",
+      "name": "holdout.WCDM.bootstrap_completion",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "delta target chi2=87.2648; active=['omega_m']",
+      "name": "holdout.WCDM.bound_stability",
+      "passed": false,
+      "severity": "scientific"
+    },
+    {
+      "detail": "24/24 successful",
+      "name": "holdout.WCDM_NONPHANTOM.bootstrap_completion",
+      "passed": true,
+      "severity": "technical"
+    },
+    {
+      "detail": "delta target chi2=87.2745; active=['omega_m']",
+      "name": "holdout.WCDM_NONPHANTOM.bound_stability",
+      "passed": false,
+      "severity": "scientific"
+    }
+  ],
+  "interpretation": [
+    "In-sample chi2 values are descriptive and retrospective.",
+    "DR1-to-DR2 and DR2-to-DR1 scores are not independent because releases overlap.",
+    "Holdout bootstrap tails are finite-simulation diagnostics, not preregistered p-values.",
+    "Any model failing optimizer, bound, or quadrature stability must not be ranked.",
+    "No manuscript, website, historical seal, or Git history was modified by this analysis."
+  ],
+  "mode": "publication",
+  "schema_version": "clean-desi-audit-v1",
+  "status": "COMPLETE_WITH_SCIENTIFIC_LIMITATIONS",
+  "summaries": {
+    "full_fits": {
+      "DESI_DR1": {
+        "CAS_LOG": 12.70286228721448,
+        "CAS_POLY": 12.296698178444304,
+        "CPL": 7.532731486386516,
+        "CPL_NONPHANTOM": 12.636263491955516,
+        "LCDM": 12.740532402826737,
+        "WCDM": 12.704898954850199,
+        "WCDM_NONPHANTOM": 12.70489895533957
+      },
+      "DESI_DR2": {
+        "CAS_LOG": 9.003767021006475,
+        "CAS_POLY": 8.125414013205285,
+        "CPL": 5.618600032062811,
+        "CPL_NONPHANTOM": 8.761003470686536,
+        "LCDM": 10.2710410028646,
+        "WCDM": 9.041046607144851,
+        "WCDM_NONPHANTOM": 9.04104660779603
+      }
+    },
+    "holdout": {
+      "CAS_LOG": {
+        "bootstrap_tail_fraction": 0.04,
+        "target_conditional_chi2": 383.777871448454,
+        "train_chi2": 5.456221314396927,
+        "wider_bounds_target_chi2": 656.1550901071466
+      },
+      "CAS_POLY": {
+        "bootstrap_tail_fraction": 0.04,
+        "target_conditional_chi2": 415.9449666311351,
+        "train_chi2": 4.330485340685809,
+        "wider_bounds_target_chi2": 378.3100778139793
+      },
+      "CPL": {
+        "bootstrap_tail_fraction": 0.72,
+        "target_conditional_chi2": 6.79498427640686,
+        "train_chi2": 4.236697459623987,
+        "wider_bounds_target_chi2": 6.808058145782404
+      },
+      "CPL_NONPHANTOM": {
+        "bootstrap_tail_fraction": 0.04,
+        "target_conditional_chi2": 497.5838455639748,
+        "train_chi2": 5.108188050438361,
+        "wider_bounds_target_chi2": 846.0021461631968
+      },
+      "LCDM": {
+        "bootstrap_tail_fraction": 0.8,
+        "target_conditional_chi2": 3.492167068942479,
+        "train_chi2": 10.90691553614691,
+        "wider_bounds_target_chi2": 3.4921481239249106
+      },
+      "WCDM": {
+        "bootstrap_tail_fraction": 0.16,
+        "target_conditional_chi2": 200.2031558015977,
+        "train_chi2": 6.726097321827782,
+        "wider_bounds_target_chi2": 287.46792273741045
+      },
+      "WCDM_NONPHANTOM": {
+        "bootstrap_tail_fraction": 0.08,
+        "target_conditional_chi2": 200.20226661712175,
+        "train_chi2": 6.7260973213709345,
+        "wider_bounds_target_chi2": 287.47680707026484
+      }
+    },
+    "release_targets": {
+      "DR1_to_DR2": {
+        "CAS_LOG": 9.939935578191696,
+        "CAS_POLY": 8.469595549579505,
+        "CPL": 12.520263956615093,
+        "CPL_NONPHANTOM": 9.51657291099774,
+        "LCDM": 10.606812675561526,
+        "WCDM": 9.973275227024246,
+        "WCDM_NONPHANTOM": 9.97324761802722
+      },
+      "DR2_to_DR1": {
+        "CAS_LOG": 13.000665345290018,
+        "CAS_POLY": 12.405369157057375,
+        "CPL": 9.521724368837939,
+        "CPL_NONPHANTOM": 12.880305856640879,
+        "LCDM": 12.853729168374667,
+        "WCDM": 13.007104956168256,
+        "WCDM_NONPHANTOM": 13.007082923886879
+      }
+    }
+  }
+}
