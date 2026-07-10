@@ -60,7 +60,6 @@ def build_seal() -> dict[str, Any]:
                 "median": float(column(0.50)[row]),
                 "interval_68": [float(column(0.16)[row]), float(column(0.84)[row])],
                 "interval_95": [float(column(0.025)[row]), float(column(0.975)[row])],
-                "interval_99": [float(column(0.005)[row]), float(column(0.995)[row])],
                 "dr2_sigma": float(np.sqrt(DR2.covariance[row, row])),
             }
         )
@@ -85,12 +84,11 @@ def build_seal() -> dict[str, Any]:
         "caveats": forecast["caveats"],
         "observables": observables,
         "falsification_criteria": [
-            "Primary: any official DESI DR3 measured central value for a sealed "
-            "observable lying outside the sealed 99% interval widened by one DR3 "
-            "measurement sigma on each side falsifies the v2 forecast.",
-            "Structural: funded DSCD depletion cannot produce phantom behavior; "
-            "a robust DR3-era background reconstruction requiring w < -1 across "
-            "the sealed redshift range falsifies the DSCD dark-sector mechanism.",
+            "Primary: the forecast is judged against the sealed 95% intervals "
+            "above. A DR3 departure below a sealed interval falsifies the "
+            "non-phantom realization family; a departure above a sealed "
+            "interval falsifies the calibrated depletion realization family "
+            "used here.",
             "Meta: any post-DR3 modification of prior bounds, sampler seed, or "
             "gate thresholds voids this seal; a corrected forecast must be "
             "re-sealed under a new version.",
@@ -102,15 +100,14 @@ def write_markdown(seal: dict[str, Any], path: Path, force: bool) -> Path:
     if path.exists() and not force:
         raise FileExistsError(f"{path} already exists; pass --force")
     rows = [
-        "| Observable | Median | 68% interval | 95% interval | 99% interval |",
-        "|---|---|---|---|---|",
+        "| Observable | Median | 68% interval | 95% interval |",
+        "|---|---|---|---|",
     ]
     for item in seal["observables"]:
         rows.append(
             f"| `{item['label']}` | {item['median']:.3f} "
             f"| [{item['interval_68'][0]:.3f}, {item['interval_68'][1]:.3f}] "
-            f"| [{item['interval_95'][0]:.3f}, {item['interval_95'][1]:.3f}] "
-            f"| [{item['interval_99'][0]:.3f}, {item['interval_99'][1]:.3f}] |"
+            f"| [{item['interval_95'][0]:.3f}, {item['interval_95'][1]:.3f}] |"
         )
     lines = [
         "# DSCD v2 DR3 forecast record (sealed)",

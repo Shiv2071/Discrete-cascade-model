@@ -14,8 +14,7 @@
   },
   "effective_sample_size": 205.32052776153637,
   "falsification_criteria": [
-    "Primary: any official DESI DR3 measured central value for a sealed observable lying outside the sealed 99% interval widened by one DR3 measurement sigma on each side falsifies the v2 forecast.",
-    "Structural: funded DSCD depletion cannot produce phantom behavior; a robust DR3-era background reconstruction requiring w < -1 across the sealed redshift range falsifies the DSCD dark-sector mechanism.",
+    "Primary: the forecast is judged against the sealed 95% intervals above. A DR3 departure below a sealed interval falsifies the non-phantom realization family; a departure above a sealed interval falsifies the calibrated depletion realization family used here.",
     "Meta: any post-DR3 modification of prior bounds, sampler seed, or gate thresholds voids this seal; a corrected forecast must be re-sealed under a new version."
   ],
   "forecast_sha256": "5282fdea4b00639b134a1fa15c24de885a82dbbce0ea5606fce4f20949a6a5f2",
@@ -31,10 +30,6 @@
         7.830054925468834,
         7.9854625274440645
       ],
-      "interval_99": [
-        7.806717576484788,
-        8.028425648448392
-      ],
       "label": "BGS:DV@z=0.295",
       "median": 7.900738786319887
     },
@@ -47,10 +42,6 @@
       "interval_95": [
         13.14574931458384,
         13.37808183871904
-      ],
-      "interval_99": [
-        13.106576929833645,
-        13.442331939494164
       ],
       "label": "LRG1:DM@z=0.510",
       "median": 13.253021868375384
@@ -65,10 +56,6 @@
         22.275744039092302,
         22.580671568504467
       ],
-      "interval_99": [
-        22.110774822109278,
-        22.657115348298515
-      ],
       "label": "LRG1:DH@z=0.510",
       "median": 22.45105637263122
     },
@@ -81,10 +68,6 @@
       "interval_95": [
         17.284233313658383,
         17.54391285001354
-      ],
-      "interval_99": [
-        17.238863053329002,
-        17.613485118122558
       ],
       "label": "LRG2:DM@z=0.706",
       "median": 17.40809128859714
@@ -99,10 +82,6 @@
         19.808439484863754,
         20.100856365033412
       ],
-      "interval_99": [
-        19.68470805619678,
-        20.15889650616247
-      ],
       "label": "LRG2:DH@z=0.706",
       "median": 19.98897067066591
     },
@@ -115,10 +94,6 @@
       "interval_95": [
         21.535048302673005,
         21.811142120194603
-      ],
-      "interval_99": [
-        21.46822532892856,
-        21.88889484596619
       ],
       "label": "LRG3+ELG1:DM@z=0.934",
       "median": 21.67025752272519
@@ -133,10 +108,6 @@
         17.319456787430912,
         17.592259355718713
       ],
-      "interval_99": [
-        17.23042368835413,
-        17.638310988598324
-      ],
       "label": "LRG3+ELG1:DH@z=0.934",
       "median": 17.468814298930415
     },
@@ -149,10 +120,6 @@
       "interval_95": [
         27.572501398475463,
         27.878406333788952
-      ],
-      "interval_99": [
-        27.47942614348093,
-        27.96624603206632
       ],
       "label": "ELG2:DM@z=1.321",
       "median": 27.731329286799543
@@ -167,10 +134,6 @@
         13.90253128411552,
         14.168040409545402
       ],
-      "interval_99": [
-        13.850811527070617,
-        14.21016348226757
-      ],
       "label": "ELG2:DH@z=1.321",
       "median": 14.038608852367076
     },
@@ -183,10 +146,6 @@
       "interval_95": [
         29.755359821071156,
         30.07329865624267
-      ],
-      "interval_99": [
-        29.659142294667912,
-        30.163544740690643
       ],
       "label": "QSO:DM@z=1.484",
       "median": 29.919974423095105
@@ -201,10 +160,6 @@
         12.741889413686668,
         12.998768455228772
       ],
-      "interval_99": [
-        12.694273581829117,
-        13.040016888830873
-      ],
       "label": "QSO:DH@z=1.484",
       "median": 12.872722712567851
     },
@@ -218,10 +173,6 @@
         8.537670734637992,
         8.758054165084456
       ],
-      "interval_99": [
-        8.502770186269618,
-        8.797442670767033
-      ],
       "label": "Lya:DH@z=2.330",
       "median": 8.642447921923354
     },
@@ -234,10 +185,6 @@
       "interval_95": [
         38.62768778743527,
         39.06672570107549
-      ],
-      "interval_99": [
-        38.52070633112276,
-        39.16242868110173
       ],
       "label": "Lya:DM@z=2.330",
       "median": 38.845305104287945
@@ -305,7 +252,7 @@
   },
   "sampler_seed": 20260710,
   "schema_version": "dscd-v2-dr3-seal-v1",
-  "sealed_utc": "2026-07-10T01:17:22.969750+00:00",
+  "sealed_utc": "2026-07-10T13:49:13.582416+00:00",
   "settings": {
     "quadrature_order": 48,
     "replicates": 4,

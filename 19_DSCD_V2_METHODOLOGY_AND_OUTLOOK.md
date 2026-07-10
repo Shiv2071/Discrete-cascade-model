@@ -198,8 +198,8 @@ calibration ~30 minutes on a 14-worker desktop.
 Subjective assessments as of 10 July 2026, not pipeline outputs.
 
 **Level 1 — the sealed intervals survive DR3 (~80-90%).** The forecast is
-LambdaCDM-like and the falsification bar is the 99% interval widened by one
-DR3 sigma. DR2 moved only modestly from DR1, and the coverage gate shows the
+LambdaCDM-like and the falsification bar is the sealed 95% interval on each
+observable. DR2 moved only modestly from DR1, and the coverage gate shows the
 intervals are honest. The residual risk is a genuine surprise in one tracer
 (DR3 roughly doubles survey volume; Lyman-alpha has surprised before).
 
